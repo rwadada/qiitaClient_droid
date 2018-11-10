@@ -1,0 +1,5059 @@
+<!DOCTYPE html>
+<!-- saved from url=(0029)https://qiita.com/api/v2/docs -->
+<html xmlns:og="http://ogp.me/ns#"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><title>Qiita API v2ドキュメント - Qiita:Developer</title><meta content="width=device-width,initial-scale=1" name="viewport"><meta content="Qiita API v2のドキュメントです." name="description"><meta content="summary" name="twitter:card"><meta content="@Qiita" name="twitter:site"><meta content="Qiita API v2ドキュメント - Qiita:Developer" property="og:title"><meta content="article" property="og:type"><meta content="https://qiita.com/" property="og:url"><meta content="https://cdn.qiita.com/assets/qiita-fb-2887e7b4aad86fd8c25cea84846f2236.png" property="og:image"><meta content="Qiita API v2のドキュメントです." property="og:description"><meta content="Qiita" property="og:site_name"><meta content="564524038" property="fb:admins"><link rel="shortcut icon" type="image/x-icon" href="https://cdn.qiita.com/assets/favicons/public/production.ico"><link rel="apple-touch-icon" type="image/png" href="https://cdn.qiita.com/assets/favicons/public/apple-touch-icon-f9a6afad761ec2306e10db2736187c8b.png"><link rel="stylesheet" media="all" href="./Qiita API v2ドキュメント - Qiita_Developer_files/public-af9629454006415fb47bd2fca6af48ab.min.css"><meta name="csrf-param" content="authenticity_token">
+<meta name="csrf-token" content="rOrpF1c4RYD6B0Q4Gc9Ra6hQTyWb2Mp560z61vrDylywu7hOoekncwDC6I9F1gL8fmzWbmHMnu4RYckdNCmqYA=="><iframe id="facebook-jssdk-iframe" src="javascript:false" style="width: 0px; height: 0px; border: 0px;" src="./Qiita API v2ドキュメント - Qiita_Developer_files/saved_resource.html"></iframe><script src="./Qiita API v2ドキュメント - Qiita_Developer_files/cb=gapi.loaded_0" async=""></script><script async="" src="./Qiita API v2ドキュメント - Qiita_Developer_files/widgets.js" id="twitter-jssdk"></script><script async="" src="./Qiita API v2ドキュメント - Qiita_Developer_files/all.js" id="facebook-jssdk"></script><script async="" src="./Qiita API v2ドキュメント - Qiita_Developer_files/plusone.js" id="google-plusone-jssdk" gapi_processed="true"></script><script async="" src="./Qiita API v2ドキュメント - Qiita_Developer_files/btn.js" id="pocket-btn-js"></script><script type="text/javascript" async="" src="./Qiita API v2ドキュメント - Qiita_Developer_files/mixpanel-2-latest.min.js"></script><script type="text/javascript" async="" src="./Qiita API v2ドキュメント - Qiita_Developer_files/analytics.js"></script><script>
+  window.gtmDataLayer = [
+    {
+      'analytics.dimension5': 'false',
+      'app.env': 'production',
+      'app.layoutVersion': 1,
+      'app.userId': 310244
+    },
+    { 'gtm.start': new Date().getTime(), event: 'gtm.js' }
+  ];
+</script>
+<script src="./Qiita API v2ドキュメント - Qiita_Developer_files/gtm.js" async=""></script>
+<style type="text/css">.fb_hidden{position:absolute;top:-10000px;z-index:10001}.fb_reposition{overflow:hidden;position:relative}.fb_invisible{display:none}.fb_reset{background:none;border:0;border-spacing:0;color:#000;cursor:auto;direction:ltr;font-family:"lucida grande", tahoma, verdana, arial, sans-serif;font-size:11px;font-style:normal;font-variant:normal;font-weight:normal;letter-spacing:normal;line-height:1;margin:0;overflow:visible;padding:0;text-align:left;text-decoration:none;text-indent:0;text-shadow:none;text-transform:none;visibility:visible;white-space:normal;word-spacing:normal}.fb_reset>div{overflow:hidden}@keyframes fb_transform{from{opacity:0;transform:scale(.95)}to{opacity:1;transform:scale(1)}}.fb_animate{animation:fb_transform .3s forwards}
+.fb_dialog{background:rgba(82, 82, 82, .7);position:absolute;top:-10000px;z-index:10001}.fb_dialog_advanced{border-radius:8px;padding:10px}.fb_dialog_content{background:#fff;color:#373737}.fb_dialog_close_icon{background:url(https://static.xx.fbcdn.net/rsrc.php/v3/yq/r/IE9JII6Z1Ys.png) no-repeat scroll 0 0 transparent;cursor:pointer;display:block;height:15px;position:absolute;right:18px;top:17px;width:15px}.fb_dialog_mobile .fb_dialog_close_icon{left:5px;right:auto;top:5px}.fb_dialog_padding{background-color:transparent;position:absolute;width:1px;z-index:-1}.fb_dialog_close_icon:hover{background:url(https://static.xx.fbcdn.net/rsrc.php/v3/yq/r/IE9JII6Z1Ys.png) no-repeat scroll 0 -15px transparent}.fb_dialog_close_icon:active{background:url(https://static.xx.fbcdn.net/rsrc.php/v3/yq/r/IE9JII6Z1Ys.png) no-repeat scroll 0 -30px transparent}.fb_dialog_iframe{line-height:0}.fb_dialog_content .dialog_title{background:#6d84b4;border:1px solid #365899;color:#fff;font-size:14px;font-weight:bold;margin:0}.fb_dialog_content .dialog_title>span{background:url(https://static.xx.fbcdn.net/rsrc.php/v3/yd/r/Cou7n-nqK52.gif) no-repeat 5px 50%;float:left;padding:5px 0 7px 26px}body.fb_hidden{height:100%;left:0;margin:0;overflow:visible;position:absolute;top:-10000px;transform:none;width:100%}.fb_dialog.fb_dialog_mobile.loading{background:url(https://static.xx.fbcdn.net/rsrc.php/v3/ya/r/3rhSv5V8j3o.gif) white no-repeat 50% 50%;min-height:100%;min-width:100%;overflow:hidden;position:absolute;top:0;z-index:10001}.fb_dialog.fb_dialog_mobile.loading.centered{background:none;height:auto;min-height:initial;min-width:initial;width:auto}.fb_dialog.fb_dialog_mobile.loading.centered #fb_dialog_loader_spinner{width:100%}.fb_dialog.fb_dialog_mobile.loading.centered .fb_dialog_content{background:none}.loading.centered #fb_dialog_loader_close{clear:both;color:#fff;display:block;font-size:18px;padding-top:20px}#fb-root #fb_dialog_ipad_overlay{background:rgba(0, 0, 0, .4);bottom:0;left:0;min-height:100%;position:absolute;right:0;top:0;width:100%;z-index:10000}#fb-root #fb_dialog_ipad_overlay.hidden{display:none}.fb_dialog.fb_dialog_mobile.loading iframe{visibility:hidden}.fb_dialog_mobile .fb_dialog_iframe{position:sticky;top:0}.fb_dialog_content .dialog_header{background:linear-gradient(from(#738aba), to(#2c4987));border-bottom:1px solid;border-color:#1d3c78;box-shadow:white 0 1px 1px -1px inset;color:#fff;font:bold 14px Helvetica, sans-serif;text-overflow:ellipsis;text-shadow:rgba(0, 30, 84, .296875) 0 -1px 0;vertical-align:middle;white-space:nowrap}.fb_dialog_content .dialog_header table{height:43px;width:100%}.fb_dialog_content .dialog_header td.header_left{font-size:12px;padding-left:5px;vertical-align:middle;width:60px}.fb_dialog_content .dialog_header td.header_right{font-size:12px;padding-right:5px;vertical-align:middle;width:60px}.fb_dialog_content .touchable_button{background:linear-gradient(from(#4267B2), to(#2a4887));background-clip:padding-box;border:1px solid #29487d;border-radius:3px;display:inline-block;line-height:18px;margin-top:3px;max-width:85px;padding:4px 12px;position:relative}.fb_dialog_content .dialog_header .touchable_button input{background:none;border:none;color:#fff;font:bold 12px Helvetica, sans-serif;margin:2px -12px;padding:2px 6px 3px 6px;text-shadow:rgba(0, 30, 84, .296875) 0 -1px 0}.fb_dialog_content .dialog_header .header_center{color:#fff;font-size:16px;font-weight:bold;line-height:18px;text-align:center;vertical-align:middle}.fb_dialog_content .dialog_content{background:url(https://static.xx.fbcdn.net/rsrc.php/v3/y9/r/jKEcVPZFk-2.gif) no-repeat 50% 50%;border:1px solid #4a4a4a;border-bottom:0;border-top:0;height:150px}.fb_dialog_content .dialog_footer{background:#f5f6f7;border:1px solid #4a4a4a;border-top-color:#ccc;height:40px}#fb_dialog_loader_close{float:left}.fb_dialog.fb_dialog_mobile .fb_dialog_close_button{text-shadow:rgba(0, 30, 84, .296875) 0 -1px 0}.fb_dialog.fb_dialog_mobile .fb_dialog_close_icon{visibility:hidden}#fb_dialog_loader_spinner{animation:rotateSpinner 1.2s linear infinite;background-color:transparent;background-image:url(https://static.xx.fbcdn.net/rsrc.php/v3/yD/r/t-wz8gw1xG1.png);background-position:50% 50%;background-repeat:no-repeat;height:24px;width:24px}@keyframes rotateSpinner{0%{transform:rotate(0deg)}100%{transform:rotate(360deg)}}
+.fb_iframe_widget{display:inline-block;position:relative}.fb_iframe_widget span{display:inline-block;position:relative;text-align:justify}.fb_iframe_widget iframe{position:absolute}.fb_iframe_widget_fluid_desktop,.fb_iframe_widget_fluid_desktop span,.fb_iframe_widget_fluid_desktop iframe{max-width:100%}.fb_iframe_widget_fluid_desktop iframe{min-width:220px;position:relative}.fb_iframe_widget_lift{z-index:1}.fb_iframe_widget_fluid{display:inline}.fb_iframe_widget_fluid span{width:100%}</style></head><body class=" with-js" id=""><noscript><iframe height="0" src="//www.googletagmanager.com/ns.html?id=GTM-TBQWPN" style="display:none;visibility:hidden" width="0"></iframe></noscript><script>
+  document.body.className = document.body.className.replace('without-js', '') + ' with-js';
+  window.Qiita = {"asset_host":"cdn.qiita.com","TLD":"com","controller_path":"api/v2/docs","controller_action":"api/v2/docs#show","controller":"docs","action":"show","action_path":"api/v2/docs#show","env":"production","flash":{},"is_team_page":false,"request_parameters":{"controller":"api/v2/docs","action":"show"},"root_domain":"qiita.com","variant":null,"config":{"mixpanel":{"per_team":"c0a2116368b33b44b5029ebd2cc9b094","public":"17d24b448ca579c365d2d1057f3a1791","team":"b7c0342acba2dbc8742484d98788efb3"},"default_locale":"en","locale":"ja"},"team":null,"user":{"id":310244,"url_name":"rwadada","profile_image_url":"https://avatars1.githubusercontent.com/u/17742832?v=4","email":"wadada.knct@gmail.com","staff":false},"GIT_BRANCH":null,"DEBUG":false};
+
+  /* You are logged in */
+</script>
+<div class="developerPage"><div class="developerPage_header"><div class="container"><div class="developerPage_header_element"><a href="https://qiita.com/api/v2/docs"><img alt="Qiita API v2ドキュメント" class="developerPage_logo" src="./Qiita API v2ドキュメント - Qiita_Developer_files/qiita_developer-970b809f2796826583a4285da9d5c8d4.png" width="191" height="30"></a></div><div class="developerPage_header_element developerPage_header_element-active"><a href="https://qiita.com/api/v2/docs">API v2</a></div><div class="developerPage_header_element"><a href="https://qiita.com/api/webhook/docs">Webhooks</a></div><div class="developerPage_header_element"><a href="https://qiita.com/">Qiitaに戻る</a></div></div></div><div class="developerPage_body js-scroll-chaser-container" style="position: relative;"><div class="container"><div style="position: relative; top: 0px; height: 0px;"></div><div class="developerPage_sidebar js-scroll-chaser-fixed" style="width: 265px; position: relative; top: 0px;"><ul>
+<li>
+<a href="https://qiita.com/api/v2/docs#%E6%A6%82%E8%A6%81">概要</a>
+<ul>
+<li>
+<a href="https://qiita.com/api/v2/docs#%E3%83%AA%E3%82%AF%E3%82%A8%E3%82%B9%E3%83%88">リクエスト</a>
+</li>
+<li>
+<a href="https://qiita.com/api/v2/docs#%E3%83%91%E3%83%A9%E3%83%A1%E3%83%BC%E3%82%BF">パラメータ</a>
+</li>
+<li>
+<a href="https://qiita.com/api/v2/docs#%E5%88%A9%E7%94%A8%E5%88%B6%E9%99%90">利用制限</a>
+</li>
+<li>
+<a href="https://qiita.com/api/v2/docs#%E3%82%B7%E3%83%B3%E3%82%B0%E3%83%AB%E3%82%B5%E3%82%A4%E3%83%B3%E3%82%AA%E3%83%B3%E3%82%92%E5%88%A9%E7%94%A8%E4%B8%AD%E3%81%AE%E3%83%81%E3%83%BC%E3%83%A0%E3%81%AB%E3%81%A4%E3%81%84%E3%81%A6">シングルサインオンを利用中のチームについて</a>
+</li>
+<li>
+<a href="https://qiita.com/api/v2/docs#%E3%82%B9%E3%83%86%E3%83%BC%E3%82%BF%E3%82%B9%E3%82%B3%E3%83%BC%E3%83%89">ステータスコード</a>
+</li>
+<li>
+<a href="https://qiita.com/api/v2/docs#%E3%83%87%E3%83%BC%E3%82%BF%E5%BD%A2%E5%BC%8F">データ形式</a>
+</li>
+<li>
+<a href="https://qiita.com/api/v2/docs#%E3%82%A8%E3%83%A9%E3%83%BC%E3%83%AC%E3%82%B9%E3%83%9D%E3%83%B3%E3%82%B9">エラーレスポンス</a>
+</li>
+<li>
+<a href="https://qiita.com/api/v2/docs#%E3%83%9A%E3%83%BC%E3%82%B8%E3%83%8D%E3%83%BC%E3%82%B7%E3%83%A7%E3%83%B3">ページネーション</a>
+</li>
+<li>
+<a href="https://qiita.com/api/v2/docs#json-schema">JSON Schema</a>
+</li>
+</ul>
+</li>
+<li>
+<a href="https://qiita.com/api/v2/docs#%E8%AA%8D%E8%A8%BC%E8%AA%8D%E5%8F%AF">認証認可</a>
+<ul>
+<li>
+<a href="https://qiita.com/api/v2/docs#%E3%82%A2%E3%82%AF%E3%82%BB%E3%82%B9%E3%83%88%E3%83%BC%E3%82%AF%E3%83%B3">アクセストークン</a>
+</li>
+<li>
+<a href="https://qiita.com/api/v2/docs#%E3%82%B9%E3%82%B3%E3%83%BC%E3%83%97">スコープ</a>
+</li>
+<li>
+<a href="https://qiita.com/api/v2/docs#get-/api/v2/oauth/authorize">GET /api/v2/oauth/authorize</a>
+</li>
+</ul>
+</li>
+<li>
+<a href="https://qiita.com/api/v2/docs#%E3%81%84%E3%81%84%E3%81%AD">いいね</a>
+<ul>
+<li>
+<a href="https://qiita.com/api/v2/docs#get-/api/v2/items/:item_id/likes">GET /api/v2/items/:item_id/likes</a>
+</li>
+</ul>
+</li>
+<li>
+<a href="https://qiita.com/api/v2/docs#%E3%82%A2%E3%82%AF%E3%82%BB%E3%82%B9%E3%83%88%E3%83%BC%E3%82%AF%E3%83%B3">アクセストークン</a>
+<ul>
+<li>
+<a href="https://qiita.com/api/v2/docs#post-/api/v2/access_tokens">POST /api/v2/access_tokens</a>
+</li>
+<li>
+<a href="https://qiita.com/api/v2/docs#delete-/api/v2/access_tokens/:access_token">DELETE /api/v2/access_tokens/:access_token</a>
+</li>
+</ul>
+</li>
+<li>
+<a href="https://qiita.com/api/v2/docs#%E3%82%B0%E3%83%AB%E3%83%BC%E3%83%97">グループ</a>
+</li>
+<li>
+<a href="https://qiita.com/api/v2/docs#%E3%82%B3%E3%83%A1%E3%83%B3%E3%83%88">コメント</a>
+<ul>
+<li>
+<a href="https://qiita.com/api/v2/docs#delete-/api/v2/comments/:comment_id">DELETE /api/v2/comments/:comment_id</a>
+</li>
+<li>
+<a href="https://qiita.com/api/v2/docs#get-/api/v2/comments/:comment_id">GET /api/v2/comments/:comment_id</a>
+</li>
+<li>
+<a href="https://qiita.com/api/v2/docs#patch-/api/v2/comments/:comment_id">PATCH /api/v2/comments/:comment_id</a>
+</li>
+<li>
+<a href="https://qiita.com/api/v2/docs#delete-/api/v2/comments/:comment_id/thank">DELETE /api/v2/comments/:comment_id/thank</a>
+</li>
+<li>
+<a href="https://qiita.com/api/v2/docs#put-/api/v2/comments/:comment_id/thank">PUT /api/v2/comments/:comment_id/thank</a>
+</li>
+<li>
+<a href="https://qiita.com/api/v2/docs#get-/api/v2/items/:item_id/comments">GET /api/v2/items/:item_id/comments</a>
+</li>
+<li>
+<a href="https://qiita.com/api/v2/docs#post-/api/v2/items/:item_id/comments">POST /api/v2/items/:item_id/comments</a>
+</li>
+<li>
+<a href="https://qiita.com/api/v2/docs#post-/api/v2/items/:item_id/imported_comments">POST /api/v2/items/:item_id/imported_comments</a>
+</li>
+<li>
+<a href="https://qiita.com/api/v2/docs#get-/api/v2/projects/:project_id/comments">GET /api/v2/projects/:project_id/comments</a>
+</li>
+<li>
+<a href="https://qiita.com/api/v2/docs#post-/api/v2/projects/:project_id/comments">POST /api/v2/projects/:project_id/comments</a>
+</li>
+<li>
+<a href="https://qiita.com/api/v2/docs#post-/api/v2/projects/:project_id/imported_comments">POST /api/v2/projects/:project_id/imported_comments</a>
+</li>
+</ul>
+</li>
+<li>
+<a href="https://qiita.com/api/v2/docs#%E3%82%BF%E3%82%AE%E3%83%B3%E3%82%B0">タギング</a>
+<ul>
+<li>
+<a href="https://qiita.com/api/v2/docs#post-/api/v2/items/:item_id/taggings">POST /api/v2/items/:item_id/taggings</a>
+</li>
+<li>
+<a href="https://qiita.com/api/v2/docs#delete-/api/v2/items/:item_id/taggings/:tagging_id">DELETE /api/v2/items/:item_id/taggings/:tagging_id</a>
+</li>
+</ul>
+</li>
+<li>
+<a href="https://qiita.com/api/v2/docs#%E3%82%BF%E3%82%B0">タグ</a>
+<ul>
+<li>
+<a href="https://qiita.com/api/v2/docs#get-/api/v2/tags">GET /api/v2/tags</a>
+</li>
+<li>
+<a href="https://qiita.com/api/v2/docs#get-/api/v2/tags/:tag_id">GET /api/v2/tags/:tag_id</a>
+</li>
+<li>
+<a href="https://qiita.com/api/v2/docs#get-/api/v2/users/:user_id/following_tags">GET /api/v2/users/:user_id/following_tags</a>
+</li>
+<li>
+<a href="https://qiita.com/api/v2/docs#delete-/api/v2/tags/:tag_id/following">DELETE /api/v2/tags/:tag_id/following</a>
+</li>
+<li>
+<a href="https://qiita.com/api/v2/docs#get-/api/v2/tags/:tag_id/following">GET /api/v2/tags/:tag_id/following</a>
+</li>
+<li>
+<a href="https://qiita.com/api/v2/docs#put-/api/v2/tags/:tag_id/following">PUT /api/v2/tags/:tag_id/following</a>
+</li>
+</ul>
+</li>
+<li>
+<a href="https://qiita.com/api/v2/docs#%E3%83%81%E3%83%BC%E3%83%A0">チーム</a>
+<ul>
+<li>
+<a href="https://qiita.com/api/v2/docs#get-/api/v2/teams">GET /api/v2/teams</a>
+</li>
+</ul>
+</li>
+<li>
+<a href="https://qiita.com/api/v2/docs#%E3%83%86%E3%83%B3%E3%83%97%E3%83%AC%E3%83%BC%E3%83%88">テンプレート</a>
+<ul>
+<li>
+<a href="https://qiita.com/api/v2/docs#get-/api/v2/templates">GET /api/v2/templates</a>
+</li>
+<li>
+<a href="https://qiita.com/api/v2/docs#delete-/api/v2/templates/:template_id">DELETE /api/v2/templates/:template_id</a>
+</li>
+<li>
+<a href="https://qiita.com/api/v2/docs#get-/api/v2/templates/:template_id">GET /api/v2/templates/:template_id</a>
+</li>
+<li>
+<a href="https://qiita.com/api/v2/docs#post-/api/v2/templates">POST /api/v2/templates</a>
+</li>
+<li>
+<a href="https://qiita.com/api/v2/docs#patch-/api/v2/templates/:template_id">PATCH /api/v2/templates/:template_id</a>
+</li>
+</ul>
+</li>
+<li>
+<a href="https://qiita.com/api/v2/docs#%E3%83%97%E3%83%AD%E3%82%B8%E3%82%A7%E3%82%AF%E3%83%88">プロジェクト</a>
+<ul>
+<li>
+<a href="https://qiita.com/api/v2/docs#get-/api/v2/projects">GET /api/v2/projects</a>
+</li>
+<li>
+<a href="https://qiita.com/api/v2/docs#post-/api/v2/projects">POST /api/v2/projects</a>
+</li>
+<li>
+<a href="https://qiita.com/api/v2/docs#delete-/api/v2/projects/:project_id">DELETE /api/v2/projects/:project_id</a>
+</li>
+<li>
+<a href="https://qiita.com/api/v2/docs#get-/api/v2/projects/:project_id">GET /api/v2/projects/:project_id</a>
+</li>
+<li>
+<a href="https://qiita.com/api/v2/docs#patch-/api/v2/projects/:project_id">PATCH /api/v2/projects/:project_id</a>
+</li>
+<li>
+<a href="https://qiita.com/api/v2/docs#post-/api/v2/imported_projects">POST /api/v2/imported_projects</a>
+</li>
+</ul>
+</li>
+<li>
+<a href="https://qiita.com/api/v2/docs#%E3%83%A6%E3%83%BC%E3%82%B6">ユーザ</a>
+<ul>
+<li>
+<a href="https://qiita.com/api/v2/docs#get-/api/v2/items/:item_id/stockers">GET /api/v2/items/:item_id/stockers</a>
+</li>
+<li>
+<a href="https://qiita.com/api/v2/docs#get-/api/v2/users">GET /api/v2/users</a>
+</li>
+<li>
+<a href="https://qiita.com/api/v2/docs#get-/api/v2/users/:user_id">GET /api/v2/users/:user_id</a>
+</li>
+<li>
+<a href="https://qiita.com/api/v2/docs#get-/api/v2/users/:user_id/followees">GET /api/v2/users/:user_id/followees</a>
+</li>
+<li>
+<a href="https://qiita.com/api/v2/docs#get-/api/v2/users/:user_id/followers">GET /api/v2/users/:user_id/followers</a>
+</li>
+<li>
+<a href="https://qiita.com/api/v2/docs#delete-/api/v2/users/:user_id/following">DELETE /api/v2/users/:user_id/following</a>
+</li>
+<li>
+<a href="https://qiita.com/api/v2/docs#get-/api/v2/users/:user_id/following">GET /api/v2/users/:user_id/following</a>
+</li>
+<li>
+<a href="https://qiita.com/api/v2/docs#put-/api/v2/users/:user_id/following">PUT /api/v2/users/:user_id/following</a>
+</li>
+</ul>
+</li>
+<li>
+<a href="https://qiita.com/api/v2/docs#%E5%B1%95%E9%96%8B%E6%B8%88%E3%81%BF%E3%83%86%E3%83%B3%E3%83%97%E3%83%AC%E3%83%BC%E3%83%88">展開済みテンプレート</a>
+<ul>
+<li>
+<a href="https://qiita.com/api/v2/docs#post-/api/v2/expanded_templates">POST /api/v2/expanded_templates</a>
+</li>
+</ul>
+</li>
+<li>
+<a href="https://qiita.com/api/v2/docs#%E6%8A%95%E7%A8%BF">投稿</a>
+<ul>
+<li>
+<a href="https://qiita.com/api/v2/docs#get-/api/v2/authenticated_user/items">GET /api/v2/authenticated_user/items</a>
+</li>
+<li>
+<a href="https://qiita.com/api/v2/docs#get-/api/v2/items">GET /api/v2/items</a>
+</li>
+<li>
+<a href="https://qiita.com/api/v2/docs#post-/api/v2/items">POST /api/v2/items</a>
+</li>
+<li>
+<a href="https://qiita.com/api/v2/docs#delete-/api/v2/items/:item_id">DELETE /api/v2/items/:item_id</a>
+</li>
+<li>
+<a href="https://qiita.com/api/v2/docs#get-/api/v2/items/:item_id">GET /api/v2/items/:item_id</a>
+</li>
+<li>
+<a href="https://qiita.com/api/v2/docs#patch-/api/v2/items/:item_id">PATCH /api/v2/items/:item_id</a>
+</li>
+<li>
+<a href="https://qiita.com/api/v2/docs#post-/api/v2/imported_items">POST /api/v2/imported_items</a>
+</li>
+<li>
+<a href="https://qiita.com/api/v2/docs#delete-/api/v2/items/:item_id/like">DELETE /api/v2/items/:item_id/like</a>
+</li>
+<li>
+<a href="https://qiita.com/api/v2/docs#put-/api/v2/items/:item_id/like">PUT /api/v2/items/:item_id/like</a>
+</li>
+<li>
+<a href="https://qiita.com/api/v2/docs#put-/api/v2/items/:item_id/stock">PUT /api/v2/items/:item_id/stock</a>
+</li>
+<li>
+<a href="https://qiita.com/api/v2/docs#delete-/api/v2/items/:item_id/stock">DELETE /api/v2/items/:item_id/stock</a>
+</li>
+<li>
+<a href="https://qiita.com/api/v2/docs#get-/api/v2/items/:item_id/stock">GET /api/v2/items/:item_id/stock</a>
+</li>
+<li>
+<a href="https://qiita.com/api/v2/docs#get-/api/v2/items/:item_id/like">GET /api/v2/items/:item_id/like</a>
+</li>
+<li>
+<a href="https://qiita.com/api/v2/docs#put-/api/v2/items/:item_id/stock">PUT /api/v2/items/:item_id/stock</a>
+</li>
+<li>
+<a href="https://qiita.com/api/v2/docs#get-/api/v2/tags/:tag_id/items">GET /api/v2/tags/:tag_id/items</a>
+</li>
+<li>
+<a href="https://qiita.com/api/v2/docs#get-/api/v2/users/:user_id/items">GET /api/v2/users/:user_id/items</a>
+</li>
+<li>
+<a href="https://qiita.com/api/v2/docs#get-/api/v2/users/:user_id/stocks">GET /api/v2/users/:user_id/stocks</a>
+</li>
+</ul>
+</li>
+<li>
+<a href="https://qiita.com/api/v2/docs#%E6%8B%9B%E5%BE%85%E4%B8%AD%E3%81%AE%E3%83%A1%E3%83%B3%E3%83%90%E3%83%BC">招待中のメンバー</a>
+<ul>
+<li>
+<a href="https://qiita.com/api/v2/docs#get-api/v2/team_invitations">GET api/v2/team_invitations</a>
+</li>
+<li>
+<a href="https://qiita.com/api/v2/docs#post-api/v2/team_invitations">POST api/v2/team_invitations</a>
+</li>
+<li>
+<a href="https://qiita.com/api/v2/docs#delete-api/v2/team_invitations/:email">DELETE api/v2/team_invitations/:email</a>
+</li>
+</ul>
+</li>
+<li>
+<a href="https://qiita.com/api/v2/docs#%E7%B5%B5%E6%96%87%E5%AD%97%E3%83%AA%E3%82%A2%E3%82%AF%E3%82%B7%E3%83%A7%E3%83%B3">絵文字リアクション</a>
+<ul>
+<li>
+<a href="https://qiita.com/api/v2/docs#post-/api/v2/comments/:comment_id/reactions">POST /api/v2/comments/:comment_id/reactions</a>
+</li>
+<li>
+<a href="https://qiita.com/api/v2/docs#post-/api/v2/items/:item_id/reactions">POST /api/v2/items/:item_id/reactions</a>
+</li>
+<li>
+<a href="https://qiita.com/api/v2/docs#post-/api/v2/projects/:project_id/reactions">POST /api/v2/projects/:project_id/reactions</a>
+</li>
+<li>
+<a href="https://qiita.com/api/v2/docs#delete-/api/v2/comments/:comment_id/reactions/:reaction_name">DELETE /api/v2/comments/:comment_id/reactions/:reaction_name</a>
+</li>
+<li>
+<a href="https://qiita.com/api/v2/docs#delete-/api/v2/items/:item_id/reactions/:reaction_name">DELETE /api/v2/items/:item_id/reactions/:reaction_name</a>
+</li>
+<li>
+<a href="https://qiita.com/api/v2/docs#delete-/api/v2/projects/:project_id/reactions/:reaction_name">DELETE /api/v2/projects/:project_id/reactions/:reaction_name</a>
+</li>
+<li>
+<a href="https://qiita.com/api/v2/docs#get-/api/v2/comments/:comment_id/reactions">GET /api/v2/comments/:comment_id/reactions</a>
+</li>
+<li>
+<a href="https://qiita.com/api/v2/docs#get-/api/v2/items/:item_id/reactions">GET /api/v2/items/:item_id/reactions</a>
+</li>
+<li>
+<a href="https://qiita.com/api/v2/docs#get-/api/v2/projects/:project_id/reactions">GET /api/v2/projects/:project_id/reactions</a>
+</li>
+</ul>
+</li>
+<li>
+<a href="https://qiita.com/api/v2/docs#%E8%AA%8D%E8%A8%BC%E4%B8%AD%E3%81%AE%E3%83%A6%E3%83%BC%E3%82%B6">認証中のユーザ</a>
+<ul>
+<li>
+<a href="https://qiita.com/api/v2/docs#get-/api/v2/authenticated_user">GET /api/v2/authenticated_user</a>
+</li>
+</ul>
+</li>
+</ul>
+</div><div class="developerPage_main markdownContent markdownContent-headingEnabled">
+<h2>
+<span id="概要" class="fragment"></span><a href="https://qiita.com/api/v2/docs#%E6%A6%82%E8%A6%81"><i class="fa fa-link"></i></a>概要</h2>
+
+<p>このドキュメントではQiita API v2の仕様について説明します。</p>
+
+<h3>
+<span id="リクエスト" class="fragment"></span><a href="https://qiita.com/api/v2/docs#%E3%83%AA%E3%82%AF%E3%82%A8%E3%82%B9%E3%83%88"><i class="fa fa-link"></i></a>リクエスト</h3>
+
+<p>APIとの全ての通信にはHTTPSプロトコルを利用します。アクセス先のホストには、Qiitaのデータを利用する場合には <code>qiita.com</code> を利用し、Qiita:Teamのデータを利用する場合には <code>*.qiita.com</code> を利用します (<code>*</code>には所属しているTeamのIDが入ります)。</p>
+
+<h3>
+<span id="パラメータ" class="fragment"></span><a href="https://qiita.com/api/v2/docs#%E3%83%91%E3%83%A9%E3%83%A1%E3%83%BC%E3%82%BF"><i class="fa fa-link"></i></a>パラメータ</h3>
+
+<p>API v2へのリクエストには、GET、POST、PUT、PATCH、DELETEの5種類のHTTPメソッドを利用します。多くのAPIへのリクエストにはパラメータを含められますが、GETリクエストにパラメータを含める場合にはURIクエリを利用し、それ以外の場合にはリクエストボディを利用します。パラメータには、ページネーション用途など任意で渡すものと、投稿時の本文など必須のものが存在します。APIドキュメントには、各APIごとに送信可能なパラメータが記載されています。</p>
+
+<h3>
+<span id="利用制限" class="fragment"></span><a href="https://qiita.com/api/v2/docs#%E5%88%A9%E7%94%A8%E5%88%B6%E9%99%90"><i class="fa fa-link"></i></a>利用制限</h3>
+
+<p>認証している状態ではユーザごとに1時間に1000回まで、認証していない状態ではIPアドレスごとに1時間に60回までリクエストを受け付けます。</p>
+
+<h3>
+<span id="シングルサインオンを利用中のチームについて" class="fragment"></span><a href="https://qiita.com/api/v2/docs#%E3%82%B7%E3%83%B3%E3%82%B0%E3%83%AB%E3%82%B5%E3%82%A4%E3%83%B3%E3%82%AA%E3%83%B3%E3%82%92%E5%88%A9%E7%94%A8%E4%B8%AD%E3%81%AE%E3%83%81%E3%83%BC%E3%83%A0%E3%81%AB%E3%81%A4%E3%81%84%E3%81%A6"><i class="fa fa-link"></i></a>シングルサインオンを利用中のチームについて</h3>
+
+<p>シングルサインオンによる認証のみを許可しているQiita:Teamのチームでは、セキュリティ上の理由から現在APIを利用したアクセスができません。</p>
+
+<h3>
+<span id="ステータスコード" class="fragment"></span><a href="https://qiita.com/api/v2/docs#%E3%82%B9%E3%83%86%E3%83%BC%E3%82%BF%E3%82%B9%E3%82%B3%E3%83%BC%E3%83%89"><i class="fa fa-link"></i></a>ステータスコード</h3>
+
+<p>200、201、204、400、401、403、404、500の8種類のステータスコードを利用します。GETまたはPATCHリクエストに対しては200を、POSTリクエストに対しては201を、PUTまたはDELETEリクエストに対しては204を返します。但し、エラーが起きた場合にはその他のステータスコードの中から適切なものを返します。</p>
+
+<h3>
+<span id="データ形式" class="fragment"></span><a href="https://qiita.com/api/v2/docs#%E3%83%87%E3%83%BC%E3%82%BF%E5%BD%A2%E5%BC%8F"><i class="fa fa-link"></i></a>データ形式</h3>
+
+<p>APIとのデータの送受信にはJSONを利用します。JSONをリクエストボディに含める場合、リクエストのContent-Typeヘッダにapplication/jsonを指定してください。但し、GETリクエストにバラメータを含める場合にはURIクエリを利用します。また、PUTリクエストまたはDELETEリクエストに対してはレスポンスボディが返却されません。日時を表現する場合には、<a href="http://ja.wikipedia.org/wiki/ISO_8601">ISO 8601</a>形式の文字列を利用します。</p>
+
+<div class="code-frame" data-lang="text"><div class="highlight"><pre><span></span>GET /api/v2/items?page=1&amp;per_page=20 HTTP/1.1
+</pre></div></div>
+
+<h3>
+<span id="エラーレスポンス" class="fragment"></span><a href="https://qiita.com/api/v2/docs#%E3%82%A8%E3%83%A9%E3%83%BC%E3%83%AC%E3%82%B9%E3%83%9D%E3%83%B3%E3%82%B9"><i class="fa fa-link"></i></a>エラーレスポンス</h3>
+
+<p>エラーが発生した場合、エラーを表現するオブジェクトを含んだエラーレスポンスが返却されます。このオブジェクトには、エラーの内容を説明するmessageプロパティと、エラーの種類を表すtypeプロパティで構成されます。typeプロパティはエラーの種類ごとに一意な文字列で、<code>^[a-z0-9_]+$</code> というパターンで表現できます。</p>
+
+<div class="code-frame" data-lang="json"><div class="highlight"><pre><span></span><span class="p">{</span>
+  <span class="nt">"message"</span><span class="p">:</span> <span class="s2">"Not found"</span><span class="p">,</span>
+  <span class="nt">"type"</span><span class="p">:</span> <span class="s2">"not_found"</span>
+<span class="p">}</span>
+</pre></div></div>
+
+<h3>
+<span id="ページネーション" class="fragment"></span><a href="https://qiita.com/api/v2/docs#%E3%83%9A%E3%83%BC%E3%82%B8%E3%83%8D%E3%83%BC%E3%82%B7%E3%83%A7%E3%83%B3"><i class="fa fa-link"></i></a>ページネーション</h3>
+
+<p>一部の配列を返すAPIでは、全ての要素を一度に返すようにはなっておらず、代わりにページを指定できるようになっています。これらのAPIには、1から始まるページ番号を表すpageパラメータと、1ページあたりに含まれる要素数を表すper_pageパラメータを指定することができます。pageの初期値は1、pageの最大値は100に設定されています。また、per_pageの初期値は20、per_pageの最大値は100に設定されています。</p>
+
+<p>ページを指定できるAPIでは、<a href="http://tools.ietf.org/html/rfc5988">Linkヘッダ</a> を含んだレスポンスを返します。Linkヘッダには、最初のページと最後のページへのリンクに加え、存在する場合には次のページと前のページへのリンクが含まれます。個々のリンクにはそれぞれ、first、last、next、prevという値を含んだrel属性が紐付けられます。</p>
+
+<div class="code-frame" data-lang="text"><div class="highlight"><pre><span></span>Link: &lt;https://qiita.com/api/v2/users?page=1&gt;; rel="first",
+      &lt;https://qiita.com/api/v2/users?page=1&gt;; rel="prev",
+      &lt;https://qiita.com/api/v2/users?page=3&gt;; rel="next",
+      &lt;https://qiita.com/api/v2/users?page=6&gt;; rel="last"
+</pre></div></div>
+
+<p>また、ページを指定できるAPIでは、要素の合計数が <code>Total-Count</code> レスポンスヘッダに含まれます。</p>
+
+<div class="code-frame" data-lang="text"><div class="highlight"><pre><span></span>Total-Count: 6
+</pre></div></div>
+
+<h3>
+<span id="json-schema" class="fragment"></span><a href="https://qiita.com/api/v2/docs#json-schema"><i class="fa fa-link"></i></a>JSON Schema</h3>
+
+<p>Qiita API v2では、APIのインターフェースを定義したJSON-Schemaを提供しています。このスキーマでは、APIでどのようなリソースが提供されているか、それらはどのようなプロパティを持っているか、それらがどのように表現されるか、及びどのような操作が提供されているかといった事柄が定義されています。スキーマには、次のURLでアクセスできます。</p>
+
+<ul>
+<li><a href="https://qiita.com/api/v2/schema" class="autolink">https://qiita.com/api/v2/schema</a></li>
+<li><a href="https://qiita.com/api/v2/schema?locale=en" class="autolink">https://qiita.com/api/v2/schema?locale=en</a></li>
+<li><a href="https://qiita.com/api/v2/schema?locale=ja" class="autolink">https://qiita.com/api/v2/schema?locale=ja</a></li>
+</ul>
+
+<h2>
+<span id="認証認可" class="fragment"></span><a href="https://qiita.com/api/v2/docs#%E8%AA%8D%E8%A8%BC%E8%AA%8D%E5%8F%AF"><i class="fa fa-link"></i></a>認証認可</h2>
+
+<p>Qiita::TeamのAPI、またはQiitaのGETリクエスト以外のAPIを利用するには、アクセストークンをリクエストに含める必要があります。アクセストークンは、後述するOAuthを利用した認可フローか、<a href="https://qiita.com/settings/applications">ユーザの管理画面</a>から発行できます。</p>
+
+<h3>
+<span id="アクセストークン" class="fragment"></span><a href="https://qiita.com/api/v2/docs#%E3%82%A2%E3%82%AF%E3%82%BB%E3%82%B9%E3%83%88%E3%83%BC%E3%82%AF%E3%83%B3"><i class="fa fa-link"></i></a>アクセストークン</h3>
+
+<p>アクセストークンは、以下のようにAuthorizationリクエストヘッダに含められます。</p>
+
+<div class="code-frame" data-lang="text"><div class="highlight"><pre><span></span>Authorization: Bearer 1234567890abcdef1234567890abcdef1234567890abcdef1234567890abcd
+</pre></div></div>
+
+<h3>
+<span id="スコープ" class="fragment"></span><a href="https://qiita.com/api/v2/docs#%E3%82%B9%E3%82%B3%E3%83%BC%E3%83%97"><i class="fa fa-link"></i></a>スコープ</h3>
+
+<p>個々のアクセストークンには、幾つかのスコープを紐付けられます。スコープはアクセストークン発行時にアプリケーションが指定でき、アプリケーションを利用するユーザはどのスコープが要求されているかを認可画面で確認できます。アクセストークンが適切なスコープを持っているときのみ、APIを介したデータ操作が許可されます。なお、認証が不要なAPIについては、どのスコープも必要としません。本APIでは以下の4つのスコープを提供しています。例えば、read_qiita_teamスコープを持っていないアクセストークンでは、Qiita:Teamからデータを読み出すことはできません。また、write_qiitaスコープを持っていないアクセストークンでは、Qiitaに投稿することはできません。</p>
+
+<div class="code-frame" data-lang="text"><div class="highlight"><pre><span></span>read_qiita       - Qiitaからアクセストークンに紐付いたユーザに関連したデータを読み出す
+read_qiita_team  - Qiita:Teamからデータを読み出す
+write_qiita      - Qiitaにデータを書き込む
+write_qiita_team - Qiita:Teamにデータを書き込む
+</pre></div></div>
+
+<h3>
+<span id="get-apiv2oauthauthorize" class="fragment"></span><a href="https://qiita.com/api/v2/docs#get-apiv2oauthauthorize"><i class="fa fa-link"></i></a>GET /api/v2/oauth/authorize</h3>
+
+<p>アクセストークンを発行するには、アプリケーションのユーザに認可画面を表示する必要があります。ユーザがアプリケーションからのアクセスを認可すると、アプリケーション登録時に指定されたURLにリダイレクトされます。このとき、リダイレクト先のURLクエリに<code>code</code>が付与されます。また指定した場合は <code>state</code> も付与されます。アプリケーションでは、この <code>code</code> の値を利用して <a href="https://qiita.com/api/v2/docs#post-/api/v2/access_tokens">POST /api/v2/access_tokens</a> にリクエストを送り、アクセストークンを発行します。</p>
+
+<ul>
+<li>client_id
+
+<ul>
+<li>登録されたAPIクライアントを特定するためのIDです。40桁の16進数で表現されます。</li>
+<li>Example: <code>"a91f0396a0968ff593eafdd194e3d17d32c41b1da7b25e873b42e9058058cd9d"</code>
+</li>
+</ul>
+</li>
+<li>scope
+
+<ul>
+<li>アプリケーションが利用するスコープをスペース区切りで指定できます。</li>
+<li>Example: <code>"read_qiita write_qiita_team"</code>
+</li>
+</ul>
+</li>
+<li>state
+
+<ul>
+<li>CSRF対策のため、認可後にリダイレクトするURLのクエリに含まれる値を指定できます。</li>
+<li>Example: <code>"bb17785d811bb1913ef54b0a7657de780defaa2d"</code>
+</li>
+</ul>
+</li>
+</ul>
+
+<div class="code-frame" data-lang="text"><div class="highlight"><pre><span></span>GET /api/v2/oauth/authorize?client_id=a91f0396a0968ff593eafdd194e3d17d32c41b1da7b25e873b42e9058058cd9d&amp;scope=read_qiita+write_qiita_team&amp;state=bb17785d811bb1913ef54b0a7657de780defaa2d HTTP/1.1
+Host: qiita.com
+</pre></div></div>
+
+<div class="code-frame" data-lang="text"><div class="highlight"><pre><span></span>HTTP/1.1 200
+Content-Type: text/html
+
+...
+</pre></div></div>
+
+<h2>
+<span id="いいね" class="fragment"></span><a href="https://qiita.com/api/v2/docs#%E3%81%84%E3%81%84%E3%81%AD"><i class="fa fa-link"></i></a>いいね</h2>
+
+<p><strong>Qiita:TeamのいいねAPIは2017年8月24日に非推奨となりました。今後は絵文字リアクションAPIをご利用ください。</strong> 投稿につけられた「いいね！」を表します。</p>
+
+<ul>
+<li>created_at
+
+<ul>
+<li>データが作成された日時</li>
+<li>Example: <code>"2000-01-01T00:00:00+00:00"</code>
+</li>
+<li>Type: string</li>
+<li>Format: date-time</li>
+</ul>
+</li>
+<li>user
+
+<ul>
+<li>Qiita上のユーザを表します。</li>
+</ul>
+</li>
+</ul>
+
+<h3>
+<span id="get-apiv2itemsitem_idlikes" class="fragment"></span><a href="https://qiita.com/api/v2/docs#get-apiv2itemsitem_idlikes"><i class="fa fa-link"></i></a>GET /api/v2/items/:item_id/likes</h3>
+
+<p>投稿につけられた「いいね！」を作成日時の降順で返します。</p>
+
+<div class="code-frame" data-lang="text"><div class="highlight"><pre><span></span>GET /api/v2/items/:item_id/likes HTTP/1.1
+Host: api.example.com
+</pre></div></div>
+
+<div class="code-frame" data-lang="text"><div class="highlight"><pre><span></span>HTTP/1.1 200
+Content-Type: application/json
+
+[
+  {
+    "created_at": "2000-01-01T00:00:00+00:00",
+    "user": {
+      "description": "Hello, world.",
+      "facebook_id": "yaotti",
+      "followees_count": 100,
+      "followers_count": 200,
+      "github_login_name": "yaotti",
+      "id": "yaotti",
+      "items_count": 300,
+      "linkedin_id": "yaotti",
+      "location": "Tokyo, Japan",
+      "name": "Hiroshige Umino",
+      "organization": "Increments Inc",
+      "permanent_id": 1,
+      "profile_image_url": "https://si0.twimg.com/profile_images/2309761038/1ijg13pfs0dg84sk2y0h_normal.jpeg",
+      "twitter_screen_name": "yaotti",
+      "website_url": "http://yaotti.hatenablog.com"
+    }
+  }
+]
+</pre></div></div>
+
+<h2>
+<span id="アクセストークン-1" class="fragment"></span><a href="https://qiita.com/api/v2/docs#%E3%82%A2%E3%82%AF%E3%82%BB%E3%82%B9%E3%83%88%E3%83%BC%E3%82%AF%E3%83%B3-1"><i class="fa fa-link"></i></a>アクセストークン</h2>
+
+<p>Qiita API v2で認証・認可を行うためのアクセストークンを表します。</p>
+
+<ul>
+<li>client_id
+
+<ul>
+<li>登録されたAPIクライアントを特定するためのID</li>
+<li>Example: <code>"a91f0396a0968ff593eafdd194e3d17d32c41b1da7b25e873b42e9058058cd9d"</code>
+</li>
+<li>Type: string</li>
+<li>Pattern: <code>/^[0-9a-f]{40}$/</code>
+</li>
+</ul>
+</li>
+<li>scopes
+
+<ul>
+<li>アクセストークンに許された操作の一覧</li>
+<li>Type: array</li>
+</ul>
+</li>
+<li>token
+
+<ul>
+<li>アクセストークンを表現する文字列</li>
+<li>Example: <code>"ea5d0a593b2655e9568f144fb1826342292f5c6b7d406fda00577b8d1530d8a5"</code>
+</li>
+<li>Type: string</li>
+<li>Pattern: <code>/^[0-9a-f]{40}$/</code>
+</li>
+</ul>
+</li>
+</ul>
+
+<h3>
+<span id="post-apiv2access_tokens" class="fragment"></span><a href="https://qiita.com/api/v2/docs#post-apiv2access_tokens"><i class="fa fa-link"></i></a>POST /api/v2/access_tokens</h3>
+
+<p>与えられた認証情報をもとに新しいアクセストークンを発行します。</p>
+
+<ul>
+<li>client_id
+
+<ul>
+<li>登録されたAPIクライアントを特定するためのID</li>
+<li>Example: <code>"a91f0396a0968ff593eafdd194e3d17d32c41b1da7b25e873b42e9058058cd9d"</code>
+</li>
+<li>Type: string</li>
+<li>Pattern: <code>/^[0-9a-f]{40}$/</code>
+</li>
+</ul>
+</li>
+<li>client_secret
+
+<ul>
+<li>登録されたAPIクライアントを認証するための秘密鍵</li>
+<li>Example: <code>"01fc259c31fe39e72c8ef911c3432a33d51e9337ff34c4fac86c491a0d37251f"</code>
+</li>
+<li>Type: string</li>
+<li>Pattern: <code>/^[0-9a-f]{40}$/</code>
+</li>
+</ul>
+</li>
+<li>code
+
+<ul>
+<li>リダイレクト用のURLに付与された、アクセストークンと交換するための文字列</li>
+<li>Example: <code>"fefef5f067171f247fb415e38cb0631797b82f4141dcdee66db846c3ade57a03"</code>
+</li>
+<li>Type: string</li>
+<li>Pattern: <code>/^[0-9a-f]{40}$/</code>
+</li>
+</ul>
+</li>
+</ul>
+
+<div class="code-frame" data-lang="text"><div class="highlight"><pre><span></span>POST /api/v2/access_tokens HTTP/1.1
+Content-Type: application/json
+Host: api.example.com
+
+{
+  "client_id": "a91f0396a0968ff593eafdd194e3d17d32c41b1da7b25e873b42e9058058cd9d",
+  "client_secret": "01fc259c31fe39e72c8ef911c3432a33d51e9337ff34c4fac86c491a0d37251f",
+  "code": "fefef5f067171f247fb415e38cb0631797b82f4141dcdee66db846c3ade57a03"
+}
+</pre></div></div>
+
+<div class="code-frame" data-lang="text"><div class="highlight"><pre><span></span>HTTP/1.1 201
+Content-Type: application/json
+
+{
+  "client_id": "a91f0396a0968ff593eafdd194e3d17d32c41b1da7b25e873b42e9058058cd9d",
+  "scopes": [
+    "read_qiita"
+  ],
+  "token": "ea5d0a593b2655e9568f144fb1826342292f5c6b7d406fda00577b8d1530d8a5"
+}
+</pre></div></div>
+
+<h3>
+<span id="delete-apiv2access_tokensaccess_token" class="fragment"></span><a href="https://qiita.com/api/v2/docs#delete-apiv2access_tokensaccess_token"><i class="fa fa-link"></i></a>DELETE /api/v2/access_tokens/:access_token</h3>
+
+<p>指定されたアクセストークンを失効させ、それ以降利用できないようにします。</p>
+
+<div class="code-frame" data-lang="text"><div class="highlight"><pre><span></span>DELETE /api/v2/access_tokens/:access_token HTTP/1.1
+Host: api.example.com
+</pre></div></div>
+
+<div class="code-frame" data-lang="text"><div class="highlight"><pre><span></span>HTTP/1.1 204
+</pre></div></div>
+
+<h2>
+<span id="グループ" class="fragment"></span><a href="https://qiita.com/api/v2/docs#%E3%82%B0%E3%83%AB%E3%83%BC%E3%83%97"><i class="fa fa-link"></i></a>グループ</h2>
+
+<p>Qiita:Teamのグループを表します。</p>
+
+<ul>
+<li>created_at
+
+<ul>
+<li>データが作成された日時</li>
+<li>Example: <code>"2000-01-01T00:00:00+00:00"</code>
+</li>
+<li>Type: string</li>
+<li>Format: date-time</li>
+</ul>
+</li>
+<li>id
+
+<ul>
+<li>グループの一意なIDを表します。</li>
+<li>Example: <code>1</code>
+</li>
+<li>Type: integer</li>
+</ul>
+</li>
+<li>name
+
+<ul>
+<li>グループに付けられた表示用の名前を表します。</li>
+<li>Example: <code>"Dev"</code>
+</li>
+<li>Type: string</li>
+</ul>
+</li>
+<li>private
+
+<ul>
+<li>非公開グループかどうかを表します。</li>
+<li>Example: <code>false</code>
+</li>
+<li>Type: boolean</li>
+</ul>
+</li>
+<li>updated_at
+
+<ul>
+<li>データが最後に更新された日時</li>
+<li>Example: <code>"2000-01-01T00:00:00+00:00"</code>
+</li>
+<li>Type: string</li>
+<li>Format: date-time</li>
+</ul>
+</li>
+<li>url_name
+
+<ul>
+<li>グループのチーム上での一意な名前を表します。</li>
+<li>Example: <code>"dev"</code>
+</li>
+<li>Type: string</li>
+</ul>
+</li>
+</ul>
+
+<h2>
+<span id="コメント" class="fragment"></span><a href="https://qiita.com/api/v2/docs#%E3%82%B3%E3%83%A1%E3%83%B3%E3%83%88"><i class="fa fa-link"></i></a>コメント</h2>
+
+<p>投稿やプロジェクトに付けられたコメントを表します。プロジェクトへのコメントはQiita:Teamでのみ有効です。</p>
+
+<ul>
+<li>body
+
+<ul>
+<li>コメントの内容を表すMarkdown形式の文字列</li>
+<li>Example: <code>"# Example"</code>
+</li>
+<li>Type: string</li>
+</ul>
+</li>
+<li>created_at
+
+<ul>
+<li>データが作成された日時</li>
+<li>Example: <code>"2000-01-01T00:00:00+00:00"</code>
+</li>
+<li>Type: string</li>
+<li>Format: date-time</li>
+</ul>
+</li>
+<li>id
+
+<ul>
+<li>コメントの一意なID</li>
+<li>Example: <code>"3391f50c35f953abfc4f"</code>
+</li>
+<li>Type: string</li>
+<li>Pattern: <code>/^[0-9a-f]{20}$/</code>
+</li>
+</ul>
+</li>
+<li>rendered_body
+
+<ul>
+<li>コメントの内容を表すHTML形式の文字列</li>
+<li>Example: <code>"&lt;h1&gt;Example&lt;/h1&gt;"</code>
+</li>
+<li>Type: string</li>
+</ul>
+</li>
+<li>updated_at
+
+<ul>
+<li>データが最後に更新された日時</li>
+<li>Example: <code>"2000-01-01T00:00:00+00:00"</code>
+</li>
+<li>Type: string</li>
+<li>Format: date-time</li>
+</ul>
+</li>
+<li>user
+
+<ul>
+<li>Qiita上のユーザを表します。</li>
+</ul>
+</li>
+</ul>
+
+<h3>
+<span id="delete-apiv2commentscomment_id" class="fragment"></span><a href="https://qiita.com/api/v2/docs#delete-apiv2commentscomment_id"><i class="fa fa-link"></i></a>DELETE /api/v2/comments/:comment_id</h3>
+
+<p>コメントを削除します。</p>
+
+<div class="code-frame" data-lang="text"><div class="highlight"><pre><span></span>DELETE /api/v2/comments/:comment_id HTTP/1.1
+Host: api.example.com
+</pre></div></div>
+
+<div class="code-frame" data-lang="text"><div class="highlight"><pre><span></span>HTTP/1.1 204
+</pre></div></div>
+
+<h3>
+<span id="get-apiv2commentscomment_id" class="fragment"></span><a href="https://qiita.com/api/v2/docs#get-apiv2commentscomment_id"><i class="fa fa-link"></i></a>GET /api/v2/comments/:comment_id</h3>
+
+<p>コメントを取得します。</p>
+
+<div class="code-frame" data-lang="text"><div class="highlight"><pre><span></span>GET /api/v2/comments/:comment_id HTTP/1.1
+Host: api.example.com
+</pre></div></div>
+
+<div class="code-frame" data-lang="text"><div class="highlight"><pre><span></span>HTTP/1.1 200
+Content-Type: application/json
+
+{
+  "body": "# Example",
+  "created_at": "2000-01-01T00:00:00+00:00",
+  "id": "3391f50c35f953abfc4f",
+  "rendered_body": "&lt;h1&gt;Example&lt;/h1&gt;",
+  "updated_at": "2000-01-01T00:00:00+00:00",
+  "user": {
+    "description": "Hello, world.",
+    "facebook_id": "yaotti",
+    "followees_count": 100,
+    "followers_count": 200,
+    "github_login_name": "yaotti",
+    "id": "yaotti",
+    "items_count": 300,
+    "linkedin_id": "yaotti",
+    "location": "Tokyo, Japan",
+    "name": "Hiroshige Umino",
+    "organization": "Increments Inc",
+    "permanent_id": 1,
+    "profile_image_url": "https://si0.twimg.com/profile_images/2309761038/1ijg13pfs0dg84sk2y0h_normal.jpeg",
+    "twitter_screen_name": "yaotti",
+    "website_url": "http://yaotti.hatenablog.com"
+  }
+}
+</pre></div></div>
+
+<h3>
+<span id="patch-apiv2commentscomment_id" class="fragment"></span><a href="https://qiita.com/api/v2/docs#patch-apiv2commentscomment_id"><i class="fa fa-link"></i></a>PATCH /api/v2/comments/:comment_id</h3>
+
+<p>コメントを更新します。</p>
+
+<ul>
+<li>body
+
+<ul>
+<li>コメントの内容を表すMarkdown形式の文字列</li>
+<li>Example: <code>"# Example"</code>
+</li>
+<li>Type: string</li>
+</ul>
+</li>
+</ul>
+
+<div class="code-frame" data-lang="text"><div class="highlight"><pre><span></span>PATCH /api/v2/comments/:comment_id HTTP/1.1
+Content-Type: application/json
+Host: api.example.com
+
+{
+  "body": "# Example"
+}
+</pre></div></div>
+
+<div class="code-frame" data-lang="text"><div class="highlight"><pre><span></span>HTTP/1.1 200
+Content-Type: application/json
+
+{
+  "body": "# Example",
+  "created_at": "2000-01-01T00:00:00+00:00",
+  "id": "3391f50c35f953abfc4f",
+  "rendered_body": "&lt;h1&gt;Example&lt;/h1&gt;",
+  "updated_at": "2000-01-01T00:00:00+00:00",
+  "user": {
+    "description": "Hello, world.",
+    "facebook_id": "yaotti",
+    "followees_count": 100,
+    "followers_count": 200,
+    "github_login_name": "yaotti",
+    "id": "yaotti",
+    "items_count": 300,
+    "linkedin_id": "yaotti",
+    "location": "Tokyo, Japan",
+    "name": "Hiroshige Umino",
+    "organization": "Increments Inc",
+    "permanent_id": 1,
+    "profile_image_url": "https://si0.twimg.com/profile_images/2309761038/1ijg13pfs0dg84sk2y0h_normal.jpeg",
+    "twitter_screen_name": "yaotti",
+    "website_url": "http://yaotti.hatenablog.com"
+  }
+}
+</pre></div></div>
+
+<h3>
+<span id="delete-apiv2commentscomment_idthank" class="fragment"></span><a href="https://qiita.com/api/v2/docs#delete-apiv2commentscomment_idthank"><i class="fa fa-link"></i></a>DELETE /api/v2/comments/:comment_id/thank</h3>
+
+<p><strong>DELETE /api/v2/comments/:comment_id/thank は2016年11月16日より非推奨となりました。</strong> コメントからいいねを外します。</p>
+
+<div class="code-frame" data-lang="text"><div class="highlight"><pre><span></span>DELETE /api/v2/comments/:comment_id/thank HTTP/1.1
+Host: api.example.com
+</pre></div></div>
+
+<div class="code-frame" data-lang="text"><div class="highlight"><pre><span></span>HTTP/1.1 200
+Content-Type: application/json
+
+{
+  "body": "# Example",
+  "created_at": "2000-01-01T00:00:00+00:00",
+  "id": "3391f50c35f953abfc4f",
+  "rendered_body": "&lt;h1&gt;Example&lt;/h1&gt;",
+  "updated_at": "2000-01-01T00:00:00+00:00",
+  "user": {
+    "description": "Hello, world.",
+    "facebook_id": "yaotti",
+    "followees_count": 100,
+    "followers_count": 200,
+    "github_login_name": "yaotti",
+    "id": "yaotti",
+    "items_count": 300,
+    "linkedin_id": "yaotti",
+    "location": "Tokyo, Japan",
+    "name": "Hiroshige Umino",
+    "organization": "Increments Inc",
+    "permanent_id": 1,
+    "profile_image_url": "https://si0.twimg.com/profile_images/2309761038/1ijg13pfs0dg84sk2y0h_normal.jpeg",
+    "twitter_screen_name": "yaotti",
+    "website_url": "http://yaotti.hatenablog.com"
+  }
+}
+</pre></div></div>
+
+<h3>
+<span id="put-apiv2commentscomment_idthank" class="fragment"></span><a href="https://qiita.com/api/v2/docs#put-apiv2commentscomment_idthank"><i class="fa fa-link"></i></a>PUT /api/v2/comments/:comment_id/thank</h3>
+
+<p><strong>PUT /api/v2/comments/:comment_id/thank は2016年11月16日より非推奨となりました。</strong> コメントにいいねを付けます。</p>
+
+<div class="code-frame" data-lang="text"><div class="highlight"><pre><span></span>PUT /api/v2/comments/:comment_id/thank HTTP/1.1
+Host: api.example.com
+</pre></div></div>
+
+<div class="code-frame" data-lang="text"><div class="highlight"><pre><span></span>HTTP/1.1 200
+Content-Type: application/json
+
+{
+  "body": "# Example",
+  "created_at": "2000-01-01T00:00:00+00:00",
+  "id": "3391f50c35f953abfc4f",
+  "rendered_body": "&lt;h1&gt;Example&lt;/h1&gt;",
+  "updated_at": "2000-01-01T00:00:00+00:00",
+  "user": {
+    "description": "Hello, world.",
+    "facebook_id": "yaotti",
+    "followees_count": 100,
+    "followers_count": 200,
+    "github_login_name": "yaotti",
+    "id": "yaotti",
+    "items_count": 300,
+    "linkedin_id": "yaotti",
+    "location": "Tokyo, Japan",
+    "name": "Hiroshige Umino",
+    "organization": "Increments Inc",
+    "permanent_id": 1,
+    "profile_image_url": "https://si0.twimg.com/profile_images/2309761038/1ijg13pfs0dg84sk2y0h_normal.jpeg",
+    "twitter_screen_name": "yaotti",
+    "website_url": "http://yaotti.hatenablog.com"
+  }
+}
+</pre></div></div>
+
+<h3>
+<span id="get-apiv2itemsitem_idcomments" class="fragment"></span><a href="https://qiita.com/api/v2/docs#get-apiv2itemsitem_idcomments"><i class="fa fa-link"></i></a>GET /api/v2/items/:item_id/comments</h3>
+
+<p>投稿に付けられたコメント一覧を投稿日時の降順で取得します。</p>
+
+<div class="code-frame" data-lang="text"><div class="highlight"><pre><span></span>GET /api/v2/items/:item_id/comments HTTP/1.1
+Host: api.example.com
+</pre></div></div>
+
+<div class="code-frame" data-lang="text"><div class="highlight"><pre><span></span>HTTP/1.1 200
+Content-Type: application/json
+
+[
+  {
+    "body": "# Example",
+    "created_at": "2000-01-01T00:00:00+00:00",
+    "id": "3391f50c35f953abfc4f",
+    "rendered_body": "&lt;h1&gt;Example&lt;/h1&gt;",
+    "updated_at": "2000-01-01T00:00:00+00:00",
+    "user": {
+      "description": "Hello, world.",
+      "facebook_id": "yaotti",
+      "followees_count": 100,
+      "followers_count": 200,
+      "github_login_name": "yaotti",
+      "id": "yaotti",
+      "items_count": 300,
+      "linkedin_id": "yaotti",
+      "location": "Tokyo, Japan",
+      "name": "Hiroshige Umino",
+      "organization": "Increments Inc",
+      "permanent_id": 1,
+      "profile_image_url": "https://si0.twimg.com/profile_images/2309761038/1ijg13pfs0dg84sk2y0h_normal.jpeg",
+      "twitter_screen_name": "yaotti",
+      "website_url": "http://yaotti.hatenablog.com"
+    }
+  }
+]
+</pre></div></div>
+
+<h3>
+<span id="post-apiv2itemsitem_idcomments" class="fragment"></span><a href="https://qiita.com/api/v2/docs#post-apiv2itemsitem_idcomments"><i class="fa fa-link"></i></a>POST /api/v2/items/:item_id/comments</h3>
+
+<p>投稿に対してコメントを投稿します。</p>
+
+<ul>
+<li>body
+
+<ul>
+<li>コメントの内容を表すMarkdown形式の文字列</li>
+<li>Example: <code>"# Example"</code>
+</li>
+<li>Type: string</li>
+</ul>
+</li>
+</ul>
+
+<div class="code-frame" data-lang="text"><div class="highlight"><pre><span></span>POST /api/v2/items/:item_id/comments HTTP/1.1
+Content-Type: application/json
+Host: api.example.com
+
+{
+  "body": "# Example"
+}
+</pre></div></div>
+
+<div class="code-frame" data-lang="text"><div class="highlight"><pre><span></span>HTTP/1.1 201
+Content-Type: application/json
+
+{
+  "body": "# Example",
+  "created_at": "2000-01-01T00:00:00+00:00",
+  "id": "3391f50c35f953abfc4f",
+  "rendered_body": "&lt;h1&gt;Example&lt;/h1&gt;",
+  "updated_at": "2000-01-01T00:00:00+00:00",
+  "user": {
+    "description": "Hello, world.",
+    "facebook_id": "yaotti",
+    "followees_count": 100,
+    "followers_count": 200,
+    "github_login_name": "yaotti",
+    "id": "yaotti",
+    "items_count": 300,
+    "linkedin_id": "yaotti",
+    "location": "Tokyo, Japan",
+    "name": "Hiroshige Umino",
+    "organization": "Increments Inc",
+    "permanent_id": 1,
+    "profile_image_url": "https://si0.twimg.com/profile_images/2309761038/1ijg13pfs0dg84sk2y0h_normal.jpeg",
+    "twitter_screen_name": "yaotti",
+    "website_url": "http://yaotti.hatenablog.com"
+  }
+}
+</pre></div></div>
+
+<h3>
+<span id="post-apiv2itemsitem_idimported_comments" class="fragment"></span><a href="https://qiita.com/api/v2/docs#post-apiv2itemsitem_idimported_comments"><i class="fa fa-link"></i></a>POST /api/v2/items/:item_id/imported_comments</h3>
+
+<p>ユーザー名を指定して投稿に対するコメントを作成します。(Qiita:Teamでのみ有効。管理者権限が必要。)</p>
+
+<ul>
+<li>body
+
+<ul>
+<li>コメントの内容を表すMarkdown形式の文字列</li>
+<li>Example: <code>"# Example"</code>
+</li>
+<li>Type: string</li>
+</ul>
+</li>
+<li>user_id
+
+<ul>
+<li>ユーザID</li>
+<li>Example: <code>"yaotti"</code>
+</li>
+<li>Type: string</li>
+</ul>
+</li>
+<li>created_at
+
+<ul>
+<li>データが作成された日時</li>
+<li>Example: <code>"2000-01-01T00:00:00+00:00"</code>
+</li>
+<li>Type: string</li>
+<li>Format: date-time</li>
+</ul>
+</li>
+<li>updated_at
+
+<ul>
+<li>データが最後に更新された日時</li>
+<li>Example: <code>"2000-01-01T00:00:00+00:00"</code>
+</li>
+<li>Type: string</li>
+<li>Format: date-time</li>
+</ul>
+</li>
+</ul>
+
+<div class="code-frame" data-lang="text"><div class="highlight"><pre><span></span>POST /api/v2/items/:item_id/imported_comments HTTP/1.1
+Content-Type: application/json
+Host: api.example.com
+
+{
+  "body": "# Example",
+  "user_id": "yaotti",
+  "created_at": "2000-01-01T00:00:00+00:00",
+  "updated_at": "2000-01-01T00:00:00+00:00"
+}
+</pre></div></div>
+
+<div class="code-frame" data-lang="text"><div class="highlight"><pre><span></span>HTTP/1.1 201
+Content-Type: application/json
+
+{
+  "body": "# Example",
+  "created_at": "2000-01-01T00:00:00+00:00",
+  "id": "3391f50c35f953abfc4f",
+  "rendered_body": "&lt;h1&gt;Example&lt;/h1&gt;",
+  "updated_at": "2000-01-01T00:00:00+00:00",
+  "user": {
+    "description": "Hello, world.",
+    "facebook_id": "yaotti",
+    "followees_count": 100,
+    "followers_count": 200,
+    "github_login_name": "yaotti",
+    "id": "yaotti",
+    "items_count": 300,
+    "linkedin_id": "yaotti",
+    "location": "Tokyo, Japan",
+    "name": "Hiroshige Umino",
+    "organization": "Increments Inc",
+    "permanent_id": 1,
+    "profile_image_url": "https://si0.twimg.com/profile_images/2309761038/1ijg13pfs0dg84sk2y0h_normal.jpeg",
+    "twitter_screen_name": "yaotti",
+    "website_url": "http://yaotti.hatenablog.com"
+  }
+}
+</pre></div></div>
+
+<h3>
+<span id="get-apiv2projectsproject_idcomments" class="fragment"></span><a href="https://qiita.com/api/v2/docs#get-apiv2projectsproject_idcomments"><i class="fa fa-link"></i></a>GET /api/v2/projects/:project_id/comments</h3>
+
+<p>プロジェクトに付けられたコメント一覧を投稿日時の降順で取得します。</p>
+
+<div class="code-frame" data-lang="text"><div class="highlight"><pre><span></span>GET /api/v2/projects/:project_id/comments HTTP/1.1
+Host: api.example.com
+</pre></div></div>
+
+<div class="code-frame" data-lang="text"><div class="highlight"><pre><span></span>HTTP/1.1 200
+Content-Type: application/json
+
+[
+  {
+    "body": "# Example",
+    "created_at": "2000-01-01T00:00:00+00:00",
+    "id": "3391f50c35f953abfc4f",
+    "rendered_body": "&lt;h1&gt;Example&lt;/h1&gt;",
+    "updated_at": "2000-01-01T00:00:00+00:00",
+    "user": {
+      "description": "Hello, world.",
+      "facebook_id": "yaotti",
+      "followees_count": 100,
+      "followers_count": 200,
+      "github_login_name": "yaotti",
+      "id": "yaotti",
+      "items_count": 300,
+      "linkedin_id": "yaotti",
+      "location": "Tokyo, Japan",
+      "name": "Hiroshige Umino",
+      "organization": "Increments Inc",
+      "permanent_id": 1,
+      "profile_image_url": "https://si0.twimg.com/profile_images/2309761038/1ijg13pfs0dg84sk2y0h_normal.jpeg",
+      "twitter_screen_name": "yaotti",
+      "website_url": "http://yaotti.hatenablog.com"
+    }
+  }
+]
+</pre></div></div>
+
+<h3>
+<span id="post-apiv2projectsproject_idcomments" class="fragment"></span><a href="https://qiita.com/api/v2/docs#post-apiv2projectsproject_idcomments"><i class="fa fa-link"></i></a>POST /api/v2/projects/:project_id/comments</h3>
+
+<p>プロジェクトに対してコメントを投稿します。</p>
+
+<ul>
+<li>body
+
+<ul>
+<li>コメントの内容を表すMarkdown形式の文字列</li>
+<li>Example: <code>"# Example"</code>
+</li>
+<li>Type: string</li>
+</ul>
+</li>
+</ul>
+
+<div class="code-frame" data-lang="text"><div class="highlight"><pre><span></span>POST /api/v2/projects/:project_id/comments HTTP/1.1
+Content-Type: application/json
+Host: api.example.com
+
+{
+  "body": "# Example"
+}
+</pre></div></div>
+
+<div class="code-frame" data-lang="text"><div class="highlight"><pre><span></span>HTTP/1.1 201
+Content-Type: application/json
+
+{
+  "body": "# Example",
+  "created_at": "2000-01-01T00:00:00+00:00",
+  "id": "3391f50c35f953abfc4f",
+  "rendered_body": "&lt;h1&gt;Example&lt;/h1&gt;",
+  "updated_at": "2000-01-01T00:00:00+00:00",
+  "user": {
+    "description": "Hello, world.",
+    "facebook_id": "yaotti",
+    "followees_count": 100,
+    "followers_count": 200,
+    "github_login_name": "yaotti",
+    "id": "yaotti",
+    "items_count": 300,
+    "linkedin_id": "yaotti",
+    "location": "Tokyo, Japan",
+    "name": "Hiroshige Umino",
+    "organization": "Increments Inc",
+    "permanent_id": 1,
+    "profile_image_url": "https://si0.twimg.com/profile_images/2309761038/1ijg13pfs0dg84sk2y0h_normal.jpeg",
+    "twitter_screen_name": "yaotti",
+    "website_url": "http://yaotti.hatenablog.com"
+  }
+}
+</pre></div></div>
+
+<h3>
+<span id="post-apiv2projectsproject_idimported_comments" class="fragment"></span><a href="https://qiita.com/api/v2/docs#post-apiv2projectsproject_idimported_comments"><i class="fa fa-link"></i></a>POST /api/v2/projects/:project_id/imported_comments</h3>
+
+<p>ユーザー名を指定してプロジェクトに対するコメントを作成します。(Qiita:Teamでのみ有効。管理者権限が必要。)</p>
+
+<ul>
+<li>body
+
+<ul>
+<li>コメントの内容を表すMarkdown形式の文字列</li>
+<li>Example: <code>"# Example"</code>
+</li>
+<li>Type: string</li>
+</ul>
+</li>
+<li>user_id
+
+<ul>
+<li>ユーザID</li>
+<li>Example: <code>"yaotti"</code>
+</li>
+<li>Type: string</li>
+</ul>
+</li>
+<li>created_at
+
+<ul>
+<li>データが作成された日時</li>
+<li>Example: <code>"2000-01-01T00:00:00+00:00"</code>
+</li>
+<li>Type: string</li>
+<li>Format: date-time</li>
+</ul>
+</li>
+<li>updated_at
+
+<ul>
+<li>データが最後に更新された日時</li>
+<li>Example: <code>"2000-01-01T00:00:00+00:00"</code>
+</li>
+<li>Type: string</li>
+<li>Format: date-time</li>
+</ul>
+</li>
+</ul>
+
+<div class="code-frame" data-lang="text"><div class="highlight"><pre><span></span>POST /api/v2/projects/:project_id/imported_comments HTTP/1.1
+Content-Type: application/json
+Host: api.example.com
+
+{
+  "body": "# Example",
+  "user_id": "yaotti",
+  "created_at": "2000-01-01T00:00:00+00:00",
+  "updated_at": "2000-01-01T00:00:00+00:00"
+}
+</pre></div></div>
+
+<div class="code-frame" data-lang="text"><div class="highlight"><pre><span></span>HTTP/1.1 201
+Content-Type: application/json
+
+{
+  "body": "# Example",
+  "created_at": "2000-01-01T00:00:00+00:00",
+  "id": "3391f50c35f953abfc4f",
+  "rendered_body": "&lt;h1&gt;Example&lt;/h1&gt;",
+  "updated_at": "2000-01-01T00:00:00+00:00",
+  "user": {
+    "description": "Hello, world.",
+    "facebook_id": "yaotti",
+    "followees_count": 100,
+    "followers_count": 200,
+    "github_login_name": "yaotti",
+    "id": "yaotti",
+    "items_count": 300,
+    "linkedin_id": "yaotti",
+    "location": "Tokyo, Japan",
+    "name": "Hiroshige Umino",
+    "organization": "Increments Inc",
+    "permanent_id": 1,
+    "profile_image_url": "https://si0.twimg.com/profile_images/2309761038/1ijg13pfs0dg84sk2y0h_normal.jpeg",
+    "twitter_screen_name": "yaotti",
+    "website_url": "http://yaotti.hatenablog.com"
+  }
+}
+</pre></div></div>
+
+<h2>
+<span id="タギング" class="fragment"></span><a href="https://qiita.com/api/v2/docs#%E3%82%BF%E3%82%AE%E3%83%B3%E3%82%B0"><i class="fa fa-link"></i></a>タギング</h2>
+
+<p>投稿とタグとの関連を表します。</p>
+
+<ul>
+<li>name
+
+<ul>
+<li>タグを特定するための一意な名前</li>
+<li>Example: <code>"qiita"</code>
+</li>
+<li>Type: string</li>
+</ul>
+</li>
+<li>versions
+
+<ul>
+<li>Example: <code>["0.0.1"]</code>
+</li>
+<li>Type: array</li>
+</ul>
+</li>
+</ul>
+
+<h3>
+<span id="post-apiv2itemsitem_idtaggings" class="fragment"></span><a href="https://qiita.com/api/v2/docs#post-apiv2itemsitem_idtaggings"><i class="fa fa-link"></i></a>POST /api/v2/items/:item_id/taggings</h3>
+
+<p>投稿にタグを追加します。Qiita:Teamでのみ有効です。</p>
+
+<ul>
+<li>name
+
+<ul>
+<li>タグを特定するための一意な名前</li>
+<li>Example: <code>"qiita"</code>
+</li>
+<li>Type: string</li>
+</ul>
+</li>
+<li>versions
+
+<ul>
+<li>Example: <code>["0.0.1"]</code>
+</li>
+<li>Type: array</li>
+</ul>
+</li>
+</ul>
+
+<div class="code-frame" data-lang="text"><div class="highlight"><pre><span></span>POST /api/v2/items/:item_id/taggings HTTP/1.1
+Content-Type: application/json
+Host: api.example.com
+
+{
+  "name": "qiita",
+  "versions": [
+    "0.0.1"
+  ]
+}
+</pre></div></div>
+
+<div class="code-frame" data-lang="text"><div class="highlight"><pre><span></span>HTTP/1.1 201
+Content-Type: application/json
+
+{
+  "name": "qiita",
+  "versions": [
+    "0.0.1"
+  ]
+}
+</pre></div></div>
+
+<h3>
+<span id="delete-apiv2itemsitem_idtaggingstagging_id" class="fragment"></span><a href="https://qiita.com/api/v2/docs#delete-apiv2itemsitem_idtaggingstagging_id"><i class="fa fa-link"></i></a>DELETE /api/v2/items/:item_id/taggings/:tagging_id</h3>
+
+<p>投稿から指定されたタグを取り除きます。Qiita:Teamでのみ有効です。</p>
+
+<div class="code-frame" data-lang="text"><div class="highlight"><pre><span></span>DELETE /api/v2/items/:item_id/taggings/:tagging_id HTTP/1.1
+Host: api.example.com
+</pre></div></div>
+
+<div class="code-frame" data-lang="text"><div class="highlight"><pre><span></span>HTTP/1.1 204
+</pre></div></div>
+
+<h2>
+<span id="タグ" class="fragment"></span><a href="https://qiita.com/api/v2/docs#%E3%82%BF%E3%82%B0"><i class="fa fa-link"></i></a>タグ</h2>
+
+<p>投稿に付けられた個々のタグを表します。</p>
+
+<ul>
+<li>followers_count
+
+<ul>
+<li>このタグをフォローしているユーザの数</li>
+<li>Example: <code>100</code>
+</li>
+<li>Type: integer</li>
+</ul>
+</li>
+<li>icon_url
+
+<ul>
+<li>このタグに設定されたアイコン画像のURL</li>
+<li>Example: <code>"https://s3-ap-northeast-1.amazonaws.com/qiita-tag-image/9de6a11d330f5694820082438f88ccf4a1b289b2/medium.jpg"</code>
+</li>
+<li>Type: null, string</li>
+</ul>
+</li>
+<li>id
+
+<ul>
+<li>タグを特定するための一意な名前</li>
+<li>Example: <code>"qiita"</code>
+</li>
+<li>Type: string</li>
+</ul>
+</li>
+<li>items_count
+
+<ul>
+<li>このタグが付けられた投稿の数</li>
+<li>Example: <code>200</code>
+</li>
+<li>Type: integer</li>
+</ul>
+</li>
+</ul>
+
+<h3>
+<span id="get-apiv2tags" class="fragment"></span><a href="https://qiita.com/api/v2/docs#get-apiv2tags"><i class="fa fa-link"></i></a>GET /api/v2/tags</h3>
+
+<p>タグ一覧を作成日時の降順で返します。</p>
+
+<ul>
+<li>page
+
+<ul>
+<li>ページ番号 (1から100まで)</li>
+<li>Example: <code>1</code>
+</li>
+<li>Type: string</li>
+<li>Pattern: <code>/^[0-9]+$/</code>
+</li>
+</ul>
+</li>
+<li>per_page
+
+<ul>
+<li>1ページあたりに含まれる要素数 (1から100まで)</li>
+<li>Example: <code>20</code>
+</li>
+<li>Type: string</li>
+<li>Pattern: <code>/^[0-9]+$/</code>
+</li>
+</ul>
+</li>
+<li>sort
+
+<ul>
+<li>並び順 (countで投稿数順、nameで名前順)</li>
+<li>Example: <code>"count"</code>
+</li>
+<li>Type: string</li>
+</ul>
+</li>
+</ul>
+
+<div class="code-frame" data-lang="text"><div class="highlight"><pre><span></span>GET /api/v2/tags?page=1&amp;per_page=20&amp;sort=count HTTP/1.1
+Host: api.example.com
+</pre></div></div>
+
+<div class="code-frame" data-lang="text"><div class="highlight"><pre><span></span>HTTP/1.1 200
+Content-Type: application/json
+
+[
+  {
+    "followers_count": 100,
+    "icon_url": "https://s3-ap-northeast-1.amazonaws.com/qiita-tag-image/9de6a11d330f5694820082438f88ccf4a1b289b2/medium.jpg",
+    "id": "qiita",
+    "items_count": 200
+  }
+]
+</pre></div></div>
+
+<h3>
+<span id="get-apiv2tagstag_id" class="fragment"></span><a href="https://qiita.com/api/v2/docs#get-apiv2tagstag_id"><i class="fa fa-link"></i></a>GET /api/v2/tags/:tag_id</h3>
+
+<p>タグを取得します。</p>
+
+<div class="code-frame" data-lang="text"><div class="highlight"><pre><span></span>GET /api/v2/tags/:tag_id HTTP/1.1
+Host: api.example.com
+</pre></div></div>
+
+<div class="code-frame" data-lang="text"><div class="highlight"><pre><span></span>HTTP/1.1 200
+Content-Type: application/json
+
+{
+  "followers_count": 100,
+  "icon_url": "https://s3-ap-northeast-1.amazonaws.com/qiita-tag-image/9de6a11d330f5694820082438f88ccf4a1b289b2/medium.jpg",
+  "id": "qiita",
+  "items_count": 200
+}
+</pre></div></div>
+
+<h3>
+<span id="get-apiv2usersuser_idfollowing_tags" class="fragment"></span><a href="https://qiita.com/api/v2/docs#get-apiv2usersuser_idfollowing_tags"><i class="fa fa-link"></i></a>GET /api/v2/users/:user_id/following_tags</h3>
+
+<p>ユーザがフォローしているタグ一覧をフォロー日時の降順で返します。</p>
+
+<ul>
+<li>page
+
+<ul>
+<li>ページ番号 (1から100まで)</li>
+<li>Example: <code>1</code>
+</li>
+<li>Type: string</li>
+<li>Pattern: <code>/^[0-9]+$/</code>
+</li>
+</ul>
+</li>
+<li>per_page
+
+<ul>
+<li>1ページあたりに含まれる要素数 (1から100まで)</li>
+<li>Example: <code>20</code>
+</li>
+<li>Type: string</li>
+<li>Pattern: <code>/^[0-9]+$/</code>
+</li>
+</ul>
+</li>
+</ul>
+
+<div class="code-frame" data-lang="text"><div class="highlight"><pre><span></span>GET /api/v2/users/:user_id/following_tags?page=1&amp;per_page=20 HTTP/1.1
+Host: api.example.com
+</pre></div></div>
+
+<div class="code-frame" data-lang="text"><div class="highlight"><pre><span></span>HTTP/1.1 200
+Content-Type: application/json
+
+[
+  {
+    "followers_count": 100,
+    "icon_url": "https://s3-ap-northeast-1.amazonaws.com/qiita-tag-image/9de6a11d330f5694820082438f88ccf4a1b289b2/medium.jpg",
+    "id": "qiita",
+    "items_count": 200
+  }
+]
+</pre></div></div>
+
+<h3>
+<span id="delete-apiv2tagstag_idfollowing" class="fragment"></span><a href="https://qiita.com/api/v2/docs#delete-apiv2tagstag_idfollowing"><i class="fa fa-link"></i></a>DELETE /api/v2/tags/:tag_id/following</h3>
+
+<p>タグのフォローを外します。</p>
+
+<div class="code-frame" data-lang="text"><div class="highlight"><pre><span></span>DELETE /api/v2/tags/:tag_id/following HTTP/1.1
+Host: api.example.com
+</pre></div></div>
+
+<div class="code-frame" data-lang="text"><div class="highlight"><pre><span></span>HTTP/1.1 204
+</pre></div></div>
+
+<h3>
+<span id="get-apiv2tagstag_idfollowing" class="fragment"></span><a href="https://qiita.com/api/v2/docs#get-apiv2tagstag_idfollowing"><i class="fa fa-link"></i></a>GET /api/v2/tags/:tag_id/following</h3>
+
+<p>タグをフォローしているかどうかを調べます。</p>
+
+<div class="code-frame" data-lang="text"><div class="highlight"><pre><span></span>GET /api/v2/tags/:tag_id/following HTTP/1.1
+Host: api.example.com
+</pre></div></div>
+
+<div class="code-frame" data-lang="text"><div class="highlight"><pre><span></span>HTTP/1.1 200
+Content-Type: application/json
+
+{
+  "followers_count": 100,
+  "icon_url": "https://s3-ap-northeast-1.amazonaws.com/qiita-tag-image/9de6a11d330f5694820082438f88ccf4a1b289b2/medium.jpg",
+  "id": "qiita",
+  "items_count": 200
+}
+</pre></div></div>
+
+<h3>
+<span id="put-apiv2tagstag_idfollowing" class="fragment"></span><a href="https://qiita.com/api/v2/docs#put-apiv2tagstag_idfollowing"><i class="fa fa-link"></i></a>PUT /api/v2/tags/:tag_id/following</h3>
+
+<p>タグをフォローします。</p>
+
+<div class="code-frame" data-lang="text"><div class="highlight"><pre><span></span>PUT /api/v2/tags/:tag_id/following HTTP/1.1
+Host: api.example.com
+</pre></div></div>
+
+<div class="code-frame" data-lang="text"><div class="highlight"><pre><span></span>HTTP/1.1 204
+</pre></div></div>
+
+<h2>
+<span id="チーム" class="fragment"></span><a href="https://qiita.com/api/v2/docs#%E3%83%81%E3%83%BC%E3%83%A0"><i class="fa fa-link"></i></a>チーム</h2>
+
+<p>Qiita:Team上で所属しているチームを表します。Qiita:Teamでのみ有効です。</p>
+
+<ul>
+<li>active
+
+<ul>
+<li>チームが利用可能な状態かどうか</li>
+<li>Example: <code>true</code>
+</li>
+<li>Type: boolean</li>
+</ul>
+</li>
+<li>id
+
+<ul>
+<li>チームの一意なID</li>
+<li>Example: <code>"increments"</code>
+</li>
+<li>Type: string</li>
+</ul>
+</li>
+<li>name
+
+<ul>
+<li>チームに設定されている名前を表します。</li>
+<li>Example: <code>"Increments Inc."</code>
+</li>
+<li>Type: string</li>
+</ul>
+</li>
+</ul>
+
+<h3>
+<span id="get-apiv2teams" class="fragment"></span><a href="https://qiita.com/api/v2/docs#get-apiv2teams"><i class="fa fa-link"></i></a>GET /api/v2/teams</h3>
+
+<p>ユーザが所属している全てのチームを、チーム作成日時の降順で返します。</p>
+
+<div class="code-frame" data-lang="text"><div class="highlight"><pre><span></span>GET /api/v2/teams HTTP/1.1
+Host: api.example.com
+</pre></div></div>
+
+<div class="code-frame" data-lang="text"><div class="highlight"><pre><span></span>HTTP/1.1 200
+Content-Type: application/json
+
+[
+  {
+    "active": true,
+    "id": "increments",
+    "name": "Increments Inc."
+  }
+]
+</pre></div></div>
+
+<h2>
+<span id="テンプレート" class="fragment"></span><a href="https://qiita.com/api/v2/docs#%E3%83%86%E3%83%B3%E3%83%97%E3%83%AC%E3%83%BC%E3%83%88"><i class="fa fa-link"></i></a>テンプレート</h2>
+
+<p>投稿のひな形に利用できるテンプレートを表します。Qiita:Teamでのみ有効です。</p>
+
+<ul>
+<li>body
+
+<ul>
+<li>テンプレートの本文</li>
+<li>Example: <code>"Weekly MTG on %{Year}/%{month}/%{day}"</code>
+</li>
+<li>Type: string</li>
+</ul>
+</li>
+<li>id
+
+<ul>
+<li>テンプレートの一意なID</li>
+<li>Example: <code>1</code>
+</li>
+<li>Type: integer</li>
+</ul>
+</li>
+<li>name
+
+<ul>
+<li>テンプレートを判別するための名前</li>
+<li>Example: <code>"Weekly MTG"</code>
+</li>
+<li>Type: string</li>
+</ul>
+</li>
+<li>expanded_body
+
+<ul>
+<li>変数を展開した状態の本文</li>
+<li>Example: <code>"Weekly MTG on 2000/01/01"</code>
+</li>
+<li>Type: string</li>
+</ul>
+</li>
+<li>expanded_tags
+
+<ul>
+<li>変数を展開した状態のタグ一覧</li>
+<li>Example: <code>[{"name"=&gt;"MTG/2000/01/01", "versions"=&gt;["0.0.1"]}]</code>
+</li>
+<li>Type: array</li>
+</ul>
+</li>
+<li>expanded_title
+
+<ul>
+<li>変数を展開した状態のタイトル</li>
+<li>Example: <code>"Weekly MTG on 2015/06/03"</code>
+</li>
+<li>Type: string</li>
+</ul>
+</li>
+<li>tags
+
+<ul>
+<li>タグ一覧</li>
+<li>Example: <code>[{"name"=&gt;"MTG/%{Year}/%{month}/%{day}", "versions"=&gt;["0.0.1"]}]</code>
+</li>
+<li>Type: array</li>
+</ul>
+</li>
+<li>title
+
+<ul>
+<li>生成される投稿のタイトルの雛形</li>
+<li>Example: <code>"Weekly MTG on %{Year}/%{month}/%{day}"</code>
+</li>
+<li>Type: string</li>
+</ul>
+</li>
+</ul>
+
+<h3>
+<span id="get-apiv2templates" class="fragment"></span><a href="https://qiita.com/api/v2/docs#get-apiv2templates"><i class="fa fa-link"></i></a>GET /api/v2/templates</h3>
+
+<p>チーム内のテンプレート一覧を返します。</p>
+
+<ul>
+<li>page
+
+<ul>
+<li>ページ番号 (1から100まで)</li>
+<li>Example: <code>1</code>
+</li>
+<li>Type: string</li>
+<li>Pattern: <code>/^[0-9]+$/</code>
+</li>
+</ul>
+</li>
+<li>per_page
+
+<ul>
+<li>1ページあたりに含まれる要素数 (1から100まで)</li>
+<li>Example: <code>20</code>
+</li>
+<li>Type: string</li>
+<li>Pattern: <code>/^[0-9]+$/</code>
+</li>
+</ul>
+</li>
+</ul>
+
+<div class="code-frame" data-lang="text"><div class="highlight"><pre><span></span>GET /api/v2/templates?page=1&amp;per_page=20 HTTP/1.1
+Host: api.example.com
+</pre></div></div>
+
+<div class="code-frame" data-lang="text"><div class="highlight"><pre><span></span>HTTP/1.1 200
+Content-Type: application/json
+
+[
+  {
+    "body": "Weekly MTG on %{Year}/%{month}/%{day}",
+    "id": 1,
+    "name": "Weekly MTG",
+    "expanded_body": "Weekly MTG on 2000/01/01",
+    "expanded_tags": [
+      {
+        "name": "MTG/2000/01/01",
+        "versions": [
+          "0.0.1"
+        ]
+      }
+    ],
+    "expanded_title": "Weekly MTG on 2015/06/03",
+    "tags": [
+      {
+        "name": "MTG/%{Year}/%{month}/%{day}",
+        "versions": [
+          "0.0.1"
+        ]
+      }
+    ],
+    "title": "Weekly MTG on %{Year}/%{month}/%{day}"
+  }
+]
+</pre></div></div>
+
+<h3>
+<span id="delete-apiv2templatestemplate_id" class="fragment"></span><a href="https://qiita.com/api/v2/docs#delete-apiv2templatestemplate_id"><i class="fa fa-link"></i></a>DELETE /api/v2/templates/:template_id</h3>
+
+<p>テンプレートを削除します。</p>
+
+<div class="code-frame" data-lang="text"><div class="highlight"><pre><span></span>DELETE /api/v2/templates/:template_id HTTP/1.1
+Host: api.example.com
+</pre></div></div>
+
+<div class="code-frame" data-lang="text"><div class="highlight"><pre><span></span>HTTP/1.1 204
+</pre></div></div>
+
+<h3>
+<span id="get-apiv2templatestemplate_id" class="fragment"></span><a href="https://qiita.com/api/v2/docs#get-apiv2templatestemplate_id"><i class="fa fa-link"></i></a>GET /api/v2/templates/:template_id</h3>
+
+<p>テンプレートを取得します。</p>
+
+<div class="code-frame" data-lang="text"><div class="highlight"><pre><span></span>GET /api/v2/templates/:template_id HTTP/1.1
+Host: api.example.com
+</pre></div></div>
+
+<div class="code-frame" data-lang="text"><div class="highlight"><pre><span></span>HTTP/1.1 200
+Content-Type: application/json
+
+{
+  "body": "Weekly MTG on %{Year}/%{month}/%{day}",
+  "id": 1,
+  "name": "Weekly MTG",
+  "expanded_body": "Weekly MTG on 2000/01/01",
+  "expanded_tags": [
+    {
+      "name": "MTG/2000/01/01",
+      "versions": [
+        "0.0.1"
+      ]
+    }
+  ],
+  "expanded_title": "Weekly MTG on 2015/06/03",
+  "tags": [
+    {
+      "name": "MTG/%{Year}/%{month}/%{day}",
+      "versions": [
+        "0.0.1"
+      ]
+    }
+  ],
+  "title": "Weekly MTG on %{Year}/%{month}/%{day}"
+}
+</pre></div></div>
+
+<h3>
+<span id="post-apiv2templates" class="fragment"></span><a href="https://qiita.com/api/v2/docs#post-apiv2templates"><i class="fa fa-link"></i></a>POST /api/v2/templates</h3>
+
+<p>新しくテンプレートを作成します。</p>
+
+<ul>
+<li>body
+
+<ul>
+<li>テンプレートの本文</li>
+<li>Example: <code>"Weekly MTG on %{Year}/%{month}/%{day}"</code>
+</li>
+<li>Type: string</li>
+</ul>
+</li>
+<li>name
+
+<ul>
+<li>テンプレートを判別するための名前</li>
+<li>Example: <code>"Weekly MTG"</code>
+</li>
+<li>Type: string</li>
+</ul>
+</li>
+<li>tags
+
+<ul>
+<li>タグ一覧</li>
+<li>Example: <code>[{"name"=&gt;"MTG/%{Year}/%{month}/%{day}", "versions"=&gt;["0.0.1"]}]</code>
+</li>
+<li>Type: array</li>
+</ul>
+</li>
+<li>title
+
+<ul>
+<li>生成される投稿のタイトルの雛形</li>
+<li>Example: <code>"Weekly MTG on %{Year}/%{month}/%{day}"</code>
+</li>
+<li>Type: string</li>
+</ul>
+</li>
+</ul>
+
+<div class="code-frame" data-lang="text"><div class="highlight"><pre><span></span>POST /api/v2/templates HTTP/1.1
+Content-Type: application/json
+Host: api.example.com
+
+{
+  "body": "Weekly MTG on %{Year}/%{month}/%{day}",
+  "name": "Weekly MTG",
+  "tags": [
+    {
+      "name": "MTG/%{Year}/%{month}/%{day}",
+      "versions": [
+        "0.0.1"
+      ]
+    }
+  ],
+  "title": "Weekly MTG on %{Year}/%{month}/%{day}"
+}
+</pre></div></div>
+
+<div class="code-frame" data-lang="text"><div class="highlight"><pre><span></span>HTTP/1.1 201
+Content-Type: application/json
+
+{
+  "body": "Weekly MTG on %{Year}/%{month}/%{day}",
+  "id": 1,
+  "name": "Weekly MTG",
+  "expanded_body": "Weekly MTG on 2000/01/01",
+  "expanded_tags": [
+    {
+      "name": "MTG/2000/01/01",
+      "versions": [
+        "0.0.1"
+      ]
+    }
+  ],
+  "expanded_title": "Weekly MTG on 2015/06/03",
+  "tags": [
+    {
+      "name": "MTG/%{Year}/%{month}/%{day}",
+      "versions": [
+        "0.0.1"
+      ]
+    }
+  ],
+  "title": "Weekly MTG on %{Year}/%{month}/%{day}"
+}
+</pre></div></div>
+
+<h3>
+<span id="patch-apiv2templatestemplate_id" class="fragment"></span><a href="https://qiita.com/api/v2/docs#patch-apiv2templatestemplate_id"><i class="fa fa-link"></i></a>PATCH /api/v2/templates/:template_id</h3>
+
+<p>テンプレートを更新します。</p>
+
+<ul>
+<li>body
+
+<ul>
+<li>テンプレートの本文</li>
+<li>Example: <code>"Weekly MTG on %{Year}/%{month}/%{day}"</code>
+</li>
+<li>Type: string</li>
+</ul>
+</li>
+<li>name
+
+<ul>
+<li>テンプレートを判別するための名前</li>
+<li>Example: <code>"Weekly MTG"</code>
+</li>
+<li>Type: string</li>
+</ul>
+</li>
+<li>tags
+
+<ul>
+<li>タグ一覧</li>
+<li>Example: <code>[{"name"=&gt;"MTG/%{Year}/%{month}/%{day}", "versions"=&gt;["0.0.1"]}]</code>
+</li>
+<li>Type: array</li>
+</ul>
+</li>
+<li>title
+
+<ul>
+<li>生成される投稿のタイトルの雛形</li>
+<li>Example: <code>"Weekly MTG on %{Year}/%{month}/%{day}"</code>
+</li>
+<li>Type: string</li>
+</ul>
+</li>
+</ul>
+
+<div class="code-frame" data-lang="text"><div class="highlight"><pre><span></span>PATCH /api/v2/templates/:template_id HTTP/1.1
+Content-Type: application/json
+Host: api.example.com
+
+{
+  "body": "Weekly MTG on %{Year}/%{month}/%{day}",
+  "name": "Weekly MTG",
+  "tags": [
+    {
+      "name": "MTG/%{Year}/%{month}/%{day}",
+      "versions": [
+        "0.0.1"
+      ]
+    }
+  ],
+  "title": "Weekly MTG on %{Year}/%{month}/%{day}"
+}
+</pre></div></div>
+
+<div class="code-frame" data-lang="text"><div class="highlight"><pre><span></span>HTTP/1.1 200
+Content-Type: application/json
+
+{
+  "body": "Weekly MTG on %{Year}/%{month}/%{day}",
+  "id": 1,
+  "name": "Weekly MTG",
+  "expanded_body": "Weekly MTG on 2000/01/01",
+  "expanded_tags": [
+    {
+      "name": "MTG/2000/01/01",
+      "versions": [
+        "0.0.1"
+      ]
+    }
+  ],
+  "expanded_title": "Weekly MTG on 2015/06/03",
+  "tags": [
+    {
+      "name": "MTG/%{Year}/%{month}/%{day}",
+      "versions": [
+        "0.0.1"
+      ]
+    }
+  ],
+  "title": "Weekly MTG on %{Year}/%{month}/%{day}"
+}
+</pre></div></div>
+
+<h2>
+<span id="プロジェクト" class="fragment"></span><a href="https://qiita.com/api/v2/docs#%E3%83%97%E3%83%AD%E3%82%B8%E3%82%A7%E3%82%AF%E3%83%88"><i class="fa fa-link"></i></a>プロジェクト</h2>
+
+<p>Qiita:Team上でのプロジェクトを表します。Qiita:Teamでのみ有効です。</p>
+
+<ul>
+<li>rendered_body
+
+<ul>
+<li>HTML形式の本文</li>
+<li>Example: <code>"&lt;h1&gt;Example&lt;/h1&gt;"</code>
+</li>
+<li>Type: string</li>
+</ul>
+</li>
+<li>archived
+
+<ul>
+<li>このプロジェクトが進行中かどうか</li>
+<li>Example: <code>false</code>
+</li>
+<li>Type: boolean</li>
+</ul>
+</li>
+<li>body
+
+<ul>
+<li>Markdown形式の本文</li>
+<li>Example: <code>"# Example"</code>
+</li>
+<li>Type: string</li>
+</ul>
+</li>
+<li>created_at
+
+<ul>
+<li>データが作成された日時</li>
+<li>Example: <code>"2000-01-01T00:00:00+00:00"</code>
+</li>
+<li>Type: string</li>
+<li>Format: date-time</li>
+</ul>
+</li>
+<li>id
+
+<ul>
+<li>プロジェクトのチーム上での一意なID</li>
+<li>Example: <code>1</code>
+</li>
+<li>Type: integer</li>
+</ul>
+</li>
+<li>name
+
+<ul>
+<li>プロジェクト名</li>
+<li>Example: <code>"Kobiro Project"</code>
+</li>
+<li>Type: string</li>
+</ul>
+</li>
+<li>reactions_count
+
+<ul>
+<li>絵文字リアクション数</li>
+<li>Example: <code>100</code>
+</li>
+<li>Type: integer</li>
+</ul>
+</li>
+<li>updated_at
+
+<ul>
+<li>データが最後に更新された日時</li>
+<li>Example: <code>"2000-01-01T00:00:00+00:00"</code>
+</li>
+<li>Type: string</li>
+<li>Format: date-time</li>
+</ul>
+</li>
+</ul>
+
+<h3>
+<span id="get-apiv2projects" class="fragment"></span><a href="https://qiita.com/api/v2/docs#get-apiv2projects"><i class="fa fa-link"></i></a>GET /api/v2/projects</h3>
+
+<p>チーム内に存在するプロジェクト一覧をプロジェクト作成日時の降順で返します。</p>
+
+<ul>
+<li>page
+
+<ul>
+<li>ページ番号 (1から100まで)</li>
+<li>Example: <code>1</code>
+</li>
+<li>Type: string</li>
+<li>Pattern: <code>/^[0-9]+$/</code>
+</li>
+</ul>
+</li>
+<li>per_page
+
+<ul>
+<li>1ページあたりに含まれる要素数 (1から100まで)</li>
+<li>Example: <code>20</code>
+</li>
+<li>Type: string</li>
+<li>Pattern: <code>/^[0-9]+$/</code>
+</li>
+</ul>
+</li>
+</ul>
+
+<div class="code-frame" data-lang="text"><div class="highlight"><pre><span></span>GET /api/v2/projects?page=1&amp;per_page=20 HTTP/1.1
+Host: api.example.com
+</pre></div></div>
+
+<div class="code-frame" data-lang="text"><div class="highlight"><pre><span></span>HTTP/1.1 200
+Content-Type: application/json
+
+[
+  {
+    "rendered_body": "&lt;h1&gt;Example&lt;/h1&gt;",
+    "archived": false,
+    "body": "# Example",
+    "created_at": "2000-01-01T00:00:00+00:00",
+    "id": 1,
+    "name": "Kobiro Project",
+    "reactions_count": 100,
+    "updated_at": "2000-01-01T00:00:00+00:00"
+  }
+]
+</pre></div></div>
+
+<h3>
+<span id="post-apiv2projects" class="fragment"></span><a href="https://qiita.com/api/v2/docs#post-apiv2projects"><i class="fa fa-link"></i></a>POST /api/v2/projects</h3>
+
+<p>プロジェクトを新たに作成します。</p>
+
+<ul>
+<li>archived
+
+<ul>
+<li>このプロジェクトが進行中かどうか</li>
+<li>Example: <code>false</code>
+</li>
+<li>Type: boolean</li>
+</ul>
+</li>
+<li>body
+
+<ul>
+<li>Markdown形式の本文</li>
+<li>Example: <code>"# Example"</code>
+</li>
+<li>Type: string</li>
+</ul>
+</li>
+<li>name
+
+<ul>
+<li>プロジェクト名</li>
+<li>Example: <code>"Kobiro Project"</code>
+</li>
+<li>Type: string</li>
+</ul>
+</li>
+<li>tags
+
+<ul>
+<li>投稿に付いたタグ一覧</li>
+<li>Example: <code>[{"name"=&gt;"Ruby", "versions"=&gt;["0.0.1"]}]</code>
+</li>
+<li>Type: array</li>
+</ul>
+</li>
+</ul>
+
+<div class="code-frame" data-lang="text"><div class="highlight"><pre><span></span>POST /api/v2/projects HTTP/1.1
+Content-Type: application/json
+Host: api.example.com
+
+{
+  "archived": false,
+  "body": "# Example",
+  "name": "Kobiro Project",
+  "tags": [
+    {
+      "name": "Ruby",
+      "versions": [
+        "0.0.1"
+      ]
+    }
+  ]
+}
+</pre></div></div>
+
+<div class="code-frame" data-lang="text"><div class="highlight"><pre><span></span>HTTP/1.1 201
+Content-Type: application/json
+
+{
+  "rendered_body": "&lt;h1&gt;Example&lt;/h1&gt;",
+  "archived": false,
+  "body": "# Example",
+  "created_at": "2000-01-01T00:00:00+00:00",
+  "id": 1,
+  "name": "Kobiro Project",
+  "reactions_count": 100,
+  "updated_at": "2000-01-01T00:00:00+00:00"
+}
+</pre></div></div>
+
+<h3>
+<span id="delete-apiv2projectsproject_id" class="fragment"></span><a href="https://qiita.com/api/v2/docs#delete-apiv2projectsproject_id"><i class="fa fa-link"></i></a>DELETE /api/v2/projects/:project_id</h3>
+
+<p>プロジェクトを削除します。</p>
+
+<div class="code-frame" data-lang="text"><div class="highlight"><pre><span></span>DELETE /api/v2/projects/:project_id HTTP/1.1
+Host: api.example.com
+</pre></div></div>
+
+<div class="code-frame" data-lang="text"><div class="highlight"><pre><span></span>HTTP/1.1 204
+</pre></div></div>
+
+<h3>
+<span id="get-apiv2projectsproject_id" class="fragment"></span><a href="https://qiita.com/api/v2/docs#get-apiv2projectsproject_id"><i class="fa fa-link"></i></a>GET /api/v2/projects/:project_id</h3>
+
+<p>プロジェクトを返します。</p>
+
+<div class="code-frame" data-lang="text"><div class="highlight"><pre><span></span>GET /api/v2/projects/:project_id HTTP/1.1
+Host: api.example.com
+</pre></div></div>
+
+<div class="code-frame" data-lang="text"><div class="highlight"><pre><span></span>HTTP/1.1 200
+Content-Type: application/json
+
+{
+  "rendered_body": "&lt;h1&gt;Example&lt;/h1&gt;",
+  "archived": false,
+  "body": "# Example",
+  "created_at": "2000-01-01T00:00:00+00:00",
+  "id": 1,
+  "name": "Kobiro Project",
+  "reactions_count": 100,
+  "updated_at": "2000-01-01T00:00:00+00:00"
+}
+</pre></div></div>
+
+<h3>
+<span id="patch-apiv2projectsproject_id" class="fragment"></span><a href="https://qiita.com/api/v2/docs#patch-apiv2projectsproject_id"><i class="fa fa-link"></i></a>PATCH /api/v2/projects/:project_id</h3>
+
+<p>プロジェクトを更新します。</p>
+
+<ul>
+<li>archived
+
+<ul>
+<li>このプロジェクトが進行中かどうか</li>
+<li>Example: <code>false</code>
+</li>
+<li>Type: boolean</li>
+</ul>
+</li>
+<li>body
+
+<ul>
+<li>Markdown形式の本文</li>
+<li>Example: <code>"# Example"</code>
+</li>
+<li>Type: string</li>
+</ul>
+</li>
+<li>name
+
+<ul>
+<li>プロジェクト名</li>
+<li>Example: <code>"Kobiro Project"</code>
+</li>
+<li>Type: string</li>
+</ul>
+</li>
+<li>tags
+
+<ul>
+<li>投稿に付いたタグ一覧</li>
+<li>Example: <code>[{"name"=&gt;"Ruby", "versions"=&gt;["0.0.1"]}]</code>
+</li>
+<li>Type: array</li>
+</ul>
+</li>
+</ul>
+
+<div class="code-frame" data-lang="text"><div class="highlight"><pre><span></span>PATCH /api/v2/projects/:project_id HTTP/1.1
+Content-Type: application/json
+Host: api.example.com
+
+{
+  "archived": false,
+  "body": "# Example",
+  "name": "Kobiro Project",
+  "tags": [
+    {
+      "name": "Ruby",
+      "versions": [
+        "0.0.1"
+      ]
+    }
+  ]
+}
+</pre></div></div>
+
+<div class="code-frame" data-lang="text"><div class="highlight"><pre><span></span>HTTP/1.1 200
+Content-Type: application/json
+
+{
+  "rendered_body": "&lt;h1&gt;Example&lt;/h1&gt;",
+  "archived": false,
+  "body": "# Example",
+  "created_at": "2000-01-01T00:00:00+00:00",
+  "id": 1,
+  "name": "Kobiro Project",
+  "reactions_count": 100,
+  "updated_at": "2000-01-01T00:00:00+00:00"
+}
+</pre></div></div>
+
+<h3>
+<span id="post-apiv2imported_projects" class="fragment"></span><a href="https://qiita.com/api/v2/docs#post-apiv2imported_projects"><i class="fa fa-link"></i></a>POST /api/v2/imported_projects</h3>
+
+<p>ユーザー名を指定してプロジェクトを新たに作成します。</p>
+
+<ul>
+<li>archived
+
+<ul>
+<li>このプロジェクトが進行中かどうか</li>
+<li>Example: <code>false</code>
+</li>
+<li>Type: boolean</li>
+</ul>
+</li>
+<li>body
+
+<ul>
+<li>Markdown形式の本文</li>
+<li>Example: <code>"# Example"</code>
+</li>
+<li>Type: string</li>
+</ul>
+</li>
+<li>name
+
+<ul>
+<li>プロジェクト名</li>
+<li>Example: <code>"Kobiro Project"</code>
+</li>
+<li>Type: string</li>
+</ul>
+</li>
+<li>tags
+
+<ul>
+<li>投稿に付いたタグ一覧</li>
+<li>Example: <code>[{"name"=&gt;"Ruby", "versions"=&gt;["0.0.1"]}]</code>
+</li>
+<li>Type: array</li>
+</ul>
+</li>
+<li>user_id
+
+<ul>
+<li>ユーザID</li>
+<li>Example: <code>"yaotti"</code>
+</li>
+<li>Type: string</li>
+</ul>
+</li>
+<li>created_at
+
+<ul>
+<li>データが作成された日時</li>
+<li>Example: <code>"2000-01-01T00:00:00+00:00"</code>
+</li>
+<li>Type: string</li>
+<li>Format: date-time</li>
+</ul>
+</li>
+<li>updated_at
+
+<ul>
+<li>データが最後に更新された日時</li>
+<li>Example: <code>"2000-01-01T00:00:00+00:00"</code>
+</li>
+<li>Type: string</li>
+<li>Format: date-time</li>
+</ul>
+</li>
+</ul>
+
+<div class="code-frame" data-lang="text"><div class="highlight"><pre><span></span>POST /api/v2/imported_projects HTTP/1.1
+Content-Type: application/json
+Host: api.example.com
+
+{
+  "archived": false,
+  "body": "# Example",
+  "name": "Kobiro Project",
+  "tags": [
+    {
+      "name": "Ruby",
+      "versions": [
+        "0.0.1"
+      ]
+    }
+  ],
+  "user_id": "yaotti",
+  "created_at": "2000-01-01T00:00:00+00:00",
+  "updated_at": "2000-01-01T00:00:00+00:00"
+}
+</pre></div></div>
+
+<div class="code-frame" data-lang="text"><div class="highlight"><pre><span></span>HTTP/1.1 201
+Content-Type: application/json
+
+{
+  "rendered_body": "&lt;h1&gt;Example&lt;/h1&gt;",
+  "archived": false,
+  "body": "# Example",
+  "created_at": "2000-01-01T00:00:00+00:00",
+  "id": 1,
+  "name": "Kobiro Project",
+  "reactions_count": 100,
+  "updated_at": "2000-01-01T00:00:00+00:00"
+}
+</pre></div></div>
+
+<h2>
+<span id="ユーザ" class="fragment"></span><a href="https://qiita.com/api/v2/docs#%E3%83%A6%E3%83%BC%E3%82%B6"><i class="fa fa-link"></i></a>ユーザ</h2>
+
+<p>Qiita上のユーザを表します。</p>
+
+<ul>
+<li>description
+
+<ul>
+<li>自己紹介文</li>
+<li>Example: <code>"Hello, world."</code>
+</li>
+<li>Type: null, string</li>
+</ul>
+</li>
+<li>facebook_id
+
+<ul>
+<li>Facebook ID</li>
+<li>Example: <code>"yaotti"</code>
+</li>
+<li>Type: null, string</li>
+</ul>
+</li>
+<li>followees_count
+
+<ul>
+<li>このユーザがフォローしているユーザの数</li>
+<li>Example: <code>100</code>
+</li>
+<li>Type: integer</li>
+</ul>
+</li>
+<li>followers_count
+
+<ul>
+<li>このユーザをフォローしているユーザの数</li>
+<li>Example: <code>200</code>
+</li>
+<li>Type: integer</li>
+</ul>
+</li>
+<li>github_login_name
+
+<ul>
+<li>GitHub ID</li>
+<li>Example: <code>"yaotti"</code>
+</li>
+<li>Type: null, string</li>
+</ul>
+</li>
+<li>id
+
+<ul>
+<li>ユーザID</li>
+<li>Example: <code>"yaotti"</code>
+</li>
+<li>Type: string</li>
+</ul>
+</li>
+<li>items_count
+
+<ul>
+<li>このユーザが qiita.com 上で公開している投稿の数 (Qiita:Teamでの投稿数は含まれません)</li>
+<li>Example: <code>300</code>
+</li>
+<li>Type: integer</li>
+</ul>
+</li>
+<li>linkedin_id
+
+<ul>
+<li>LinkedIn ID</li>
+<li>Example: <code>"yaotti"</code>
+</li>
+<li>Type: null, string</li>
+</ul>
+</li>
+<li>location
+
+<ul>
+<li>居住地</li>
+<li>Example: <code>"Tokyo, Japan"</code>
+</li>
+<li>Type: null, string</li>
+</ul>
+</li>
+<li>name
+
+<ul>
+<li>設定している名前</li>
+<li>Example: <code>"Hiroshige Umino"</code>
+</li>
+<li>Type: null, string</li>
+</ul>
+</li>
+<li>organization
+
+<ul>
+<li>所属している組織</li>
+<li>Example: <code>"Increments Inc"</code>
+</li>
+<li>Type: null, string</li>
+</ul>
+</li>
+<li>permanent_id
+
+<ul>
+<li>ユーザごとに割り当てられる整数のID</li>
+<li>Example: <code>1</code>
+</li>
+<li>Type: integer</li>
+</ul>
+</li>
+<li>profile_image_url
+
+<ul>
+<li>設定しているプロフィール画像のURL</li>
+<li>Example: <code>"https://si0.twimg.com/profile_images/2309761038/1ijg13pfs0dg84sk2y0h_normal.jpeg"</code>
+</li>
+<li>Type: string</li>
+</ul>
+</li>
+<li>twitter_screen_name
+
+<ul>
+<li>Twitterのスクリーンネーム</li>
+<li>Example: <code>"yaotti"</code>
+</li>
+<li>Type: null, string</li>
+</ul>
+</li>
+<li>website_url
+
+<ul>
+<li>設定しているWebサイトのURL</li>
+<li>Example: <code>"http://yaotti.hatenablog.com"</code>
+</li>
+<li>Type: null, string</li>
+</ul>
+</li>
+</ul>
+
+<h3>
+<span id="get-apiv2itemsitem_idstockers" class="fragment"></span><a href="https://qiita.com/api/v2/docs#get-apiv2itemsitem_idstockers"><i class="fa fa-link"></i></a>GET /api/v2/items/:item_id/stockers</h3>
+
+<p>投稿をストックしているユーザ一覧を、ストックした日時の降順で返します。</p>
+
+<ul>
+<li>page
+
+<ul>
+<li>ページ番号 (1から100まで)</li>
+<li>Example: <code>1</code>
+</li>
+<li>Type: string</li>
+<li>Pattern: <code>/^[0-9]+$/</code>
+</li>
+</ul>
+</li>
+<li>per_page
+
+<ul>
+<li>1ページあたりに含まれる要素数 (1から100まで)</li>
+<li>Example: <code>20</code>
+</li>
+<li>Type: string</li>
+<li>Pattern: <code>/^[0-9]+$/</code>
+</li>
+</ul>
+</li>
+</ul>
+
+<div class="code-frame" data-lang="text"><div class="highlight"><pre><span></span>GET /api/v2/items/:item_id/stockers?page=1&amp;per_page=20 HTTP/1.1
+Host: api.example.com
+</pre></div></div>
+
+<div class="code-frame" data-lang="text"><div class="highlight"><pre><span></span>HTTP/1.1 200
+Content-Type: application/json
+
+[
+  {
+    "description": "Hello, world.",
+    "facebook_id": "yaotti",
+    "followees_count": 100,
+    "followers_count": 200,
+    "github_login_name": "yaotti",
+    "id": "yaotti",
+    "items_count": 300,
+    "linkedin_id": "yaotti",
+    "location": "Tokyo, Japan",
+    "name": "Hiroshige Umino",
+    "organization": "Increments Inc",
+    "permanent_id": 1,
+    "profile_image_url": "https://si0.twimg.com/profile_images/2309761038/1ijg13pfs0dg84sk2y0h_normal.jpeg",
+    "twitter_screen_name": "yaotti",
+    "website_url": "http://yaotti.hatenablog.com"
+  }
+]
+</pre></div></div>
+
+<h3>
+<span id="get-apiv2users" class="fragment"></span><a href="https://qiita.com/api/v2/docs#get-apiv2users"><i class="fa fa-link"></i></a>GET /api/v2/users</h3>
+
+<p>全てのユーザの一覧を作成日時の降順で取得します。</p>
+
+<ul>
+<li>page
+
+<ul>
+<li>ページ番号 (1から100まで)</li>
+<li>Example: <code>1</code>
+</li>
+<li>Type: string</li>
+<li>Pattern: <code>/^[0-9]+$/</code>
+</li>
+</ul>
+</li>
+<li>per_page
+
+<ul>
+<li>1ページあたりに含まれる要素数 (1から100まで)</li>
+<li>Example: <code>20</code>
+</li>
+<li>Type: string</li>
+<li>Pattern: <code>/^[0-9]+$/</code>
+</li>
+</ul>
+</li>
+</ul>
+
+<div class="code-frame" data-lang="text"><div class="highlight"><pre><span></span>GET /api/v2/users?page=1&amp;per_page=20 HTTP/1.1
+Host: api.example.com
+</pre></div></div>
+
+<div class="code-frame" data-lang="text"><div class="highlight"><pre><span></span>HTTP/1.1 200
+Content-Type: application/json
+
+[
+  {
+    "description": "Hello, world.",
+    "facebook_id": "yaotti",
+    "followees_count": 100,
+    "followers_count": 200,
+    "github_login_name": "yaotti",
+    "id": "yaotti",
+    "items_count": 300,
+    "linkedin_id": "yaotti",
+    "location": "Tokyo, Japan",
+    "name": "Hiroshige Umino",
+    "organization": "Increments Inc",
+    "permanent_id": 1,
+    "profile_image_url": "https://si0.twimg.com/profile_images/2309761038/1ijg13pfs0dg84sk2y0h_normal.jpeg",
+    "twitter_screen_name": "yaotti",
+    "website_url": "http://yaotti.hatenablog.com"
+  }
+]
+</pre></div></div>
+
+<h3>
+<span id="get-apiv2usersuser_id" class="fragment"></span><a href="https://qiita.com/api/v2/docs#get-apiv2usersuser_id"><i class="fa fa-link"></i></a>GET /api/v2/users/:user_id</h3>
+
+<p>ユーザを取得します。</p>
+
+<div class="code-frame" data-lang="text"><div class="highlight"><pre><span></span>GET /api/v2/users/:user_id HTTP/1.1
+Host: api.example.com
+</pre></div></div>
+
+<div class="code-frame" data-lang="text"><div class="highlight"><pre><span></span>HTTP/1.1 200
+Content-Type: application/json
+
+{
+  "description": "Hello, world.",
+  "facebook_id": "yaotti",
+  "followees_count": 100,
+  "followers_count": 200,
+  "github_login_name": "yaotti",
+  "id": "yaotti",
+  "items_count": 300,
+  "linkedin_id": "yaotti",
+  "location": "Tokyo, Japan",
+  "name": "Hiroshige Umino",
+  "organization": "Increments Inc",
+  "permanent_id": 1,
+  "profile_image_url": "https://si0.twimg.com/profile_images/2309761038/1ijg13pfs0dg84sk2y0h_normal.jpeg",
+  "twitter_screen_name": "yaotti",
+  "website_url": "http://yaotti.hatenablog.com"
+}
+</pre></div></div>
+
+<h3>
+<span id="get-apiv2usersuser_idfollowees" class="fragment"></span><a href="https://qiita.com/api/v2/docs#get-apiv2usersuser_idfollowees"><i class="fa fa-link"></i></a>GET /api/v2/users/:user_id/followees</h3>
+
+<p>ユーザがフォローしているユーザ一覧を取得します。</p>
+
+<ul>
+<li>page
+
+<ul>
+<li>ページ番号 (1から100まで)</li>
+<li>Example: <code>1</code>
+</li>
+<li>Type: string</li>
+<li>Pattern: <code>/^[0-9]+$/</code>
+</li>
+</ul>
+</li>
+<li>per_page
+
+<ul>
+<li>1ページあたりに含まれる要素数 (1から100まで)</li>
+<li>Example: <code>20</code>
+</li>
+<li>Type: string</li>
+<li>Pattern: <code>/^[0-9]+$/</code>
+</li>
+</ul>
+</li>
+</ul>
+
+<div class="code-frame" data-lang="text"><div class="highlight"><pre><span></span>GET /api/v2/users/:user_id/followees?page=1&amp;per_page=20 HTTP/1.1
+Host: api.example.com
+</pre></div></div>
+
+<div class="code-frame" data-lang="text"><div class="highlight"><pre><span></span>HTTP/1.1 200
+Content-Type: application/json
+
+[
+  {
+    "description": "Hello, world.",
+    "facebook_id": "yaotti",
+    "followees_count": 100,
+    "followers_count": 200,
+    "github_login_name": "yaotti",
+    "id": "yaotti",
+    "items_count": 300,
+    "linkedin_id": "yaotti",
+    "location": "Tokyo, Japan",
+    "name": "Hiroshige Umino",
+    "organization": "Increments Inc",
+    "permanent_id": 1,
+    "profile_image_url": "https://si0.twimg.com/profile_images/2309761038/1ijg13pfs0dg84sk2y0h_normal.jpeg",
+    "twitter_screen_name": "yaotti",
+    "website_url": "http://yaotti.hatenablog.com"
+  }
+]
+</pre></div></div>
+
+<h3>
+<span id="get-apiv2usersuser_idfollowers" class="fragment"></span><a href="https://qiita.com/api/v2/docs#get-apiv2usersuser_idfollowers"><i class="fa fa-link"></i></a>GET /api/v2/users/:user_id/followers</h3>
+
+<p>ユーザをフォローしているユーザ一覧を取得します。</p>
+
+<ul>
+<li>page
+
+<ul>
+<li>ページ番号 (1から100まで)</li>
+<li>Example: <code>1</code>
+</li>
+<li>Type: string</li>
+<li>Pattern: <code>/^[0-9]+$/</code>
+</li>
+</ul>
+</li>
+<li>per_page
+
+<ul>
+<li>1ページあたりに含まれる要素数 (1から100まで)</li>
+<li>Example: <code>20</code>
+</li>
+<li>Type: string</li>
+<li>Pattern: <code>/^[0-9]+$/</code>
+</li>
+</ul>
+</li>
+</ul>
+
+<div class="code-frame" data-lang="text"><div class="highlight"><pre><span></span>GET /api/v2/users/:user_id/followers?page=1&amp;per_page=20 HTTP/1.1
+Host: api.example.com
+</pre></div></div>
+
+<div class="code-frame" data-lang="text"><div class="highlight"><pre><span></span>HTTP/1.1 200
+Content-Type: application/json
+
+[
+  {
+    "description": "Hello, world.",
+    "facebook_id": "yaotti",
+    "followees_count": 100,
+    "followers_count": 200,
+    "github_login_name": "yaotti",
+    "id": "yaotti",
+    "items_count": 300,
+    "linkedin_id": "yaotti",
+    "location": "Tokyo, Japan",
+    "name": "Hiroshige Umino",
+    "organization": "Increments Inc",
+    "permanent_id": 1,
+    "profile_image_url": "https://si0.twimg.com/profile_images/2309761038/1ijg13pfs0dg84sk2y0h_normal.jpeg",
+    "twitter_screen_name": "yaotti",
+    "website_url": "http://yaotti.hatenablog.com"
+  }
+]
+</pre></div></div>
+
+<h3>
+<span id="delete-apiv2usersuser_idfollowing" class="fragment"></span><a href="https://qiita.com/api/v2/docs#delete-apiv2usersuser_idfollowing"><i class="fa fa-link"></i></a>DELETE /api/v2/users/:user_id/following</h3>
+
+<p>ユーザへのフォローを外します。</p>
+
+<div class="code-frame" data-lang="text"><div class="highlight"><pre><span></span>DELETE /api/v2/users/:user_id/following HTTP/1.1
+Host: api.example.com
+</pre></div></div>
+
+<div class="code-frame" data-lang="text"><div class="highlight"><pre><span></span>HTTP/1.1 204
+</pre></div></div>
+
+<h3>
+<span id="get-apiv2usersuser_idfollowing" class="fragment"></span><a href="https://qiita.com/api/v2/docs#get-apiv2usersuser_idfollowing"><i class="fa fa-link"></i></a>GET /api/v2/users/:user_id/following</h3>
+
+<p>ユーザをフォローしている場合に204を返します。</p>
+
+<div class="code-frame" data-lang="text"><div class="highlight"><pre><span></span>GET /api/v2/users/:user_id/following HTTP/1.1
+Host: api.example.com
+</pre></div></div>
+
+<div class="code-frame" data-lang="text"><div class="highlight"><pre><span></span>HTTP/1.1 200
+Content-Type: application/json
+
+{
+  "description": "Hello, world.",
+  "facebook_id": "yaotti",
+  "followees_count": 100,
+  "followers_count": 200,
+  "github_login_name": "yaotti",
+  "id": "yaotti",
+  "items_count": 300,
+  "linkedin_id": "yaotti",
+  "location": "Tokyo, Japan",
+  "name": "Hiroshige Umino",
+  "organization": "Increments Inc",
+  "permanent_id": 1,
+  "profile_image_url": "https://si0.twimg.com/profile_images/2309761038/1ijg13pfs0dg84sk2y0h_normal.jpeg",
+  "twitter_screen_name": "yaotti",
+  "website_url": "http://yaotti.hatenablog.com"
+}
+</pre></div></div>
+
+<h3>
+<span id="put-apiv2usersuser_idfollowing" class="fragment"></span><a href="https://qiita.com/api/v2/docs#put-apiv2usersuser_idfollowing"><i class="fa fa-link"></i></a>PUT /api/v2/users/:user_id/following</h3>
+
+<p>ユーザをフォローします。</p>
+
+<div class="code-frame" data-lang="text"><div class="highlight"><pre><span></span>PUT /api/v2/users/:user_id/following HTTP/1.1
+Host: api.example.com
+</pre></div></div>
+
+<div class="code-frame" data-lang="text"><div class="highlight"><pre><span></span>HTTP/1.1 204
+</pre></div></div>
+
+<h2>
+<span id="展開済みテンプレート" class="fragment"></span><a href="https://qiita.com/api/v2/docs#%E5%B1%95%E9%96%8B%E6%B8%88%E3%81%BF%E3%83%86%E3%83%B3%E3%83%97%E3%83%AC%E3%83%BC%E3%83%88"><i class="fa fa-link"></i></a>展開済みテンプレート</h2>
+
+<p>テンプレートを保存する前に変数展開後の状態をプレビューできます。Qiita:Teamでのみ有効です。</p>
+
+<ul>
+<li>expanded_body
+
+<ul>
+<li>変数を展開した状態の本文</li>
+<li>Example: <code>"Weekly MTG on 2000/01/01"</code>
+</li>
+<li>Type: string</li>
+</ul>
+</li>
+<li>expanded_tags
+
+<ul>
+<li>変数を展開した状態のタグ一覧</li>
+<li>Example: <code>[{"name"=&gt;"MTG/2000/01/01", "versions"=&gt;["0.0.1"]}]</code>
+</li>
+<li>Type: array</li>
+</ul>
+</li>
+<li>expanded_title
+
+<ul>
+<li>変数を展開した状態のタイトル</li>
+<li>Example: <code>"Weekly MTG on 2015/06/03"</code>
+</li>
+<li>Type: string</li>
+</ul>
+</li>
+</ul>
+
+<h3>
+<span id="post-apiv2expanded_templates" class="fragment"></span><a href="https://qiita.com/api/v2/docs#post-apiv2expanded_templates"><i class="fa fa-link"></i></a>POST /api/v2/expanded_templates</h3>
+
+<p>受け取ったテンプレート用文字列の変数を展開して返します。</p>
+
+<ul>
+<li>body
+
+<ul>
+<li>テンプレートの本文</li>
+<li>Example: <code>"Weekly MTG on %{Year}/%{month}/%{day}"</code>
+</li>
+<li>Type: string</li>
+</ul>
+</li>
+<li>tags
+
+<ul>
+<li>タグ一覧</li>
+<li>Example: <code>[{"name"=&gt;"MTG/%{Year}/%{month}/%{day}", "versions"=&gt;["0.0.1"]}]</code>
+</li>
+<li>Type: array</li>
+</ul>
+</li>
+<li>title
+
+<ul>
+<li>生成される投稿のタイトルの雛形</li>
+<li>Example: <code>"Weekly MTG on %{Year}/%{month}/%{day}"</code>
+</li>
+<li>Type: string</li>
+</ul>
+</li>
+</ul>
+
+<div class="code-frame" data-lang="text"><div class="highlight"><pre><span></span>POST /api/v2/expanded_templates HTTP/1.1
+Content-Type: application/json
+Host: api.example.com
+
+{
+  "body": "Weekly MTG on %{Year}/%{month}/%{day}",
+  "tags": [
+    {
+      "name": "MTG/%{Year}/%{month}/%{day}",
+      "versions": [
+        "0.0.1"
+      ]
+    }
+  ],
+  "title": "Weekly MTG on %{Year}/%{month}/%{day}"
+}
+</pre></div></div>
+
+<div class="code-frame" data-lang="text"><div class="highlight"><pre><span></span>HTTP/1.1 201
+Content-Type: application/json
+
+{
+  "expanded_body": "Weekly MTG on 2000/01/01",
+  "expanded_tags": [
+    {
+      "name": "MTG/2000/01/01",
+      "versions": [
+        "0.0.1"
+      ]
+    }
+  ],
+  "expanded_title": "Weekly MTG on 2015/06/03"
+}
+</pre></div></div>
+
+<h2>
+<span id="投稿" class="fragment"></span><a href="https://qiita.com/api/v2/docs#%E6%8A%95%E7%A8%BF"><i class="fa fa-link"></i></a>投稿</h2>
+
+<p>ユーザからの投稿を表します。</p>
+
+<ul>
+<li>rendered_body
+
+<ul>
+<li>HTML形式の本文</li>
+<li>Example: <code>"&lt;h1&gt;Example&lt;/h1&gt;"</code>
+</li>
+<li>Type: string</li>
+</ul>
+</li>
+<li>body
+
+<ul>
+<li>Markdown形式の本文</li>
+<li>Example: <code>"# Example"</code>
+</li>
+<li>Type: string</li>
+</ul>
+</li>
+<li>coediting
+
+<ul>
+<li>この投稿が共同更新状態かどうか (Qiita:Teamでのみ有効)</li>
+<li>Example: <code>false</code>
+</li>
+<li>Type: boolean</li>
+</ul>
+</li>
+<li>comments_count
+
+<ul>
+<li>この投稿へのコメントの数</li>
+<li>Example: <code>100</code>
+</li>
+<li>Type: integer</li>
+</ul>
+</li>
+<li>created_at
+
+<ul>
+<li>データが作成された日時</li>
+<li>Example: <code>"2000-01-01T00:00:00+00:00"</code>
+</li>
+<li>Type: string</li>
+<li>Format: date-time</li>
+</ul>
+</li>
+<li>group
+
+<ul>
+<li>Qiita:Teamのグループを表します。</li>
+</ul>
+</li>
+<li>id
+
+<ul>
+<li>投稿の一意なID</li>
+<li>Example: <code>"4bd431809afb1bb99e4f"</code>
+</li>
+<li>Type: string</li>
+<li>Pattern: <code>/^[0-9a-f]{20}$/</code>
+</li>
+</ul>
+</li>
+<li>likes_count
+
+<ul>
+<li>この投稿への「いいね！」の数（Qiitaでのみ有効）</li>
+<li>Example: <code>100</code>
+</li>
+<li>Type: integer</li>
+</ul>
+</li>
+<li>private
+
+<ul>
+<li>限定共有状態かどうかを表すフラグ (Qiita:Teamでは無効)</li>
+<li>Example: <code>false</code>
+</li>
+<li>Type: boolean</li>
+</ul>
+</li>
+<li>reactions_count
+
+<ul>
+<li>絵文字リアクションの数（Qiita:Teamでのみ有効）</li>
+<li>Example: <code>100</code>
+</li>
+<li>Type: integer</li>
+</ul>
+</li>
+<li>tags
+
+<ul>
+<li>投稿に付いたタグ一覧</li>
+<li>Example: <code>[{"name"=&gt;"Ruby", "versions"=&gt;["0.0.1"]}]</code>
+</li>
+<li>Type: array</li>
+</ul>
+</li>
+<li>title
+
+<ul>
+<li>投稿のタイトル</li>
+<li>Example: <code>"Example title"</code>
+</li>
+<li>Type: string</li>
+</ul>
+</li>
+<li>updated_at
+
+<ul>
+<li>データが最後に更新された日時</li>
+<li>Example: <code>"2000-01-01T00:00:00+00:00"</code>
+</li>
+<li>Type: string</li>
+<li>Format: date-time</li>
+</ul>
+</li>
+<li>url
+
+<ul>
+<li>投稿のURL</li>
+<li>Example: <code>"https://qiita.com/yaotti/items/4bd431809afb1bb99e4f"</code>
+</li>
+<li>Type: string</li>
+</ul>
+</li>
+<li>user
+
+<ul>
+<li>Qiita上のユーザを表します。</li>
+</ul>
+</li>
+<li>page_views_count
+
+<ul>
+<li>閲覧数</li>
+<li>Example: <code>100</code>
+</li>
+<li>Type: null, integer</li>
+</ul>
+</li>
+</ul>
+
+<h3>
+<span id="get-apiv2authenticated_useritems" class="fragment"></span><a href="https://qiita.com/api/v2/docs#get-apiv2authenticated_useritems"><i class="fa fa-link"></i></a>GET /api/v2/authenticated_user/items</h3>
+
+<p>認証中のユーザの投稿の一覧を作成日時の降順で返します。</p>
+
+<ul>
+<li>page
+
+<ul>
+<li>ページ番号 (1から100まで)</li>
+<li>Example: <code>1</code>
+</li>
+<li>Type: string</li>
+<li>Pattern: <code>/^[0-9]+$/</code>
+</li>
+</ul>
+</li>
+<li>per_page
+
+<ul>
+<li>1ページあたりに含まれる要素数 (1から100まで)</li>
+<li>Example: <code>20</code>
+</li>
+<li>Type: string</li>
+<li>Pattern: <code>/^[0-9]+$/</code>
+</li>
+</ul>
+</li>
+</ul>
+
+<div class="code-frame" data-lang="text"><div class="highlight"><pre><span></span>GET /api/v2/authenticated_user/items?page=1&amp;per_page=20 HTTP/1.1
+Host: api.example.com
+</pre></div></div>
+
+<div class="code-frame" data-lang="text"><div class="highlight"><pre><span></span>HTTP/1.1 200
+Content-Type: application/json
+
+[
+  {
+    "rendered_body": "&lt;h1&gt;Example&lt;/h1&gt;",
+    "body": "# Example",
+    "coediting": false,
+    "comments_count": 100,
+    "created_at": "2000-01-01T00:00:00+00:00",
+    "group": {
+      "created_at": "2000-01-01T00:00:00+00:00",
+      "id": 1,
+      "name": "Dev",
+      "private": false,
+      "updated_at": "2000-01-01T00:00:00+00:00",
+      "url_name": "dev"
+    },
+    "id": "4bd431809afb1bb99e4f",
+    "likes_count": 100,
+    "private": false,
+    "reactions_count": 100,
+    "tags": [
+      {
+        "name": "Ruby",
+        "versions": [
+          "0.0.1"
+        ]
+      }
+    ],
+    "title": "Example title",
+    "updated_at": "2000-01-01T00:00:00+00:00",
+    "url": "https://qiita.com/yaotti/items/4bd431809afb1bb99e4f",
+    "user": {
+      "description": "Hello, world.",
+      "facebook_id": "yaotti",
+      "followees_count": 100,
+      "followers_count": 200,
+      "github_login_name": "yaotti",
+      "id": "yaotti",
+      "items_count": 300,
+      "linkedin_id": "yaotti",
+      "location": "Tokyo, Japan",
+      "name": "Hiroshige Umino",
+      "organization": "Increments Inc",
+      "permanent_id": 1,
+      "profile_image_url": "https://si0.twimg.com/profile_images/2309761038/1ijg13pfs0dg84sk2y0h_normal.jpeg",
+      "twitter_screen_name": "yaotti",
+      "website_url": "http://yaotti.hatenablog.com"
+    },
+    "page_views_count": 100
+  }
+]
+</pre></div></div>
+
+<h3>
+<span id="get-apiv2items" class="fragment"></span><a href="https://qiita.com/api/v2/docs#get-apiv2items"><i class="fa fa-link"></i></a>GET /api/v2/items</h3>
+
+<p>投稿の一覧を作成日時の降順で返します。</p>
+
+<ul>
+<li>page
+
+<ul>
+<li>ページ番号 (1から100まで)</li>
+<li>Example: <code>1</code>
+</li>
+<li>Type: string</li>
+<li>Pattern: <code>/^[0-9]+$/</code>
+</li>
+</ul>
+</li>
+<li>per_page
+
+<ul>
+<li>1ページあたりに含まれる要素数 (1から100まで)</li>
+<li>Example: <code>20</code>
+</li>
+<li>Type: string</li>
+<li>Pattern: <code>/^[0-9]+$/</code>
+</li>
+</ul>
+</li>
+<li>query
+
+<ul>
+<li>検索クエリ</li>
+<li>Example: <code>"qiita user:yaotti"</code>
+</li>
+<li>Type: string</li>
+</ul>
+</li>
+</ul>
+
+<div class="code-frame" data-lang="text"><div class="highlight"><pre><span></span>GET /api/v2/items?page=1&amp;per_page=20&amp;query=qiita+user%3Ayaotti HTTP/1.1
+Host: api.example.com
+</pre></div></div>
+
+<div class="code-frame" data-lang="text"><div class="highlight"><pre><span></span>HTTP/1.1 200
+Content-Type: application/json
+
+[
+  {
+    "rendered_body": "&lt;h1&gt;Example&lt;/h1&gt;",
+    "body": "# Example",
+    "coediting": false,
+    "comments_count": 100,
+    "created_at": "2000-01-01T00:00:00+00:00",
+    "group": {
+      "created_at": "2000-01-01T00:00:00+00:00",
+      "id": 1,
+      "name": "Dev",
+      "private": false,
+      "updated_at": "2000-01-01T00:00:00+00:00",
+      "url_name": "dev"
+    },
+    "id": "4bd431809afb1bb99e4f",
+    "likes_count": 100,
+    "private": false,
+    "reactions_count": 100,
+    "tags": [
+      {
+        "name": "Ruby",
+        "versions": [
+          "0.0.1"
+        ]
+      }
+    ],
+    "title": "Example title",
+    "updated_at": "2000-01-01T00:00:00+00:00",
+    "url": "https://qiita.com/yaotti/items/4bd431809afb1bb99e4f",
+    "user": {
+      "description": "Hello, world.",
+      "facebook_id": "yaotti",
+      "followees_count": 100,
+      "followers_count": 200,
+      "github_login_name": "yaotti",
+      "id": "yaotti",
+      "items_count": 300,
+      "linkedin_id": "yaotti",
+      "location": "Tokyo, Japan",
+      "name": "Hiroshige Umino",
+      "organization": "Increments Inc",
+      "permanent_id": 1,
+      "profile_image_url": "https://si0.twimg.com/profile_images/2309761038/1ijg13pfs0dg84sk2y0h_normal.jpeg",
+      "twitter_screen_name": "yaotti",
+      "website_url": "http://yaotti.hatenablog.com"
+    },
+    "page_views_count": 100
+  }
+]
+</pre></div></div>
+
+<h3>
+<span id="post-apiv2items" class="fragment"></span><a href="https://qiita.com/api/v2/docs#post-apiv2items"><i class="fa fa-link"></i></a>POST /api/v2/items</h3>
+
+<p>新たに投稿を作成します。</p>
+
+<ul>
+<li>body
+
+<ul>
+<li>Markdown形式の本文</li>
+<li>Example: <code>"# Example"</code>
+</li>
+<li>Type: string</li>
+</ul>
+</li>
+<li>coediting
+
+<ul>
+<li>この投稿が共同更新状態かどうか (Qiita:Teamでのみ有効)</li>
+<li>Example: <code>false</code>
+</li>
+<li>Type: boolean</li>
+</ul>
+</li>
+<li>gist
+
+<ul>
+<li>本文中のコードをGistに投稿するかどうか (GitHub連携を有効化している場合のみ有効)</li>
+<li>Example: <code>false</code>
+</li>
+<li>Type: boolean</li>
+</ul>
+</li>
+<li>group_url_name
+
+<ul>
+<li>この投稿を公開するグループの url_name (null で全体に公開。Qiita:Teamでのみ有効)</li>
+<li>Example: <code>"dev"</code>
+</li>
+<li>Type: null, string</li>
+</ul>
+</li>
+<li>private
+
+<ul>
+<li>限定共有状態かどうかを表すフラグ (Qiita:Teamでは無効)</li>
+<li>Example: <code>false</code>
+</li>
+<li>Type: boolean</li>
+</ul>
+</li>
+<li>tags
+
+<ul>
+<li>投稿に付いたタグ一覧</li>
+<li>Example: <code>[{"name"=&gt;"Ruby", "versions"=&gt;["0.0.1"]}]</code>
+</li>
+<li>Type: array</li>
+</ul>
+</li>
+<li>title
+
+<ul>
+<li>投稿のタイトル</li>
+<li>Example: <code>"Example title"</code>
+</li>
+<li>Type: string</li>
+</ul>
+</li>
+<li>tweet
+
+<ul>
+<li>Twitterに投稿するかどうか (Twitter連携を有効化している場合のみ有効)</li>
+<li>Example: <code>false</code>
+</li>
+<li>Type: boolean</li>
+</ul>
+</li>
+</ul>
+
+<div class="code-frame" data-lang="text"><div class="highlight"><pre><span></span>POST /api/v2/items HTTP/1.1
+Content-Type: application/json
+Host: api.example.com
+
+{
+  "body": "# Example",
+  "coediting": false,
+  "gist": false,
+  "group_url_name": "dev",
+  "private": false,
+  "tags": [
+    {
+      "name": "Ruby",
+      "versions": [
+        "0.0.1"
+      ]
+    }
+  ],
+  "title": "Example title",
+  "tweet": false
+}
+</pre></div></div>
+
+<div class="code-frame" data-lang="text"><div class="highlight"><pre><span></span>HTTP/1.1 201
+Content-Type: application/json
+
+{
+  "rendered_body": "&lt;h1&gt;Example&lt;/h1&gt;",
+  "body": "# Example",
+  "coediting": false,
+  "comments_count": 100,
+  "created_at": "2000-01-01T00:00:00+00:00",
+  "group": {
+    "created_at": "2000-01-01T00:00:00+00:00",
+    "id": 1,
+    "name": "Dev",
+    "private": false,
+    "updated_at": "2000-01-01T00:00:00+00:00",
+    "url_name": "dev"
+  },
+  "id": "4bd431809afb1bb99e4f",
+  "likes_count": 100,
+  "private": false,
+  "reactions_count": 100,
+  "tags": [
+    {
+      "name": "Ruby",
+      "versions": [
+        "0.0.1"
+      ]
+    }
+  ],
+  "title": "Example title",
+  "updated_at": "2000-01-01T00:00:00+00:00",
+  "url": "https://qiita.com/yaotti/items/4bd431809afb1bb99e4f",
+  "user": {
+    "description": "Hello, world.",
+    "facebook_id": "yaotti",
+    "followees_count": 100,
+    "followers_count": 200,
+    "github_login_name": "yaotti",
+    "id": "yaotti",
+    "items_count": 300,
+    "linkedin_id": "yaotti",
+    "location": "Tokyo, Japan",
+    "name": "Hiroshige Umino",
+    "organization": "Increments Inc",
+    "permanent_id": 1,
+    "profile_image_url": "https://si0.twimg.com/profile_images/2309761038/1ijg13pfs0dg84sk2y0h_normal.jpeg",
+    "twitter_screen_name": "yaotti",
+    "website_url": "http://yaotti.hatenablog.com"
+  },
+  "page_views_count": 100
+}
+</pre></div></div>
+
+<h3>
+<span id="delete-apiv2itemsitem_id" class="fragment"></span><a href="https://qiita.com/api/v2/docs#delete-apiv2itemsitem_id"><i class="fa fa-link"></i></a>DELETE /api/v2/items/:item_id</h3>
+
+<p>投稿を削除します。</p>
+
+<div class="code-frame" data-lang="text"><div class="highlight"><pre><span></span>DELETE /api/v2/items/:item_id HTTP/1.1
+Host: api.example.com
+</pre></div></div>
+
+<div class="code-frame" data-lang="text"><div class="highlight"><pre><span></span>HTTP/1.1 200
+Content-Type: application/json
+
+{
+  "rendered_body": "&lt;h1&gt;Example&lt;/h1&gt;",
+  "body": "# Example",
+  "coediting": false,
+  "comments_count": 100,
+  "created_at": "2000-01-01T00:00:00+00:00",
+  "group": {
+    "created_at": "2000-01-01T00:00:00+00:00",
+    "id": 1,
+    "name": "Dev",
+    "private": false,
+    "updated_at": "2000-01-01T00:00:00+00:00",
+    "url_name": "dev"
+  },
+  "id": "4bd431809afb1bb99e4f",
+  "likes_count": 100,
+  "private": false,
+  "reactions_count": 100,
+  "tags": [
+    {
+      "name": "Ruby",
+      "versions": [
+        "0.0.1"
+      ]
+    }
+  ],
+  "title": "Example title",
+  "updated_at": "2000-01-01T00:00:00+00:00",
+  "url": "https://qiita.com/yaotti/items/4bd431809afb1bb99e4f",
+  "user": {
+    "description": "Hello, world.",
+    "facebook_id": "yaotti",
+    "followees_count": 100,
+    "followers_count": 200,
+    "github_login_name": "yaotti",
+    "id": "yaotti",
+    "items_count": 300,
+    "linkedin_id": "yaotti",
+    "location": "Tokyo, Japan",
+    "name": "Hiroshige Umino",
+    "organization": "Increments Inc",
+    "permanent_id": 1,
+    "profile_image_url": "https://si0.twimg.com/profile_images/2309761038/1ijg13pfs0dg84sk2y0h_normal.jpeg",
+    "twitter_screen_name": "yaotti",
+    "website_url": "http://yaotti.hatenablog.com"
+  },
+  "page_views_count": 100
+}
+</pre></div></div>
+
+<h3>
+<span id="get-apiv2itemsitem_id" class="fragment"></span><a href="https://qiita.com/api/v2/docs#get-apiv2itemsitem_id"><i class="fa fa-link"></i></a>GET /api/v2/items/:item_id</h3>
+
+<p>投稿を取得します。</p>
+
+<div class="code-frame" data-lang="text"><div class="highlight"><pre><span></span>GET /api/v2/items/:item_id HTTP/1.1
+Host: api.example.com
+</pre></div></div>
+
+<div class="code-frame" data-lang="text"><div class="highlight"><pre><span></span>HTTP/1.1 200
+Content-Type: application/json
+
+{
+  "rendered_body": "&lt;h1&gt;Example&lt;/h1&gt;",
+  "body": "# Example",
+  "coediting": false,
+  "comments_count": 100,
+  "created_at": "2000-01-01T00:00:00+00:00",
+  "group": {
+    "created_at": "2000-01-01T00:00:00+00:00",
+    "id": 1,
+    "name": "Dev",
+    "private": false,
+    "updated_at": "2000-01-01T00:00:00+00:00",
+    "url_name": "dev"
+  },
+  "id": "4bd431809afb1bb99e4f",
+  "likes_count": 100,
+  "private": false,
+  "reactions_count": 100,
+  "tags": [
+    {
+      "name": "Ruby",
+      "versions": [
+        "0.0.1"
+      ]
+    }
+  ],
+  "title": "Example title",
+  "updated_at": "2000-01-01T00:00:00+00:00",
+  "url": "https://qiita.com/yaotti/items/4bd431809afb1bb99e4f",
+  "user": {
+    "description": "Hello, world.",
+    "facebook_id": "yaotti",
+    "followees_count": 100,
+    "followers_count": 200,
+    "github_login_name": "yaotti",
+    "id": "yaotti",
+    "items_count": 300,
+    "linkedin_id": "yaotti",
+    "location": "Tokyo, Japan",
+    "name": "Hiroshige Umino",
+    "organization": "Increments Inc",
+    "permanent_id": 1,
+    "profile_image_url": "https://si0.twimg.com/profile_images/2309761038/1ijg13pfs0dg84sk2y0h_normal.jpeg",
+    "twitter_screen_name": "yaotti",
+    "website_url": "http://yaotti.hatenablog.com"
+  },
+  "page_views_count": 100
+}
+</pre></div></div>
+
+<h3>
+<span id="patch-apiv2itemsitem_id" class="fragment"></span><a href="https://qiita.com/api/v2/docs#patch-apiv2itemsitem_id"><i class="fa fa-link"></i></a>PATCH /api/v2/items/:item_id</h3>
+
+<p>投稿を更新します。</p>
+
+<ul>
+<li>body
+
+<ul>
+<li>Markdown形式の本文</li>
+<li>Example: <code>"# Example"</code>
+</li>
+<li>Type: string</li>
+</ul>
+</li>
+<li>coediting
+
+<ul>
+<li>この投稿が共同更新状態かどうか (Qiita:Teamでのみ有効)</li>
+<li>Example: <code>false</code>
+</li>
+<li>Type: boolean</li>
+</ul>
+</li>
+<li>group_url_name
+
+<ul>
+<li>この投稿を公開するグループの url_name (null で全体に公開。Qiita:Teamでのみ有効)</li>
+<li>Example: <code>"dev"</code>
+</li>
+<li>Type: null, string</li>
+</ul>
+</li>
+<li>private
+
+<ul>
+<li>限定共有状態かどうかを表すフラグ (Qiita:Teamでは無効)</li>
+<li>Example: <code>false</code>
+</li>
+<li>Type: boolean</li>
+</ul>
+</li>
+<li>tags
+
+<ul>
+<li>投稿に付いたタグ一覧</li>
+<li>Example: <code>[{"name"=&gt;"Ruby", "versions"=&gt;["0.0.1"]}]</code>
+</li>
+<li>Type: array</li>
+</ul>
+</li>
+<li>title
+
+<ul>
+<li>投稿のタイトル</li>
+<li>Example: <code>"Example title"</code>
+</li>
+<li>Type: string</li>
+</ul>
+</li>
+</ul>
+
+<div class="code-frame" data-lang="text"><div class="highlight"><pre><span></span>PATCH /api/v2/items/:item_id HTTP/1.1
+Content-Type: application/json
+Host: api.example.com
+
+{
+  "body": "# Example",
+  "coediting": false,
+  "group_url_name": "dev",
+  "private": false,
+  "tags": [
+    {
+      "name": "Ruby",
+      "versions": [
+        "0.0.1"
+      ]
+    }
+  ],
+  "title": "Example title"
+}
+</pre></div></div>
+
+<div class="code-frame" data-lang="text"><div class="highlight"><pre><span></span>HTTP/1.1 200
+Content-Type: application/json
+
+{
+  "rendered_body": "&lt;h1&gt;Example&lt;/h1&gt;",
+  "body": "# Example",
+  "coediting": false,
+  "comments_count": 100,
+  "created_at": "2000-01-01T00:00:00+00:00",
+  "group": {
+    "created_at": "2000-01-01T00:00:00+00:00",
+    "id": 1,
+    "name": "Dev",
+    "private": false,
+    "updated_at": "2000-01-01T00:00:00+00:00",
+    "url_name": "dev"
+  },
+  "id": "4bd431809afb1bb99e4f",
+  "likes_count": 100,
+  "private": false,
+  "reactions_count": 100,
+  "tags": [
+    {
+      "name": "Ruby",
+      "versions": [
+        "0.0.1"
+      ]
+    }
+  ],
+  "title": "Example title",
+  "updated_at": "2000-01-01T00:00:00+00:00",
+  "url": "https://qiita.com/yaotti/items/4bd431809afb1bb99e4f",
+  "user": {
+    "description": "Hello, world.",
+    "facebook_id": "yaotti",
+    "followees_count": 100,
+    "followers_count": 200,
+    "github_login_name": "yaotti",
+    "id": "yaotti",
+    "items_count": 300,
+    "linkedin_id": "yaotti",
+    "location": "Tokyo, Japan",
+    "name": "Hiroshige Umino",
+    "organization": "Increments Inc",
+    "permanent_id": 1,
+    "profile_image_url": "https://si0.twimg.com/profile_images/2309761038/1ijg13pfs0dg84sk2y0h_normal.jpeg",
+    "twitter_screen_name": "yaotti",
+    "website_url": "http://yaotti.hatenablog.com"
+  },
+  "page_views_count": 100
+}
+</pre></div></div>
+
+<h3>
+<span id="post-apiv2imported_items" class="fragment"></span><a href="https://qiita.com/api/v2/docs#post-apiv2imported_items"><i class="fa fa-link"></i></a>POST /api/v2/imported_items</h3>
+
+<p>ユーザー名、日時を指定して投稿を作成します。(Qiita:Teamでのみ有効。管理者権限が必要。)</p>
+
+<ul>
+<li>body
+
+<ul>
+<li>Markdown形式の本文</li>
+<li>Example: <code>"# Example"</code>
+</li>
+<li>Type: string</li>
+</ul>
+</li>
+<li>coediting
+
+<ul>
+<li>この投稿が共同更新状態かどうか (Qiita:Teamでのみ有効)</li>
+<li>Example: <code>false</code>
+</li>
+<li>Type: boolean</li>
+</ul>
+</li>
+<li>group_url_name
+
+<ul>
+<li>この投稿を公開するグループの url_name (null で全体に公開。Qiita:Teamでのみ有効)</li>
+<li>Example: <code>"dev"</code>
+</li>
+<li>Type: null, string</li>
+</ul>
+</li>
+<li>tags
+
+<ul>
+<li>投稿に付いたタグ一覧</li>
+<li>Example: <code>[{"name"=&gt;"Ruby", "versions"=&gt;["0.0.1"]}]</code>
+</li>
+<li>Type: array</li>
+</ul>
+</li>
+<li>title
+
+<ul>
+<li>投稿のタイトル</li>
+<li>Example: <code>"Example title"</code>
+</li>
+<li>Type: string</li>
+</ul>
+</li>
+<li>user_id
+
+<ul>
+<li>ユーザID</li>
+<li>Example: <code>"yaotti"</code>
+</li>
+<li>Type: string</li>
+</ul>
+</li>
+<li>created_at
+
+<ul>
+<li>データが作成された日時</li>
+<li>Example: <code>"2000-01-01T00:00:00+00:00"</code>
+</li>
+<li>Type: string</li>
+<li>Format: date-time</li>
+</ul>
+</li>
+<li>updated_at
+
+<ul>
+<li>データが最後に更新された日時</li>
+<li>Example: <code>"2000-01-01T00:00:00+00:00"</code>
+</li>
+<li>Type: string</li>
+<li>Format: date-time</li>
+</ul>
+</li>
+</ul>
+
+<div class="code-frame" data-lang="text"><div class="highlight"><pre><span></span>POST /api/v2/imported_items HTTP/1.1
+Content-Type: application/json
+Host: api.example.com
+
+{
+  "body": "# Example",
+  "coediting": false,
+  "group_url_name": "dev",
+  "tags": [
+    {
+      "name": "Ruby",
+      "versions": [
+        "0.0.1"
+      ]
+    }
+  ],
+  "title": "Example title",
+  "user_id": "yaotti",
+  "created_at": "2000-01-01T00:00:00+00:00",
+  "updated_at": "2000-01-01T00:00:00+00:00"
+}
+</pre></div></div>
+
+<div class="code-frame" data-lang="text"><div class="highlight"><pre><span></span>HTTP/1.1 201
+Content-Type: application/json
+
+{
+  "rendered_body": "&lt;h1&gt;Example&lt;/h1&gt;",
+  "body": "# Example",
+  "coediting": false,
+  "comments_count": 100,
+  "created_at": "2000-01-01T00:00:00+00:00",
+  "group": {
+    "created_at": "2000-01-01T00:00:00+00:00",
+    "id": 1,
+    "name": "Dev",
+    "private": false,
+    "updated_at": "2000-01-01T00:00:00+00:00",
+    "url_name": "dev"
+  },
+  "id": "4bd431809afb1bb99e4f",
+  "likes_count": 100,
+  "private": false,
+  "reactions_count": 100,
+  "tags": [
+    {
+      "name": "Ruby",
+      "versions": [
+        "0.0.1"
+      ]
+    }
+  ],
+  "title": "Example title",
+  "updated_at": "2000-01-01T00:00:00+00:00",
+  "url": "https://qiita.com/yaotti/items/4bd431809afb1bb99e4f",
+  "user": {
+    "description": "Hello, world.",
+    "facebook_id": "yaotti",
+    "followees_count": 100,
+    "followers_count": 200,
+    "github_login_name": "yaotti",
+    "id": "yaotti",
+    "items_count": 300,
+    "linkedin_id": "yaotti",
+    "location": "Tokyo, Japan",
+    "name": "Hiroshige Umino",
+    "organization": "Increments Inc",
+    "permanent_id": 1,
+    "profile_image_url": "https://si0.twimg.com/profile_images/2309761038/1ijg13pfs0dg84sk2y0h_normal.jpeg",
+    "twitter_screen_name": "yaotti",
+    "website_url": "http://yaotti.hatenablog.com"
+  },
+  "page_views_count": 100
+}
+</pre></div></div>
+
+<h3>
+<span id="delete-apiv2itemsitem_idlike" class="fragment"></span><a href="https://qiita.com/api/v2/docs#delete-apiv2itemsitem_idlike"><i class="fa fa-link"></i></a>DELETE /api/v2/items/:item_id/like</h3>
+
+<p><strong>Qiita:TeamのいいねAPIは2017年8月24日に非推奨となりました。今後は絵文字リアクションAPIをご利用ください。</strong> 投稿への「いいね！」を取り消します。</p>
+
+<div class="code-frame" data-lang="text"><div class="highlight"><pre><span></span>DELETE /api/v2/items/:item_id/like HTTP/1.1
+Host: api.example.com
+</pre></div></div>
+
+<div class="code-frame" data-lang="text"><div class="highlight"><pre><span></span>HTTP/1.1 204
+</pre></div></div>
+
+<h3>
+<span id="put-apiv2itemsitem_idlike" class="fragment"></span><a href="https://qiita.com/api/v2/docs#put-apiv2itemsitem_idlike"><i class="fa fa-link"></i></a>PUT /api/v2/items/:item_id/like</h3>
+
+<p><strong>Qiita:TeamのいいねAPIは2017年8月24日に非推奨となりました。今後は絵文字リアクションAPIをご利用ください。</strong> 投稿に「いいね！」を付けます。</p>
+
+<div class="code-frame" data-lang="text"><div class="highlight"><pre><span></span>PUT /api/v2/items/:item_id/like HTTP/1.1
+Host: api.example.com
+</pre></div></div>
+
+<div class="code-frame" data-lang="text"><div class="highlight"><pre><span></span>HTTP/1.1 204
+</pre></div></div>
+
+<h3>
+<span id="put-apiv2itemsitem_idstock" class="fragment"></span><a href="https://qiita.com/api/v2/docs#put-apiv2itemsitem_idstock"><i class="fa fa-link"></i></a>PUT /api/v2/items/:item_id/stock</h3>
+
+<p>投稿をストックします。</p>
+
+<div class="code-frame" data-lang="text"><div class="highlight"><pre><span></span>PUT /api/v2/items/:item_id/stock HTTP/1.1
+Host: api.example.com
+</pre></div></div>
+
+<div class="code-frame" data-lang="text"><div class="highlight"><pre><span></span>HTTP/1.1 204
+</pre></div></div>
+
+<h3>
+<span id="delete-apiv2itemsitem_idstock" class="fragment"></span><a href="https://qiita.com/api/v2/docs#delete-apiv2itemsitem_idstock"><i class="fa fa-link"></i></a>DELETE /api/v2/items/:item_id/stock</h3>
+
+<p>投稿をストックから取り除きます。</p>
+
+<div class="code-frame" data-lang="text"><div class="highlight"><pre><span></span>DELETE /api/v2/items/:item_id/stock HTTP/1.1
+Host: api.example.com
+</pre></div></div>
+
+<div class="code-frame" data-lang="text"><div class="highlight"><pre><span></span>HTTP/1.1 204
+</pre></div></div>
+
+<h3>
+<span id="get-apiv2itemsitem_idstock" class="fragment"></span><a href="https://qiita.com/api/v2/docs#get-apiv2itemsitem_idstock"><i class="fa fa-link"></i></a>GET /api/v2/items/:item_id/stock</h3>
+
+<p>投稿をストックしているかどうかを調べます。</p>
+
+<div class="code-frame" data-lang="text"><div class="highlight"><pre><span></span>GET /api/v2/items/:item_id/stock HTTP/1.1
+Host: api.example.com
+</pre></div></div>
+
+<div class="code-frame" data-lang="text"><div class="highlight"><pre><span></span>HTTP/1.1 204
+</pre></div></div>
+
+<h3>
+<span id="get-apiv2itemsitem_idlike" class="fragment"></span><a href="https://qiita.com/api/v2/docs#get-apiv2itemsitem_idlike"><i class="fa fa-link"></i></a>GET /api/v2/items/:item_id/like</h3>
+
+<p><strong>Qiita:TeamのいいねAPIは2017年8月24日に非推奨となりました。今後は絵文字リアクションAPIをご利用ください。</strong> 投稿に「いいね！」を付けているかどうかを調べます。</p>
+
+<div class="code-frame" data-lang="text"><div class="highlight"><pre><span></span>GET /api/v2/items/:item_id/like HTTP/1.1
+Host: api.example.com
+</pre></div></div>
+
+<div class="code-frame" data-lang="text"><div class="highlight"><pre><span></span>HTTP/1.1 204
+</pre></div></div>
+
+<h3>
+<span id="put-apiv2itemsitem_idstock-1" class="fragment"></span><a href="https://qiita.com/api/v2/docs#put-apiv2itemsitem_idstock-1"><i class="fa fa-link"></i></a>PUT /api/v2/items/:item_id/stock</h3>
+
+<p>投稿をストックします。</p>
+
+<div class="code-frame" data-lang="text"><div class="highlight"><pre><span></span>PUT /api/v2/items/:item_id/stock HTTP/1.1
+Host: api.example.com
+</pre></div></div>
+
+<div class="code-frame" data-lang="text"><div class="highlight"><pre><span></span>HTTP/1.1 204
+</pre></div></div>
+
+<h3>
+<span id="get-apiv2tagstag_iditems" class="fragment"></span><a href="https://qiita.com/api/v2/docs#get-apiv2tagstag_iditems"><i class="fa fa-link"></i></a>GET /api/v2/tags/:tag_id/items</h3>
+
+<p>指定されたタグが付けられた投稿一覧を、タグを付けた日時の降順で返します。</p>
+
+<ul>
+<li>page
+
+<ul>
+<li>ページ番号 (1から100まで)</li>
+<li>Example: <code>1</code>
+</li>
+<li>Type: string</li>
+<li>Pattern: <code>/^[0-9]+$/</code>
+</li>
+</ul>
+</li>
+<li>per_page
+
+<ul>
+<li>1ページあたりに含まれる要素数 (1から100まで)</li>
+<li>Example: <code>20</code>
+</li>
+<li>Type: string</li>
+<li>Pattern: <code>/^[0-9]+$/</code>
+</li>
+</ul>
+</li>
+</ul>
+
+<div class="code-frame" data-lang="text"><div class="highlight"><pre><span></span>GET /api/v2/tags/:tag_id/items?page=1&amp;per_page=20 HTTP/1.1
+Host: api.example.com
+</pre></div></div>
+
+<div class="code-frame" data-lang="text"><div class="highlight"><pre><span></span>HTTP/1.1 200
+Content-Type: application/json
+
+[
+  {
+    "rendered_body": "&lt;h1&gt;Example&lt;/h1&gt;",
+    "body": "# Example",
+    "coediting": false,
+    "comments_count": 100,
+    "created_at": "2000-01-01T00:00:00+00:00",
+    "group": {
+      "created_at": "2000-01-01T00:00:00+00:00",
+      "id": 1,
+      "name": "Dev",
+      "private": false,
+      "updated_at": "2000-01-01T00:00:00+00:00",
+      "url_name": "dev"
+    },
+    "id": "4bd431809afb1bb99e4f",
+    "likes_count": 100,
+    "private": false,
+    "reactions_count": 100,
+    "tags": [
+      {
+        "name": "Ruby",
+        "versions": [
+          "0.0.1"
+        ]
+      }
+    ],
+    "title": "Example title",
+    "updated_at": "2000-01-01T00:00:00+00:00",
+    "url": "https://qiita.com/yaotti/items/4bd431809afb1bb99e4f",
+    "user": {
+      "description": "Hello, world.",
+      "facebook_id": "yaotti",
+      "followees_count": 100,
+      "followers_count": 200,
+      "github_login_name": "yaotti",
+      "id": "yaotti",
+      "items_count": 300,
+      "linkedin_id": "yaotti",
+      "location": "Tokyo, Japan",
+      "name": "Hiroshige Umino",
+      "organization": "Increments Inc",
+      "permanent_id": 1,
+      "profile_image_url": "https://si0.twimg.com/profile_images/2309761038/1ijg13pfs0dg84sk2y0h_normal.jpeg",
+      "twitter_screen_name": "yaotti",
+      "website_url": "http://yaotti.hatenablog.com"
+    },
+    "page_views_count": 100
+  }
+]
+</pre></div></div>
+
+<h3>
+<span id="get-apiv2usersuser_iditems" class="fragment"></span><a href="https://qiita.com/api/v2/docs#get-apiv2usersuser_iditems"><i class="fa fa-link"></i></a>GET /api/v2/users/:user_id/items</h3>
+
+<p>指定されたユーザの投稿一覧を、作成日時の降順で返します。</p>
+
+<ul>
+<li>page
+
+<ul>
+<li>ページ番号 (1から100まで)</li>
+<li>Example: <code>1</code>
+</li>
+<li>Type: string</li>
+<li>Pattern: <code>/^[0-9]+$/</code>
+</li>
+</ul>
+</li>
+<li>per_page
+
+<ul>
+<li>1ページあたりに含まれる要素数 (1から100まで)</li>
+<li>Example: <code>20</code>
+</li>
+<li>Type: string</li>
+<li>Pattern: <code>/^[0-9]+$/</code>
+</li>
+</ul>
+</li>
+</ul>
+
+<div class="code-frame" data-lang="text"><div class="highlight"><pre><span></span>GET /api/v2/users/:user_id/items?page=1&amp;per_page=20 HTTP/1.1
+Host: api.example.com
+</pre></div></div>
+
+<div class="code-frame" data-lang="text"><div class="highlight"><pre><span></span>HTTP/1.1 200
+Content-Type: application/json
+
+[
+  {
+    "rendered_body": "&lt;h1&gt;Example&lt;/h1&gt;",
+    "body": "# Example",
+    "coediting": false,
+    "comments_count": 100,
+    "created_at": "2000-01-01T00:00:00+00:00",
+    "group": {
+      "created_at": "2000-01-01T00:00:00+00:00",
+      "id": 1,
+      "name": "Dev",
+      "private": false,
+      "updated_at": "2000-01-01T00:00:00+00:00",
+      "url_name": "dev"
+    },
+    "id": "4bd431809afb1bb99e4f",
+    "likes_count": 100,
+    "private": false,
+    "reactions_count": 100,
+    "tags": [
+      {
+        "name": "Ruby",
+        "versions": [
+          "0.0.1"
+        ]
+      }
+    ],
+    "title": "Example title",
+    "updated_at": "2000-01-01T00:00:00+00:00",
+    "url": "https://qiita.com/yaotti/items/4bd431809afb1bb99e4f",
+    "user": {
+      "description": "Hello, world.",
+      "facebook_id": "yaotti",
+      "followees_count": 100,
+      "followers_count": 200,
+      "github_login_name": "yaotti",
+      "id": "yaotti",
+      "items_count": 300,
+      "linkedin_id": "yaotti",
+      "location": "Tokyo, Japan",
+      "name": "Hiroshige Umino",
+      "organization": "Increments Inc",
+      "permanent_id": 1,
+      "profile_image_url": "https://si0.twimg.com/profile_images/2309761038/1ijg13pfs0dg84sk2y0h_normal.jpeg",
+      "twitter_screen_name": "yaotti",
+      "website_url": "http://yaotti.hatenablog.com"
+    },
+    "page_views_count": 100
+  }
+]
+</pre></div></div>
+
+<h3>
+<span id="get-apiv2usersuser_idstocks" class="fragment"></span><a href="https://qiita.com/api/v2/docs#get-apiv2usersuser_idstocks"><i class="fa fa-link"></i></a>GET /api/v2/users/:user_id/stocks</h3>
+
+<p>指定されたユーザがストックした投稿一覧を、ストックした日時の降順で返します。</p>
+
+<ul>
+<li>page
+
+<ul>
+<li>ページ番号 (1から100まで)</li>
+<li>Example: <code>1</code>
+</li>
+<li>Type: string</li>
+<li>Pattern: <code>/^[0-9]+$/</code>
+</li>
+</ul>
+</li>
+<li>per_page
+
+<ul>
+<li>1ページあたりに含まれる要素数 (1から100まで)</li>
+<li>Example: <code>20</code>
+</li>
+<li>Type: string</li>
+<li>Pattern: <code>/^[0-9]+$/</code>
+</li>
+</ul>
+</li>
+</ul>
+
+<div class="code-frame" data-lang="text"><div class="highlight"><pre><span></span>GET /api/v2/users/:user_id/stocks?page=1&amp;per_page=20 HTTP/1.1
+Host: api.example.com
+</pre></div></div>
+
+<div class="code-frame" data-lang="text"><div class="highlight"><pre><span></span>HTTP/1.1 200
+Content-Type: application/json
+
+[
+  {
+    "rendered_body": "&lt;h1&gt;Example&lt;/h1&gt;",
+    "body": "# Example",
+    "coediting": false,
+    "comments_count": 100,
+    "created_at": "2000-01-01T00:00:00+00:00",
+    "group": {
+      "created_at": "2000-01-01T00:00:00+00:00",
+      "id": 1,
+      "name": "Dev",
+      "private": false,
+      "updated_at": "2000-01-01T00:00:00+00:00",
+      "url_name": "dev"
+    },
+    "id": "4bd431809afb1bb99e4f",
+    "likes_count": 100,
+    "private": false,
+    "reactions_count": 100,
+    "tags": [
+      {
+        "name": "Ruby",
+        "versions": [
+          "0.0.1"
+        ]
+      }
+    ],
+    "title": "Example title",
+    "updated_at": "2000-01-01T00:00:00+00:00",
+    "url": "https://qiita.com/yaotti/items/4bd431809afb1bb99e4f",
+    "user": {
+      "description": "Hello, world.",
+      "facebook_id": "yaotti",
+      "followees_count": 100,
+      "followers_count": 200,
+      "github_login_name": "yaotti",
+      "id": "yaotti",
+      "items_count": 300,
+      "linkedin_id": "yaotti",
+      "location": "Tokyo, Japan",
+      "name": "Hiroshige Umino",
+      "organization": "Increments Inc",
+      "permanent_id": 1,
+      "profile_image_url": "https://si0.twimg.com/profile_images/2309761038/1ijg13pfs0dg84sk2y0h_normal.jpeg",
+      "twitter_screen_name": "yaotti",
+      "website_url": "http://yaotti.hatenablog.com"
+    },
+    "page_views_count": 100
+  }
+]
+</pre></div></div>
+
+<h2>
+<span id="招待中のメンバー" class="fragment"></span><a href="https://qiita.com/api/v2/docs#%E6%8B%9B%E5%BE%85%E4%B8%AD%E3%81%AE%E3%83%A1%E3%83%B3%E3%83%90%E3%83%BC"><i class="fa fa-link"></i></a>招待中のメンバー</h2>
+
+<p>Qiita:Teamでの招待中のメンバーを表します。(Qiita:Teamでのみ有効。管理者権限が必要。)</p>
+
+<ul>
+<li>email
+
+<ul>
+<li>招待中のメンバーのemailアドレスです。</li>
+<li>Example: <code>"example@example.com"</code>
+</li>
+<li>Type: string</li>
+</ul>
+</li>
+<li>url
+
+<ul>
+<li>招待用URLです。有効期限は1日です。</li>
+<li>Example: <code>"https://team-name.qiita.com/registration/confirm?id=3&amp;token=456c84ae60070161a36c08c9e710050abe5852cc"</code>
+</li>
+<li>Type: string</li>
+</ul>
+</li>
+</ul>
+
+<h3>
+<span id="get-apiv2team_invitations" class="fragment"></span><a href="https://qiita.com/api/v2/docs#get-apiv2team_invitations"><i class="fa fa-link"></i></a>GET api/v2/team_invitations</h3>
+
+<p>招待中のメンバーの一覧を返します</p>
+
+<div class="code-frame" data-lang="text"><div class="highlight"><pre><span></span>GET api/v2/team_invitations HTTP/1.1
+Host: api.example.com
+</pre></div></div>
+
+<div class="code-frame" data-lang="text"><div class="highlight"><pre><span></span>HTTP/1.1 200
+Content-Type: application/json
+
+[
+  {
+    "email": "example@example.com",
+    "url": "https://team-name.qiita.com/registration/confirm?id=3&amp;token=456c84ae60070161a36c08c9e710050abe5852cc"
+  }
+]
+</pre></div></div>
+
+<h3>
+<span id="post-apiv2team_invitations" class="fragment"></span><a href="https://qiita.com/api/v2/docs#post-apiv2team_invitations"><i class="fa fa-link"></i></a>POST api/v2/team_invitations</h3>
+
+<p>チームにメンバーを招待します</p>
+
+<div class="code-frame" data-lang="text"><div class="highlight"><pre><span></span>POST api/v2/team_invitations HTTP/1.1
+Host: api.example.com
+</pre></div></div>
+
+<div class="code-frame" data-lang="text"><div class="highlight"><pre><span></span>HTTP/1.1 201
+Content-Type: application/json
+
+{
+  "email": "example@example.com",
+  "url": "https://team-name.qiita.com/registration/confirm?id=3&amp;token=456c84ae60070161a36c08c9e710050abe5852cc"
+}
+</pre></div></div>
+
+<h3>
+<span id="delete-apiv2team_invitationsemail" class="fragment"></span><a href="https://qiita.com/api/v2/docs#delete-apiv2team_invitationsemail"><i class="fa fa-link"></i></a>DELETE api/v2/team_invitations/:email</h3>
+
+<p>招待を取り消します</p>
+
+<div class="code-frame" data-lang="text"><div class="highlight"><pre><span></span>DELETE api/v2/team_invitations/:email HTTP/1.1
+Host: api.example.com
+</pre></div></div>
+
+<div class="code-frame" data-lang="text"><div class="highlight"><pre><span></span>HTTP/1.1 204
+</pre></div></div>
+
+<h2>
+<span id="絵文字リアクション" class="fragment"></span><a href="https://qiita.com/api/v2/docs#%E7%B5%B5%E6%96%87%E5%AD%97%E3%83%AA%E3%82%A2%E3%82%AF%E3%82%B7%E3%83%A7%E3%83%B3"><i class="fa fa-link"></i></a>絵文字リアクション</h2>
+
+<p>Qiita:Team上での絵文字リアクションを表します。Qiita:Teamでのみ有効です。</p>
+
+<ul>
+<li>created_at
+
+<ul>
+<li>データが作成された日時</li>
+<li>Example: <code>"2000-01-01T00:00:00+00:00"</code>
+</li>
+<li>Type: string</li>
+<li>Format: date-time</li>
+</ul>
+</li>
+<li>image_url
+
+<ul>
+<li>絵文字画像のURL</li>
+<li>Example: <code>"https://cdn.qiita.com/emoji/twemoji/unicode/1f44d.png"</code>
+</li>
+<li>Type: string</li>
+</ul>
+</li>
+<li>name
+
+<ul>
+<li>絵文字の識別子</li>
+<li>Example: <code>"+1"</code>
+</li>
+<li>Type: string</li>
+</ul>
+</li>
+<li>user
+
+<ul>
+<li>Qiita上のユーザを表します。</li>
+</ul>
+</li>
+</ul>
+
+<h3>
+<span id="post-apiv2commentscomment_idreactions" class="fragment"></span><a href="https://qiita.com/api/v2/docs#post-apiv2commentscomment_idreactions"><i class="fa fa-link"></i></a>POST /api/v2/comments/:comment_id/reactions</h3>
+
+<p>コメントに絵文字リアクションを付けます。</p>
+
+<ul>
+<li>name
+
+<ul>
+<li>絵文字の識別子</li>
+<li>Example: <code>"+1"</code>
+</li>
+<li>Type: string</li>
+</ul>
+</li>
+</ul>
+
+<div class="code-frame" data-lang="text"><div class="highlight"><pre><span></span>POST /api/v2/comments/:comment_id/reactions HTTP/1.1
+Content-Type: application/json
+Host: api.example.com
+
+{
+  "name": "+1"
+}
+</pre></div></div>
+
+<div class="code-frame" data-lang="text"><div class="highlight"><pre><span></span>HTTP/1.1 201
+Content-Type: application/json
+
+{
+  "created_at": "2000-01-01T00:00:00+00:00",
+  "image_url": "https://cdn.qiita.com/emoji/twemoji/unicode/1f44d.png",
+  "name": "+1",
+  "user": {
+    "description": "Hello, world.",
+    "facebook_id": "yaotti",
+    "followees_count": 100,
+    "followers_count": 200,
+    "github_login_name": "yaotti",
+    "id": "yaotti",
+    "items_count": 300,
+    "linkedin_id": "yaotti",
+    "location": "Tokyo, Japan",
+    "name": "Hiroshige Umino",
+    "organization": "Increments Inc",
+    "permanent_id": 1,
+    "profile_image_url": "https://si0.twimg.com/profile_images/2309761038/1ijg13pfs0dg84sk2y0h_normal.jpeg",
+    "twitter_screen_name": "yaotti",
+    "website_url": "http://yaotti.hatenablog.com"
+  }
+}
+</pre></div></div>
+
+<h3>
+<span id="post-apiv2itemsitem_idreactions" class="fragment"></span><a href="https://qiita.com/api/v2/docs#post-apiv2itemsitem_idreactions"><i class="fa fa-link"></i></a>POST /api/v2/items/:item_id/reactions</h3>
+
+<p>記事に絵文字リアクションを付けます。</p>
+
+<ul>
+<li>name
+
+<ul>
+<li>絵文字の識別子</li>
+<li>Example: <code>"+1"</code>
+</li>
+<li>Type: string</li>
+</ul>
+</li>
+</ul>
+
+<div class="code-frame" data-lang="text"><div class="highlight"><pre><span></span>POST /api/v2/items/:item_id/reactions HTTP/1.1
+Content-Type: application/json
+Host: api.example.com
+
+{
+  "name": "+1"
+}
+</pre></div></div>
+
+<div class="code-frame" data-lang="text"><div class="highlight"><pre><span></span>HTTP/1.1 201
+Content-Type: application/json
+
+{
+  "created_at": "2000-01-01T00:00:00+00:00",
+  "image_url": "https://cdn.qiita.com/emoji/twemoji/unicode/1f44d.png",
+  "name": "+1",
+  "user": {
+    "description": "Hello, world.",
+    "facebook_id": "yaotti",
+    "followees_count": 100,
+    "followers_count": 200,
+    "github_login_name": "yaotti",
+    "id": "yaotti",
+    "items_count": 300,
+    "linkedin_id": "yaotti",
+    "location": "Tokyo, Japan",
+    "name": "Hiroshige Umino",
+    "organization": "Increments Inc",
+    "permanent_id": 1,
+    "profile_image_url": "https://si0.twimg.com/profile_images/2309761038/1ijg13pfs0dg84sk2y0h_normal.jpeg",
+    "twitter_screen_name": "yaotti",
+    "website_url": "http://yaotti.hatenablog.com"
+  }
+}
+</pre></div></div>
+
+<h3>
+<span id="post-apiv2projectsproject_idreactions" class="fragment"></span><a href="https://qiita.com/api/v2/docs#post-apiv2projectsproject_idreactions"><i class="fa fa-link"></i></a>POST /api/v2/projects/:project_id/reactions</h3>
+
+<p>プロジェクトに絵文字リアクションを付けます。</p>
+
+<ul>
+<li>name
+
+<ul>
+<li>絵文字の識別子</li>
+<li>Example: <code>"+1"</code>
+</li>
+<li>Type: string</li>
+</ul>
+</li>
+</ul>
+
+<div class="code-frame" data-lang="text"><div class="highlight"><pre><span></span>POST /api/v2/projects/:project_id/reactions HTTP/1.1
+Content-Type: application/json
+Host: api.example.com
+
+{
+  "name": "+1"
+}
+</pre></div></div>
+
+<div class="code-frame" data-lang="text"><div class="highlight"><pre><span></span>HTTP/1.1 201
+Content-Type: application/json
+
+{
+  "created_at": "2000-01-01T00:00:00+00:00",
+  "image_url": "https://cdn.qiita.com/emoji/twemoji/unicode/1f44d.png",
+  "name": "+1",
+  "user": {
+    "description": "Hello, world.",
+    "facebook_id": "yaotti",
+    "followees_count": 100,
+    "followers_count": 200,
+    "github_login_name": "yaotti",
+    "id": "yaotti",
+    "items_count": 300,
+    "linkedin_id": "yaotti",
+    "location": "Tokyo, Japan",
+    "name": "Hiroshige Umino",
+    "organization": "Increments Inc",
+    "permanent_id": 1,
+    "profile_image_url": "https://si0.twimg.com/profile_images/2309761038/1ijg13pfs0dg84sk2y0h_normal.jpeg",
+    "twitter_screen_name": "yaotti",
+    "website_url": "http://yaotti.hatenablog.com"
+  }
+}
+</pre></div></div>
+
+<h3>
+<span id="delete-apiv2commentscomment_idreactionsreaction_name" class="fragment"></span><a href="https://qiita.com/api/v2/docs#delete-apiv2commentscomment_idreactionsreaction_name"><i class="fa fa-link"></i></a>DELETE /api/v2/comments/:comment_id/reactions/:reaction_name</h3>
+
+<p>コメントから絵文字リアクションを削除します。</p>
+
+<div class="code-frame" data-lang="text"><div class="highlight"><pre><span></span>DELETE /api/v2/comments/:comment_id/reactions/:reaction_name HTTP/1.1
+Host: api.example.com
+</pre></div></div>
+
+<div class="code-frame" data-lang="text"><div class="highlight"><pre><span></span>HTTP/1.1 200
+Content-Type: application/json
+
+{
+  "created_at": "2000-01-01T00:00:00+00:00",
+  "image_url": "https://cdn.qiita.com/emoji/twemoji/unicode/1f44d.png",
+  "name": "+1",
+  "user": {
+    "description": "Hello, world.",
+    "facebook_id": "yaotti",
+    "followees_count": 100,
+    "followers_count": 200,
+    "github_login_name": "yaotti",
+    "id": "yaotti",
+    "items_count": 300,
+    "linkedin_id": "yaotti",
+    "location": "Tokyo, Japan",
+    "name": "Hiroshige Umino",
+    "organization": "Increments Inc",
+    "permanent_id": 1,
+    "profile_image_url": "https://si0.twimg.com/profile_images/2309761038/1ijg13pfs0dg84sk2y0h_normal.jpeg",
+    "twitter_screen_name": "yaotti",
+    "website_url": "http://yaotti.hatenablog.com"
+  }
+}
+</pre></div></div>
+
+<h3>
+<span id="delete-apiv2itemsitem_idreactionsreaction_name" class="fragment"></span><a href="https://qiita.com/api/v2/docs#delete-apiv2itemsitem_idreactionsreaction_name"><i class="fa fa-link"></i></a>DELETE /api/v2/items/:item_id/reactions/:reaction_name</h3>
+
+<p>記事から絵文字リアクションを削除します。</p>
+
+<div class="code-frame" data-lang="text"><div class="highlight"><pre><span></span>DELETE /api/v2/items/:item_id/reactions/:reaction_name HTTP/1.1
+Host: api.example.com
+</pre></div></div>
+
+<div class="code-frame" data-lang="text"><div class="highlight"><pre><span></span>HTTP/1.1 200
+Content-Type: application/json
+
+{
+  "created_at": "2000-01-01T00:00:00+00:00",
+  "image_url": "https://cdn.qiita.com/emoji/twemoji/unicode/1f44d.png",
+  "name": "+1",
+  "user": {
+    "description": "Hello, world.",
+    "facebook_id": "yaotti",
+    "followees_count": 100,
+    "followers_count": 200,
+    "github_login_name": "yaotti",
+    "id": "yaotti",
+    "items_count": 300,
+    "linkedin_id": "yaotti",
+    "location": "Tokyo, Japan",
+    "name": "Hiroshige Umino",
+    "organization": "Increments Inc",
+    "permanent_id": 1,
+    "profile_image_url": "https://si0.twimg.com/profile_images/2309761038/1ijg13pfs0dg84sk2y0h_normal.jpeg",
+    "twitter_screen_name": "yaotti",
+    "website_url": "http://yaotti.hatenablog.com"
+  }
+}
+</pre></div></div>
+
+<h3>
+<span id="delete-apiv2projectsproject_idreactionsreaction_name" class="fragment"></span><a href="https://qiita.com/api/v2/docs#delete-apiv2projectsproject_idreactionsreaction_name"><i class="fa fa-link"></i></a>DELETE /api/v2/projects/:project_id/reactions/:reaction_name</h3>
+
+<p>プロジェクトから絵文字リアクションを削除します。</p>
+
+<div class="code-frame" data-lang="text"><div class="highlight"><pre><span></span>DELETE /api/v2/projects/:project_id/reactions/:reaction_name HTTP/1.1
+Host: api.example.com
+</pre></div></div>
+
+<div class="code-frame" data-lang="text"><div class="highlight"><pre><span></span>HTTP/1.1 200
+Content-Type: application/json
+
+{
+  "created_at": "2000-01-01T00:00:00+00:00",
+  "image_url": "https://cdn.qiita.com/emoji/twemoji/unicode/1f44d.png",
+  "name": "+1",
+  "user": {
+    "description": "Hello, world.",
+    "facebook_id": "yaotti",
+    "followees_count": 100,
+    "followers_count": 200,
+    "github_login_name": "yaotti",
+    "id": "yaotti",
+    "items_count": 300,
+    "linkedin_id": "yaotti",
+    "location": "Tokyo, Japan",
+    "name": "Hiroshige Umino",
+    "organization": "Increments Inc",
+    "permanent_id": 1,
+    "profile_image_url": "https://si0.twimg.com/profile_images/2309761038/1ijg13pfs0dg84sk2y0h_normal.jpeg",
+    "twitter_screen_name": "yaotti",
+    "website_url": "http://yaotti.hatenablog.com"
+  }
+}
+</pre></div></div>
+
+<h3>
+<span id="get-apiv2commentscomment_idreactions" class="fragment"></span><a href="https://qiita.com/api/v2/docs#get-apiv2commentscomment_idreactions"><i class="fa fa-link"></i></a>GET /api/v2/comments/:comment_id/reactions</h3>
+
+<p>コメントに付けられた絵文字リアクション一覧を作成日時の降順で返します。</p>
+
+<div class="code-frame" data-lang="text"><div class="highlight"><pre><span></span>GET /api/v2/comments/:comment_id/reactions HTTP/1.1
+Host: api.example.com
+</pre></div></div>
+
+<div class="code-frame" data-lang="text"><div class="highlight"><pre><span></span>HTTP/1.1 200
+Content-Type: application/json
+
+[
+  {
+    "created_at": "2000-01-01T00:00:00+00:00",
+    "image_url": "https://cdn.qiita.com/emoji/twemoji/unicode/1f44d.png",
+    "name": "+1",
+    "user": {
+      "description": "Hello, world.",
+      "facebook_id": "yaotti",
+      "followees_count": 100,
+      "followers_count": 200,
+      "github_login_name": "yaotti",
+      "id": "yaotti",
+      "items_count": 300,
+      "linkedin_id": "yaotti",
+      "location": "Tokyo, Japan",
+      "name": "Hiroshige Umino",
+      "organization": "Increments Inc",
+      "permanent_id": 1,
+      "profile_image_url": "https://si0.twimg.com/profile_images/2309761038/1ijg13pfs0dg84sk2y0h_normal.jpeg",
+      "twitter_screen_name": "yaotti",
+      "website_url": "http://yaotti.hatenablog.com"
+    }
+  }
+]
+</pre></div></div>
+
+<h3>
+<span id="get-apiv2itemsitem_idreactions" class="fragment"></span><a href="https://qiita.com/api/v2/docs#get-apiv2itemsitem_idreactions"><i class="fa fa-link"></i></a>GET /api/v2/items/:item_id/reactions</h3>
+
+<p>記事に付けられた絵文字リアクション一覧を作成日時の降順で返します。</p>
+
+<div class="code-frame" data-lang="text"><div class="highlight"><pre><span></span>GET /api/v2/items/:item_id/reactions HTTP/1.1
+Host: api.example.com
+</pre></div></div>
+
+<div class="code-frame" data-lang="text"><div class="highlight"><pre><span></span>HTTP/1.1 200
+Content-Type: application/json
+
+[
+  {
+    "created_at": "2000-01-01T00:00:00+00:00",
+    "image_url": "https://cdn.qiita.com/emoji/twemoji/unicode/1f44d.png",
+    "name": "+1",
+    "user": {
+      "description": "Hello, world.",
+      "facebook_id": "yaotti",
+      "followees_count": 100,
+      "followers_count": 200,
+      "github_login_name": "yaotti",
+      "id": "yaotti",
+      "items_count": 300,
+      "linkedin_id": "yaotti",
+      "location": "Tokyo, Japan",
+      "name": "Hiroshige Umino",
+      "organization": "Increments Inc",
+      "permanent_id": 1,
+      "profile_image_url": "https://si0.twimg.com/profile_images/2309761038/1ijg13pfs0dg84sk2y0h_normal.jpeg",
+      "twitter_screen_name": "yaotti",
+      "website_url": "http://yaotti.hatenablog.com"
+    }
+  }
+]
+</pre></div></div>
+
+<h3>
+<span id="get-apiv2projectsproject_idreactions" class="fragment"></span><a href="https://qiita.com/api/v2/docs#get-apiv2projectsproject_idreactions"><i class="fa fa-link"></i></a>GET /api/v2/projects/:project_id/reactions</h3>
+
+<p>プロジェクトに付けられた絵文字リアクション一覧を作成日時の降順で返します。</p>
+
+<div class="code-frame" data-lang="text"><div class="highlight"><pre><span></span>GET /api/v2/projects/:project_id/reactions HTTP/1.1
+Host: api.example.com
+</pre></div></div>
+
+<div class="code-frame" data-lang="text"><div class="highlight"><pre><span></span>HTTP/1.1 200
+Content-Type: application/json
+
+[
+  {
+    "created_at": "2000-01-01T00:00:00+00:00",
+    "image_url": "https://cdn.qiita.com/emoji/twemoji/unicode/1f44d.png",
+    "name": "+1",
+    "user": {
+      "description": "Hello, world.",
+      "facebook_id": "yaotti",
+      "followees_count": 100,
+      "followers_count": 200,
+      "github_login_name": "yaotti",
+      "id": "yaotti",
+      "items_count": 300,
+      "linkedin_id": "yaotti",
+      "location": "Tokyo, Japan",
+      "name": "Hiroshige Umino",
+      "organization": "Increments Inc",
+      "permanent_id": 1,
+      "profile_image_url": "https://si0.twimg.com/profile_images/2309761038/1ijg13pfs0dg84sk2y0h_normal.jpeg",
+      "twitter_screen_name": "yaotti",
+      "website_url": "http://yaotti.hatenablog.com"
+    }
+  }
+]
+</pre></div></div>
+
+<h2>
+<span id="認証中のユーザ" class="fragment"></span><a href="https://qiita.com/api/v2/docs#%E8%AA%8D%E8%A8%BC%E4%B8%AD%E3%81%AE%E3%83%A6%E3%83%BC%E3%82%B6"><i class="fa fa-link"></i></a>認証中のユーザ</h2>
+
+<p>現在のアクセストークンで認証中のユーザを表します。通常のユーザ情報よりも詳細な情報を含んでいます。</p>
+
+<ul>
+<li>description
+
+<ul>
+<li>自己紹介文</li>
+<li>Example: <code>"Hello, world."</code>
+</li>
+<li>Type: null, string</li>
+</ul>
+</li>
+<li>facebook_id
+
+<ul>
+<li>Facebook ID</li>
+<li>Example: <code>"yaotti"</code>
+</li>
+<li>Type: null, string</li>
+</ul>
+</li>
+<li>followees_count
+
+<ul>
+<li>このユーザがフォローしているユーザの数</li>
+<li>Example: <code>100</code>
+</li>
+<li>Type: integer</li>
+</ul>
+</li>
+<li>followers_count
+
+<ul>
+<li>このユーザをフォローしているユーザの数</li>
+<li>Example: <code>200</code>
+</li>
+<li>Type: integer</li>
+</ul>
+</li>
+<li>github_login_name
+
+<ul>
+<li>GitHub ID</li>
+<li>Example: <code>"yaotti"</code>
+</li>
+<li>Type: null, string</li>
+</ul>
+</li>
+<li>id
+
+<ul>
+<li>ユーザID</li>
+<li>Example: <code>"yaotti"</code>
+</li>
+<li>Type: string</li>
+</ul>
+</li>
+<li>items_count
+
+<ul>
+<li>このユーザが qiita.com 上で公開している投稿の数 (Qiita:Teamでの投稿数は含まれません)</li>
+<li>Example: <code>300</code>
+</li>
+<li>Type: integer</li>
+</ul>
+</li>
+<li>linkedin_id
+
+<ul>
+<li>LinkedIn ID</li>
+<li>Example: <code>"yaotti"</code>
+</li>
+<li>Type: null, string</li>
+</ul>
+</li>
+<li>location
+
+<ul>
+<li>居住地</li>
+<li>Example: <code>"Tokyo, Japan"</code>
+</li>
+<li>Type: null, string</li>
+</ul>
+</li>
+<li>name
+
+<ul>
+<li>設定している名前</li>
+<li>Example: <code>"Hiroshige Umino"</code>
+</li>
+<li>Type: null, string</li>
+</ul>
+</li>
+<li>organization
+
+<ul>
+<li>所属している組織</li>
+<li>Example: <code>"Increments Inc"</code>
+</li>
+<li>Type: null, string</li>
+</ul>
+</li>
+<li>permanent_id
+
+<ul>
+<li>ユーザごとに割り当てられる整数のID</li>
+<li>Example: <code>1</code>
+</li>
+<li>Type: integer</li>
+</ul>
+</li>
+<li>profile_image_url
+
+<ul>
+<li>設定しているプロフィール画像のURL</li>
+<li>Example: <code>"https://si0.twimg.com/profile_images/2309761038/1ijg13pfs0dg84sk2y0h_normal.jpeg"</code>
+</li>
+<li>Type: string</li>
+</ul>
+</li>
+<li>twitter_screen_name
+
+<ul>
+<li>Twitterのスクリーンネーム</li>
+<li>Example: <code>"yaotti"</code>
+</li>
+<li>Type: null, string</li>
+</ul>
+</li>
+<li>website_url
+
+<ul>
+<li>設定しているWebサイトのURL</li>
+<li>Example: <code>"http://yaotti.hatenablog.com"</code>
+</li>
+<li>Type: null, string</li>
+</ul>
+</li>
+<li>image_monthly_upload_limit
+
+<ul>
+<li>1ヶ月あたりにQiitaにアップロードできる画像の総容量</li>
+<li>Example: <code>1048576</code>
+</li>
+<li>Type: integer</li>
+</ul>
+</li>
+<li>image_monthly_upload_remaining
+
+<ul>
+<li>その月にQiitaにアップロードできる画像の残りの容量</li>
+<li>Example: <code>524288</code>
+</li>
+<li>Type: integer</li>
+</ul>
+</li>
+<li>team_only
+
+<ul>
+<li>Qiita:Team専用モードに設定されているかどうか</li>
+<li>Example: <code>false</code>
+</li>
+<li>Type: boolean</li>
+</ul>
+</li>
+</ul>
+
+<h3>
+<span id="get-apiv2authenticated_user" class="fragment"></span><a href="https://qiita.com/api/v2/docs#get-apiv2authenticated_user"><i class="fa fa-link"></i></a>GET /api/v2/authenticated_user</h3>
+
+<p>アクセストークンに紐付いたユーザを返します。</p>
+
+<div class="code-frame" data-lang="text"><div class="highlight"><pre><span></span>GET /api/v2/authenticated_user HTTP/1.1
+Host: api.example.com
+</pre></div></div>
+
+<div class="code-frame" data-lang="text"><div class="highlight"><pre><span></span>HTTP/1.1 200
+Content-Type: application/json
+
+{
+  "description": "Hello, world.",
+  "facebook_id": "yaotti",
+  "followees_count": 100,
+  "followers_count": 200,
+  "github_login_name": "yaotti",
+  "id": "yaotti",
+  "items_count": 300,
+  "linkedin_id": "yaotti",
+  "location": "Tokyo, Japan",
+  "name": "Hiroshige Umino",
+  "organization": "Increments Inc",
+  "permanent_id": 1,
+  "profile_image_url": "https://si0.twimg.com/profile_images/2309761038/1ijg13pfs0dg84sk2y0h_normal.jpeg",
+  "twitter_screen_name": "yaotti",
+  "website_url": "http://yaotti.hatenablog.com",
+  "image_monthly_upload_limit": 1048576,
+  "image_monthly_upload_remaining": 524288,
+  "team_only": false
+}
+</pre></div></div>
+</div></div></div></div><footer class="footer"><div class="footer_inner"><div class="footer_container"><ul class="footer_links-left"><li class="footer_link"><a class="footer_copyright" href="http://increments.co.jp/">© 2011-2018 Increments Inc.</a></li><li class="footer_link"><a href="https://qiita.com/terms">利用規約</a></li><li class="footer_link"><a target="_blank" href="http://help.qiita.com/ja/articles/qiita-community-guideline">ガイドライン</a></li><li class="footer_link"><a href="https://qiita.com/privacy">プライバシー</a></li><li class="footer_link"><a href="https://help.qiita.com/">ヘルプ</a></li></ul><ul class="footer_links-right"><li class="footer_link"><a href="https://qiita.com/about">Qiitaとは</a></li><li class="footer_link"><a href="https://qiita.com/users">ユーザー</a></li><li class="footer_link"><a href="https://qiita.com/tags">タグ</a></li><li class="footer_link"><a href="https://qiita.com/items">投稿</a></li><li class="footer_link"><a href="https://blog.qiita.com/">ブログ</a></li><li class="footer_link"><a href="https://qiita.com/api/v2/docs">API</a></li><li class="footer_link"><a href="https://teams.qiita.com/">Team</a></li><li class="footer_link"><a class="js-public-form-feedback-link" data-target=".js-feedback-form" data-toggle="modal" href="https://qiita.com/api/v2/docs"><i class="fa fa-heart"></i> ご意見 <i class="fa fa-caret-down"></i></a></li></ul></div></div></footer><div class="js-feedback-form modal fade feedbackForm"><div class="modal-dialog"><div class="modal-content"><div class="modal-header"><button name="button" type="submit" class="close" data-dismiss="modal">×</button><h4 class="modal-title">ご意見</h4></div><div class="modal-body"><form class="js-feedback-form-form" action="https://qiita.com/feedbacks" accept-charset="UTF-8" method="post"><input name="utf8" type="hidden" value="✓"><input type="hidden" name="authenticity_token" value="rOrpF1c4RYD6B0Q4Gc9Ra6hQTyWb2Mp560z61vrDylywu7hOoekncwDC6I9F1gL8fmzWbmHMnu4RYckdNCmqYA=="><input type="hidden" name="redirect_path" id="redirect_path" value="/api/v2/docs"><div class="form-group"><textarea name="feedback[message]" id="feedback_message" class="form-control js-feedback-form-text-area" placeholder="Qiitaについてのご意見をお聞かせください。" required="required" rows="5"></textarea></div><div class="feedbackForm_submitButtonContainer"><button name="button" type="submit" class="btn btn-primary feedbackForm_submitButton"><i class="fa fa-send"></i> 送信</button><p class="feedbackForm_note">いただいたご意見への返信は行っておりません。<br>返信の必要な内容については、<a href="https://increments.zendesk.com/hc/ja/requests/new">こちら</a> からお問い合わせください。</p></div><div style="position:fixed;top:-99999px;opacity:0.0001;"><input name="feedback[name]" type="text"></div></form></div></div></div></div><script>// if (window.mixpanel instanceof Element) {
+//   window.mixpanel = [];
+// }
+// (function(f,b){if(!b.__SV){var a,e,i,g;window.mixpanel=b;b._i=[];b.init=function(a,e,d){function f(b,h){var a=h.split(".");2==a.length&&(b=b[a[0]],h=a[1]);b[h]=function(){b.push([h].concat(Array.prototype.slice.call(arguments,0)))}}var c=b;"undefined"!==typeof d?c=b[d]=[]:d="mixpanel";c.people=c.people||[];c.toString=function(b){var a="mixpanel";"mixpanel"!==d&&(a+="."+d);b||(a+=" (stub)");return a};c.people.toString=function(){return c.toString(1)+".people (stub)"};i="disable track track_pageview track_links track_forms register register_once alias unregister identify name_tag set_config people.set people.set_once people.increment people.append people.track_charge people.clear_charges people.delete_user".split(" ");
+// for(g=0;g<i.length;g++)f(c,i[g]);b._i.push([a,e,d])};b.__SV=1.2;a=f.createElement("script");a.type="text/javascript";a.async=!0;a.src="//cdn.mxpnl.com/libs/mixpanel-2.2.min.js";e=f.getElementsByTagName("script")[0];e.parentNode.insertBefore(a,e)}})(document,window.mixpanel||[]);</script><script src="./Qiita API v2ドキュメント - Qiita_Developer_files/public-65e3c31bd2fb0374d93c330f0975a5aa.min.js"></script>
+<script type="text/javascript" id="">(function(e,a){if(!a.__SV){var b=window;try{var n,k,l=b.location,g=l.hash;var c=function(a,b){return(n=a.match(RegExp(b+"\x3d([^\x26]*)")))?n[1]:null};g&&c(g,"state")&&(k=JSON.parse(decodeURIComponent(c(g,"state"))),"mpeditor"===k.action&&(b.sessionStorage.setItem("_mpcehash",g),history.replaceState(k.desiredHash||"",e.title,l.pathname+l.search)))}catch(p){}var m,h;window.mixpanel=a;a._i=[];a.init=function(b,c,f){function e(b,a){var c=a.split(".");2==c.length&&(b=b[c[0]],a=c[1]);b[a]=function(){b.push([a].concat(Array.prototype.slice.call(arguments,
+0)))}}var d=a;"undefined"!==typeof f?d=a[f]=[]:f="mixpanel";d.people=d.people||[];d.toString=function(b){var a="mixpanel";"mixpanel"!==f&&(a+="."+f);b||(a+=" (stub)");return a};d.people.toString=function(){return d.toString(1)+".people (stub)"};m="disable time_event track track_pageview track_links track_forms register register_once alias unregister identify name_tag set_config reset people.set people.set_once people.increment people.append people.union people.track_charge people.clear_charges people.delete_user".split(" ");
+for(h=0;h<m.length;h++)e(d,m[h]);a._i.push([b,c,f])};a.__SV=1.2;b=e.createElement("script");b.type="text/javascript";b.async=!0;b.src="undefined"!==typeof MIXPANEL_CUSTOM_LIB_URL?MIXPANEL_CUSTOM_LIB_URL:"file:"===e.location.protocol&&"//cdn.mxpnl.com/libs/mixpanel-2-latest.min.js".match(/^\/\//)?"https://cdn.mxpnl.com/libs/mixpanel-2-latest.min.js":"//cdn.mxpnl.com/libs/mixpanel-2-latest.min.js";c=e.getElementsByTagName("script")[0];c.parentNode.insertBefore(b,c)}})(document,window.mixpanel||[]);
+mixpanel.init(google_tag_manager["GTM-TBQWPN"].macro(14));google_tag_manager["GTM-TBQWPN"].macro(15)&&mixpanel.people.set(google_tag_manager["GTM-TBQWPN"].macro(16));google_tag_manager["GTM-TBQWPN"].macro(18)&&mixpanel.identify(google_tag_manager["GTM-TBQWPN"].macro(20));google_tag_manager["GTM-TBQWPN"].macro(21)&&mixpanel.register({"Layout Version":google_tag_manager["GTM-TBQWPN"].macro(22)});</script>
+<div id="fb-root" class=" fb_reset"><div style="position: absolute; top: -10000px; height: 0px; width: 0px;"><div><iframe name="fb_xdm_frame_https" frameborder="0" allowtransparency="true" allowfullscreen="true" scrolling="no" allow="encrypted-media" id="fb_xdm_frame_https" aria-hidden="true" title="Facebook Cross Domain Communication Frame" tabindex="-1" src="./Qiita API v2ドキュメント - Qiita_Developer_files/__Bz3h5RzMx.html" style="border: none;"></iframe></div></div><div style="position: absolute; top: -10000px; height: 0px; width: 0px;"><div></div></div></div><iframe scrolling="no" frameborder="0" allowtransparency="true" src="./Qiita API v2ドキュメント - Qiita_Developer_files/widget_iframe.6a4ed48f02c42484dcac7ad4945520ca.html" title="Twitter settings iframe" style="display: none;"></iframe><iframe id="rufous-sandbox" scrolling="no" frameborder="0" allowtransparency="true" allowfullscreen="true" style="position: absolute; visibility: hidden; display: none; width: 0px; height: 0px; padding: 0px; border: none;" title="Twitter analytics iframe" src="./Qiita API v2ドキュメント - Qiita_Developer_files/saved_resource(1).html"></iframe></body></html>
