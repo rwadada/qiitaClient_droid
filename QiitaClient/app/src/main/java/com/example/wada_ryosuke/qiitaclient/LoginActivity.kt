@@ -11,7 +11,10 @@ class LoginActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_login)
+        //レイアウトをmActivityLoginBindingにバインドする。
         var mActivityLoginBinding: ActivityLoginBinding = DataBindingUtil.setContentView(this, R.layout.activity_login)
+
+        //ボタンに表示するテキストを設定
         mActivityLoginBinding.guestButton.setText("Guest")
         mActivityLoginBinding.loginButton.setText("Login")
     }
