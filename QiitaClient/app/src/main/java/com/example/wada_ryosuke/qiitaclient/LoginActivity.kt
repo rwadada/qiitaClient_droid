@@ -12,8 +12,6 @@ class LoginActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_login)
         var mActivityLoginBinding: ActivityLoginBinding = DataBindingUtil.setContentView(this, R.layout.activity_login)
-        val titl: TextView = mActivityLoginBinding.titleTextview
-        titl.setText("  Qiita\nCLIENT")
         mActivityLoginBinding.guestButton.setText("Guest")
         mActivityLoginBinding.loginButton.setText("Login")
     }
