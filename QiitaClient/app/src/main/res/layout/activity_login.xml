@@ -1,5 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <layout>
+    <data>
+        <variable
+            name="handler"
+            type="com.example.wada_ryosuke.qiitaclient.LoginActivity"/>
+    </data>
 
     <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
         android:layout_width="match_parent"
@@ -35,7 +40,8 @@
                     android:layout_gravity="center"
                     android:textSize="20dp"
                     android:fontFamily="serif"
-                    android:background="@drawable/button_template_login"/>
+                    android:background="@drawable/button_template_login"
+                    android:onClick="@{handler.onLoginButtonClick}"/>
 
                 <Button
                     android:id="@+id/guest_button"
@@ -45,7 +51,8 @@
                     android:layout_marginTop="10dp"
                     android:textSize="20dp"
                     android:fontFamily="serif"
-                    android:background="@drawable/button_template_login" />
+                    android:background="@drawable/button_template_login"
+                    android:onClick="@{handler.onGuestButtonClick}" />
 
             </LinearLayout>
 
