@@ -35,5 +35,6 @@ class LoginViewModel(mActivity: LoginActivity) {
 
     fun onGuestButtonClick(view: View) {
         Log.d(TAG, "Guest button click")
+        model.doGuestLogin()
     }
 }
