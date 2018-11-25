@@ -1,9 +1,8 @@
-package com.example.wada_ryosuke.qiitaclient.view.activities
+package com.example.wada_ryosuke.qiitaclient.login
 
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import com.example.wada_ryosuke.qiitaclient.R
-import com.example.wada_ryosuke.qiitaclient.view_model.LoginViewModel
 
 class LoginActivity : AppCompatActivity() {
     companion object {

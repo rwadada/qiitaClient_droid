@@ -1,8 +1,8 @@
-package com.example.wada_ryosuke.qiitaclient.usecase
+package com.example.wada_ryosuke.qiitaclient.login
 
 import android.content.Intent
 import android.net.Uri
-import com.example.wada_ryosuke.qiitaclient.view.activities.LoginActivity
+import com.example.wada_ryosuke.qiitaclient.login.LoginActivity
 
 class LoginModel(val mActivity: LoginActivity) {
     fun doLogin() {

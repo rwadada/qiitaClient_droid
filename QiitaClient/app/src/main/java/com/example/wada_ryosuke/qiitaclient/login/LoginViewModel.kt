@@ -1,4 +1,4 @@
-package com.example.wada_ryosuke.qiitaclient.view_model
+package com.example.wada_ryosuke.qiitaclient.login
 
 import android.databinding.DataBindingUtil
 import android.util.Log
@@ -6,8 +6,6 @@ import android.view.View
 import android.widget.Button
 import com.example.wada_ryosuke.qiitaclient.R
 import com.example.wada_ryosuke.qiitaclient.databinding.ActivityLoginBinding
-import com.example.wada_ryosuke.qiitaclient.usecase.LoginModel
-import com.example.wada_ryosuke.qiitaclient.view.activities.LoginActivity
 
 class LoginViewModel(mActivity: LoginActivity) {
     private val TAG = LoginViewModel::class.java.simpleName
