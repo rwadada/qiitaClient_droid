@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">QiitaClient</string>
+    <string name="button_login">LOGIN</string>
+    <string name="button_guest">GUEST</string>
 </resources>
