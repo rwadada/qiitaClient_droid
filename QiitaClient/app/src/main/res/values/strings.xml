@@ -2,4 +2,9 @@
     <string name="app_name">QiitaClient</string>
     <string name="button_login">LOGIN</string>
     <string name="button_guest">GUEST</string>
+
+    <!--Qiita API-->
+    <string name="qiita_api_url">https://qiita.com/api/v2/</string>
+    <string name="auth_api">oauth/authorize</string>
+    <string name="client_id">690c6c96a29e14b18ec611eb4bd7a4a17ec2da01</string>
 </resources>
