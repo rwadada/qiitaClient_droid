@@ -1,4 +1,4 @@
-package com.example.wada_ryosuke.qiitaclient.view.activities
+package com.example.wada_ryosuke.qiitaclient.main
 
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity

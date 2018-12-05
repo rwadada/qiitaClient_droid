@@ -1,14 +1,10 @@
 package com.example.wada_ryosuke.qiitaclient.login
 
 import android.content.Intent
-import android.databinding.DataBindingUtil
 import android.net.Uri
-import android.util.Log
-import android.view.View
-import android.widget.Button
 import com.example.wada_ryosuke.qiitaclient.R
 import com.example.wada_ryosuke.qiitaclient.common.UrlBuilder
-import com.example.wada_ryosuke.qiitaclient.databinding.ActivityLoginBinding
+import com.example.wada_ryosuke.qiitaclient.main.MainActivity
 
 class LoginViewModel(mActivity: LoginActivity) {
     private val TAG = LoginViewModel::class.java.simpleName
@@ -27,7 +23,7 @@ class LoginViewModel(mActivity: LoginActivity) {
     }
 
     fun doGuestLogin() {
-        val intent = Intent(Intent.ACTION_VIEW, Uri.parse("wadada://qiita_client"))
+        val intent = Intent(mActivity, MainActivity.javaClass)
         mActivity.startActivity(intent)
     }
 }
