@@ -2,6 +2,7 @@
     <string name="app_name">QiitaClient</string>
     <string name="button_login">LOGIN</string>
     <string name="button_guest">GUEST</string>
+    <string name="loading_login">認証中</string>
 
     <!--Qiita API-->
     <string name="qiita_api_url">https://qiita.com/api/v2/</string>
