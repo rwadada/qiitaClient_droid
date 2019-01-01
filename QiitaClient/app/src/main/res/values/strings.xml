@@ -8,4 +8,6 @@
     <string name="qiita_api_url">https://qiita.com/api/v2/</string>
     <string name="auth_api">oauth/authorize</string>
     <string name="client_id">690c6c96a29e14b18ec611eb4bd7a4a17ec2da01</string>
+    <string name="authorization_api">access_tokens</string>
+    <string name="client_secret">f0f189eb5a95a74a1fe47e441e5f83036fa159ae</string>
 </resources>
