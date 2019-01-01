@@ -10,7 +10,11 @@ import com.example.wada_ryosuke.qiitaclient.common.HttpClient
 import io.reactivex.Scheduler
 import io.reactivex.Single
 import io.reactivex.schedulers.Schedulers
+import okhttp3.Headers
 import okhttp3.HttpUrl
+import okhttp3.MediaType
+import okhttp3.RequestBody
+import org.json.JSONObject
 
 @Suppress("RECEIVER_NULLABILITY_MISMATCH_BASED_ON_JAVA_ANNOTATIONS")
 class LoadingActivity : AppCompatActivity() {
@@ -26,7 +30,7 @@ class LoadingActivity : AppCompatActivity() {
         Log.d(TAG, queryParams.code)
         Log.d(TAG, queryParams.state)
         val single = Single.create<Bitmap> {
-            doAuthenticate("hoge")
+            doAuthenticate(queryParams.code)
         }
                 .subscribeOn(Schedulers.newThread())
 
@@ -41,8 +45,16 @@ class LoadingActivity : AppCompatActivity() {
         )
     }
 
-    private fun doAuthenticate(code: String) {
-        val queryObserver = HttpClient.get(HttpUrl.get("http://httpbin.org/get"))
+    private fun doAuthenticate(code: String? = "") {
+        val requestStr: String = JSONObject()
+                .put("client_id", getString(R.string.client_id))
+                .put("client_secret", getString(R.string.client_secret))
+                .put("code", code)
+                .toString()
+        val url: HttpUrl = HttpUrl.get(getString(R.string.qiita_api_url) + getString(R.string.authorization_api))
+        val mediaType: MediaType = MediaType.parse("application/json")!!
+        val requestBody: RequestBody = RequestBody.create(mediaType, requestStr)
+        val queryObserver = HttpClient.post(url = url, requestBody = requestBody)
         queryObserver.doOnNext {
             Log.d("Response body", it.body()!!.string())
         }.doOnError{

@@ -1,10 +1,7 @@
 package com.example.wada_ryosuke.qiitaclient.common
 
 import io.reactivex.Observable
-import okhttp3.HttpUrl
-import okhttp3.OkHttpClient
-import okhttp3.Request
-import okhttp3.Response
+import okhttp3.*
 import java.io.IOException
 
 object HttpClient {
@@ -33,6 +30,23 @@ object HttpClient {
                 .url(url)
                 .get()
                 .build()
+        return callObservable(request)
+    }
+
+    fun post(url: HttpUrl, headers: Headers? = null, requestBody: RequestBody): Observable<Response> {
+        val request: Request
+        if (headers == null) {
+            request = Request.Builder()
+                    .url(url)
+                    .post(requestBody)
+                    .build()
+        } else {
+            request = Request.Builder()
+                    .url(url)
+                    .headers(headers)
+                    .post(requestBody)
+                    .build()
+        }
         return callObservable(request)
     }
 }
