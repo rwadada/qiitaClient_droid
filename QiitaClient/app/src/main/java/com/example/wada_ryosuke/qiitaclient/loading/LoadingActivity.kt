@@ -1,16 +1,11 @@
 package com.example.wada_ryosuke.qiitaclient.loading
 
-import android.graphics.Bitmap
-import android.net.Uri
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
 import android.util.Log
 import com.example.wada_ryosuke.qiitaclient.R
 import com.example.wada_ryosuke.qiitaclient.common.HttpClient
-import io.reactivex.Scheduler
-import io.reactivex.Single
 import io.reactivex.schedulers.Schedulers
-import okhttp3.Headers
 import okhttp3.HttpUrl
 import okhttp3.MediaType
 import okhttp3.RequestBody
@@ -29,12 +24,8 @@ class LoadingActivity : AppCompatActivity() {
         val queryParams = getParameters()
         Log.d(TAG, queryParams.code)
         Log.d(TAG, queryParams.state)
-        val single = Single.create<Bitmap> {
-            doAuthenticate(queryParams.code)
-        }
-                .subscribeOn(Schedulers.newThread())
 
-        single.subscribe()
+        doAuthenticate(queryParams.code)
     }
 
     private fun getParameters(): QueryParams {
@@ -55,12 +46,13 @@ class LoadingActivity : AppCompatActivity() {
         val mediaType: MediaType = MediaType.parse("application/json")!!
         val requestBody: RequestBody = RequestBody.create(mediaType, requestStr)
         val queryObserver = HttpClient.post(url = url, requestBody = requestBody)
-        queryObserver.doOnNext {
+                .subscribeOn(Schedulers.newThread())
+
+        queryObserver.doOnNext { it ->
             Log.d("Response body", it.body()!!.string())
-        }.doOnError{
+        }.doOnError { it ->
             Log.e("Query Error", it.localizedMessage)
         }.subscribe()
     }
-
 
 }
