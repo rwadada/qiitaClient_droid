@@ -5,6 +5,7 @@ import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
 import android.util.Log
 import com.example.wada_ryosuke.qiitaclient.R
+import com.example.wada_ryosuke.qiitaclient.common.AppData
 
 class MainActivity : AppCompatActivity() {
     companion object {
@@ -14,8 +15,6 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-        var uri = intent.data
-        Log.d(TAG, "code : ${uri.getQueryParameter("code")}")
-        Log.d(TAG, "state : ${uri.getQueryParameter("state")}")
+        Log.d(TAG, AppData.getAccess_token())
     }
 }

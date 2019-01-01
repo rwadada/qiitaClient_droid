@@ -1,14 +1,18 @@
 package com.example.wada_ryosuke.qiitaclient.loading
 
+import android.content.Intent
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
 import android.util.Log
 import com.example.wada_ryosuke.qiitaclient.R
+import com.example.wada_ryosuke.qiitaclient.common.AppData
 import com.example.wada_ryosuke.qiitaclient.common.HttpClient
+import com.example.wada_ryosuke.qiitaclient.main.MainActivity
 import io.reactivex.schedulers.Schedulers
 import okhttp3.HttpUrl
 import okhttp3.MediaType
 import okhttp3.RequestBody
+import org.json.JSONException
 import org.json.JSONObject
 
 @Suppress("RECEIVER_NULLABILITY_MISMATCH_BASED_ON_JAVA_ANNOTATIONS")
@@ -37,6 +41,8 @@ class LoadingActivity : AppCompatActivity() {
     }
 
     private fun doAuthenticate(code: String? = "") {
+        var access_token = ""
+
         val requestStr: String = JSONObject()
                 .put("client_id", getString(R.string.client_id))
                 .put("client_secret", getString(R.string.client_secret))
@@ -49,7 +55,19 @@ class LoadingActivity : AppCompatActivity() {
                 .subscribeOn(Schedulers.newThread())
 
         queryObserver.doOnNext { it ->
-            Log.d("Response body", it.body()!!.string())
+            val resString = it.body()!!.string()
+            Log.d("Response body", resString)
+            try {
+                val response = JSONObject(resString)
+                access_token = response.getString("token")
+                AppData.setAccess_token(access_token)
+                val intent: Intent = Intent(this, MainActivity::class.java)
+                this.startActivity(intent)
+                this.finish()
+
+            } catch (e: JSONException) {
+                e.printStackTrace()
+            }
         }.doOnError { it ->
             Log.e("Query Error", it.localizedMessage)
         }.subscribe()
