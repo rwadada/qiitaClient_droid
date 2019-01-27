@@ -1,6 +1,5 @@
 package com.example.wada_ryosuke.qiitaclient.main
 
-import android.net.Uri
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
 import android.util.Log
